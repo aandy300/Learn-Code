@@ -8,3 +8,9 @@
 # 08-static-class-靜態類別
 # 09-Array-陣列
 # 10-垃圾回收
+# 11-封裝性-public-private
+# 12-private-exsample
+# 13-get-set-存取器-class-func()-更簡潔化
+# 14-get-set-練習-
+27-封裝性-立體停車場-取用需要的部分?
+28 繼承性-
