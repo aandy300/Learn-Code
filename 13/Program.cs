@@ -1,4 +1,6 @@
-﻿// get set 圖
+﻿// get set 圖 精簡class func()
+// #1 如果只有 get = 唯讀
+// #2 get 呼叫時啟動 set 存入值時啟動
 using System;
 
 namespace _13
