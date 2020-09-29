@@ -1,4 +1,5 @@
 ﻿// 建構子-Constructor 多載 Overloaded 圖
+// 中文教學 http://slmtsite.blogspot.com/2013/04/c-17-constructor.html
 using System;
 
 namespace _06
