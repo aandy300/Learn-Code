@@ -13,13 +13,20 @@
 # 13-get-set-存取器-class-func()-更簡潔化
 # 14-get-set-練習-value
 # 15-封裝性
-# 16-繼承性-Q沒辦法用
+# 16-繼承性-Q沒辦法用-基底用法?
 # 17-亂數-Random
 # 18-複寫-Override
-# 19-Override-Method-Hiding-隱藏
+# 19-Override-Method-Hiding-隱藏-new
+# 20-Protected-保護
+# 21-Base-指向基底類別
+# 22-
+不用填寫內容 
+強制繼承的物件使用 特定動作 
+在 繼承的物件裡面填寫動作內容
 
-隱藏  同樣func()時  優先順序為 看你以哪個CLASS呼叫他
-new  雖然一樣 但方便分別哪些有其他相同的 多載
+
+
+
 
 # Tip
 
@@ -27,6 +34,6 @@ C#  判定  func() 是否相同是以 func()名稱 與 (容器內容是否一樣
 
 Q沒辦法用 結構子 繼承
 https://dotblogs.com.tw/chichiBlog/2017/08/20/Inheritance
-A 用this 在 該class本身下
-
+A1 # 18 Npc.cs 用this 在 該class本身下? this.Name =  name;
+A2 # 21 Dog.cs base指向?  public Dog(string name) : base(name)
 VSCODE CTRL+SHIFT+C  = CMD here

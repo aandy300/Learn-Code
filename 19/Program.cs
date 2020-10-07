@@ -2,6 +2,9 @@
 // func() 以 baseclass(Fruit) 使用 or 自身(Bana) 使用
 // new 用來區分 是否是 隱藏
 
+// 呼叫同名func()時  優先順序為 看你以哪個CLASS呼叫他
+
+
 
 using System;
 
