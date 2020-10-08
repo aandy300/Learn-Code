@@ -19,21 +19,35 @@
 # 19-Override-Method-Hiding-隱藏-new
 # 20-Protected-保護
 # 21-Base-指向基底類別
-# 22-
-不用填寫內容 
-強制繼承的物件使用 特定動作 
-在 繼承的物件裡面填寫動作內容
+# 22-Abstract-Class-抽象class
+# 23-Constant-readonly-常數
+# 24-Switch-enum
+
+編譯過後會固定 解 readonly
 
 
 
+未解:
+Q 
+1. 填入資訊時
+2. 可以產生物件時填入資訊  base 與  繼承的 印出不同資訊
+// 沒辦法取到基底的 info why?  | 被override了? 不是取用最近的?
 
 
 # Tip
 
 C#  判定  func() 是否相同是以 func()名稱 與 (容器內容是否一樣)
+VSCODE CTRL+SHIFT+C  = CMD here
+
+宣告時:
+變數每個單字大寫
+常數每個字大寫單字下引號
+
+基底容器,new 衍伸類型
+
+已解:
 
 Q沒辦法用 結構子 繼承
 https://dotblogs.com.tw/chichiBlog/2017/08/20/Inheritance
 A1 # 18 Npc.cs 用this 在 該class本身下? this.Name =  name;
 A2 # 21 Dog.cs base指向?  public Dog(string name) : base(name)
-VSCODE CTRL+SHIFT+C  = CMD here
