@@ -21,11 +21,21 @@
 # 21-Base-指向基底類別
 # 22-Abstract-Class-抽象class
 # 23-Constant-readonly-常數
-# 24-Switch-enum
+# 24-Switch-enum-列舉
+# 25-Multidimensional-Array-多維陣列
+# 25-Multidimensional-Array-多維陣列-加減乘除
 
-編譯過後會固定 解 readonly
-
-
+04.21
+超過陣列 範圍 編譯的時候才會發現問題
+07.40
+二維  三圍 作圖?
+幾維=幾個編號要找
+幾維陣列 用逗號來增減
+12.55
+宣時放入東 西 看不懂
+a: 官網 圖 一個包 一個
+20.27
+加乘法
 
 未解:
 Q 
