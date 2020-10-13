@@ -1,4 +1,4 @@
-# 01-環境設置
+﻿# 01-環境設置
 # 02-環境設置2-debug 
 # 03-for-while-if-印出格式
 # 04-Class
@@ -23,7 +23,8 @@
 # 23-Constant-readonly-常數
 # 24-Switch-enum-列舉
 # 25-Multidimensional-Array-多維陣列
-# 25-Multidimensional-Array-多維陣列-加減乘除
+# 26-Multidimensional-Array-多維陣列-加法
+# 26-Multidimensional-Array-多維陣列-乘法
 
 04.21
 超過陣列 範圍 編譯的時候才會發現問題

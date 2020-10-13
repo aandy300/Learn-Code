@@ -1,5 +1,5 @@
 ﻿// Martrix addition 矩陣 加法 
-
+// C# 矩陣 加法 https://www.tutorialspoint.com/How-to-perform-Matrix-Addition-using-Chash
 using System;
 
 namespace u2_C_
