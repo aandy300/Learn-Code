@@ -24,7 +24,7 @@
 # 24-Switch-enum-列舉
 # 25-Multidimensional-Array-多維陣列
 # 26-Multidimensional-Array-多維陣列-加法
-# 26-Multidimensional-Array-多維陣列-乘法
+# 26-數學課-多維陣列-乘法
 
 04.21
 超過陣列 範圍 編譯的時候才會發現問題
@@ -37,7 +37,16 @@
 a: 官網 圖 一個包 一個
 20.27
 加乘法
+左至右 上至下
 
+畫格子 EX WIKI
+A 左至右 A1 * B1 上至下
+
+
+不相等尺寸時
+
+當AB = AC時,且 A≠0
+但 B = C 未必成立
 未解:
 Q 
 1. 填入資訊時
