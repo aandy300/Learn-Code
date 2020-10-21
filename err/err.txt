@@ -1,0 +1,6 @@
+System.InvalidCastException: 無法將類型 'Mono.Debugger.Soft.PointerValue' 的物件轉換為類型 'Mono.Debugger.Soft.PrimitiveValue'。
+   於 Mono.Debugging.Soft.SoftDebuggerAdaptor.TargetObjectToObject(EvaluationContext ctx, Object obj) 於 C:\projects\vscode-temp\debugger-libs\Mono.Debugging.Soft\SoftDebuggerAdaptor.cs: 行 3003
+   於 Mono.Debugging.Evaluation.ExpressionEvaluator.TargetObjectToExpression(EvaluationContext ctx, Object obj) 於 C:\projects\vscode-temp\debugger-libs\Mono.Debugging\Mono.Debugging.Evaluation\ExpressionEvaluator.cs: 行 87
+   於 Mono.Debugging.Evaluation.ObjectValueAdaptor.CreateObjectValueImpl(EvaluationContext ctx, IObjectValueSource source, ObjectPath path, Object obj, ObjectValueFlags flags) 於 C:\projects\vscode-temp\debugger-libs\Mono.Debugging\Mono.Debugging.Evaluation\ObjectValueAdaptor.cs: 行 499
+   於 Mono.Debugging.Soft.SoftDebuggerAdaptor.CreateObjectValueImpl(EvaluationContext ctx, IObjectValueSource source, ObjectPath path, Object obj, ObjectValueFlags flags) 於 C:\projects\vscode-temp\debugger-libs\Mono.Debugging.Soft\SoftDebuggerAdaptor.cs: 行 1706
+   於 Mono.Debugging.Evaluation.ObjectValueAdaptor.CreateObjectValue(EvaluationContext ctx, IObjectValueSource source, ObjectPath path, Object obj, ObjectValueFlags flags) 於 C:\projects\vscode-temp\debugger-libs\Mono.Debugging\Mono.Debugging.Evaluation\ObjectValueAdaptor.cs: 行 97
