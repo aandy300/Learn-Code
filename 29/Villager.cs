@@ -22,4 +22,7 @@ class Villager
     public virtual void talk(){
         Console.WriteLine("my name is : " + Name);    
     }
+    public void injured(int dmg){
+        Hp -= dmg;    
+    }
 }

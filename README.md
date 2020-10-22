@@ -26,6 +26,8 @@
 # 26-Multidimensional-Array-多維陣列-加法
 # 27-數學課-多維陣列-乘法
 # 28-Multidimensional-Array-多維陣列-乘法 
+# 29-多型性-Polymorphism
+# 30-介面-Interface
 
 
 
