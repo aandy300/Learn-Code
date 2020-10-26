@@ -9,7 +9,7 @@ class Monster
         Console.WriteLine("my name is : " + Name);    
     }
     // 多形性
-    public void atk(Villager target){
+    public void atk(Creature target){
         target.injured(power);
     }
 }

@@ -1,9 +1,9 @@
 using System;
-class Villager
+class Creature
 {
     protected string Name;
     protected int Hp;
-    public Villager(string name){
+    public Creature(string name){
         Hp = 100;
         Name = name;
     }

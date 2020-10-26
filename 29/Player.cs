@@ -1,6 +1,6 @@
 using System;
 // 繼承性 class, 建構子
-class Player : Villager
+class Player : Creature
 {
 
     public Player(string name) : base(name)

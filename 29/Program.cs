@@ -18,7 +18,7 @@ namespace _29
         {
             Console.WriteLine("Hello World!");
 
-            Villager v1 = new Villager("生物");
+            Creature v1 = new Creature("生物");
             Console.WriteLine(v1.HP);
             v1.talk();
 
