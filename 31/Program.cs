@@ -1,6 +1,11 @@
 ﻿// List-串列-列表
 // 官方文件
 // https://docs.microsoft.com/zh-tw/dotnet/api/system.collections.generic.list-1?view=netcore-3.1
+// 延伸 slmtsite.blogspot 
+// List 的 Remove 與 Contains 判斷相等的方式
+// List 的 Sort 如何比較大小？
+// https://slmtsite.blogspot.com/2020/10/c-sharp-49-list.html
+
 using System;
 using System.Collections.Generic;
 
