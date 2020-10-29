@@ -1,0 +1,25 @@
+https://www.runoob.com/csharp/csharp-tutorial.html
+
+# 簡介
+	重要工能
+	布尔条件（Boolean Conditions）
+	自动垃圾回收（Automatic Garbage Collection）
+	标准库（Standard Library）
+	组件版本（Assembly Versioning）
+	属性（Properties）和事件（Events）
+	委托（Delegates）和事件管理（Events Management）
+	易于使用的泛型（Generics）
+	索引器（Indexers）
+	条件编译（Conditional Compilation）
+	简单的多线程（Multithreading）
+	LINQ 和 Lambda 表达式
+	集成 Windows
+# 環境
+	.Net 框架（.Net Framework）
+	.Net 框架是一个创新的平台，能帮您编写出下面类型的应用程序：
+# 程序結構
+	C# 是大小写敏感的。
+	所有的语句和表达式必须以分号（;）结尾。
+	程序的执行从 Main 方法开始。
+	与 Java 不同的是，文件名可以不同于类的名称。
+# 基本語法
