@@ -23,3 +23,62 @@ https://www.runoob.com/csharp/csharp-tutorial.html
 	程序的执行从 Main 方法开始。
 	与 Java 不同的是，文件名可以不同于类的名称。
 # 基本語法
+	标识符
+	标识符是用来识别类、变量、函数或任何其它用户定义的项目。在 C# 中，类的命名必须遵循如下基本规则：
+	标识符必须以字母、下划线或 @ 开头，后面可以跟一系列的字母、数字（ 0 - 9 ）、下划线（ _ ）、@。
+	标识符中的第一个字符不能是数字。
+	标识符必须不包含任何嵌入的空格或符号，比如 ? - +! # % ^ & * ( ) [ ] { } . ; : " ' / \。
+	标识符不能是 C# 关键字。除非它们有一个 @ 前缀。 例如，@if 是有效的标识符，但 if 不是，因为 if 是关键字。
+	标识符必须区分大小写。大写字母和小写字母被认为是不同的字母。
+	不能与C#的类库名称相同。
+	C# 关键字
+	https://www.runoob.com/csharp/csharp-basic-syntax.html
+# 數據類型
+	bool	布尔值	             True 或 False	False
+	byte	8 位无符号整数		  0 到 255	0
+	char	16 位 Unicode 字符	U +0000 到 U +ffff	'\0'
+	decimal	128 位精确的十进制值，28-29 有效位数	(-7.9 x 1028 到 7.9 x 1028) / 100 到 28	0.0M
+	double	64 位双精度浮点型	(+/-)5.0 x 10-324 到 (+/-)1.7 x 10308	0.0D
+	float	32 位单精度浮点型	-3.4 x 1038 到 + 3.4 x 1038	0.0F
+	int	    32 位有符号整数类型	-2,147,483,648 到 2,147,483,647	0
+	long	64 位有符号整数类型	-9,223,372,036,854,775,808 到 9,223,372,036,854,775,807	0L
+	sbyte	8 位有符号整数类型	-128 到 127	0
+	short	16 位有符号整数类型	-32,768 到 32,767	0
+	uint	32 位无符号整数类型	0 到 4,294,967,295	0
+	ulong	64 位无符号整数类型	0 到 18,446,744,073,709,551,615	0
+	ushort	16 位无符号整数类型	0 到 65,535	0
+	
+	引用类型（Reference types）
+	object obj;
+	obj = 100; // 这是装箱
+	动态（Dynamic）类型
+	dynamic d = 20;
+	字符串（String）类型
+	String str = "runoob.com";
+	指针类型（Pointer types）
+	char* cptr;
+	int* iptr;
+# 類型轉換
+	double d = 5673.74;
+    int i;
+	// 强制转换 double 为 int
+	i = (int)d;
+	To ***
+# C#變量
+	C# 中的变量定义
+	<data_type> <variable_list>;
+	int i, j, k;
+	C# 中的变量初始化
+	<data_type> <variable_name> = value;
+	int d = 3, f = 5;    /* 初始化 d 和 f. */
+
+	正确地初始化变量是一个良好的编程习惯，否则有时程序会产生意想不到的结果。
+# C#常量
+	常量是固定值，程序执行期间不会改变。常量可以是任何基本数据类型，比如整数常量、浮点常量、字符常量或者字符串常量，还有枚举常量。
+	常量可以被当作常规的变量，只是它们的值在定义后不能被修改。
+	定义常量
+	常量是使用 const 关键字来定义的 。定义一个常量的语法如下：
+	const <data_type> <constant_name> = value;
+	string a = "hello, world";                  // hello, world
+# C#運算符
+	https://www.runoob.com/csharp/csharp-operators.html
