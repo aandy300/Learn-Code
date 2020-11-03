@@ -71,8 +71,7 @@ https://www.runoob.com/csharp/csharp-tutorial.html
 	C# 中的变量初始化
 	<data_type> <variable_name> = value;
 	int d = 3, f = 5;    /* 初始化 d 和 f. */
-
-	正确地初始化变量是一个良好的编程习惯，否则有时程序会产生意想不到的结果。
+	! 正确地初始化变量是一个良好的编程习惯，否则有时程序会产生意想不到的结果。
 # C#常量
 	常量是固定值，程序执行期间不会改变。常量可以是任何基本数据类型，比如整数常量、浮点常量、字符常量或者字符串常量，还有枚举常量。
 	常量可以被当作常规的变量，只是它们的值在定义后不能被修改。
@@ -82,3 +81,184 @@ https://www.runoob.com/csharp/csharp-tutorial.html
 	string a = "hello, world";                  // hello, world
 # C#運算符
 	https://www.runoob.com/csharp/csharp-operators.html
+	範例部分
+	关系运算符
+	==	检查两个操作数的值是否相等，如果相等则条件为真。	(A == B) 不为真。
+	!=	检查两个操作数的值是否相等，如果不相等则条件为真。	(A != B) 为真。
+	>	检查左操作数的值是否大于右操作数的值，如果是则条件为真。	(A > B) 不为真。
+	<	检查左操作数的值是否小于右操作数的值，如果是则条件为真。	(A < B) 为真。
+	>=	检查左操作数的值是否大于或等于右操作数的值，如果是则条件为真。	(A >= B) 不为真。
+	<=	检查左操作数的值是否小于或等于右操作数的值，如果是则条件为真。	(A <= B) 为真。
+	位运算符 二進位 不大理解
+	int a = 60;            /* 60 = 0011 1100 */ 
+	&	如果同时存在于两个操作数中，二进制 AND 运算符复制一位到结果中。	(A & B) 将得到 12，即为 0000 1100 
+	c = a & b;           /* 12 = 0000 1100 */
+    Console.WriteLine("Line 1 - c 的值是 {0}", c );
+	Line 1 - c 的值是 12
+# C#判斷
+	判断语句
+	if 语句	一个 if 语句 由一个布尔表达式后跟一个或多个语句组成。
+	if...else 语句	一个 if 语句 后可跟一个可选的 else 语句，else 语句在布尔表达式为假时执行。
+	嵌套 if 语句	您可以在一个 if 或 else if 语句内使用另一个 if 或 else if 语句。
+	switch 语句	一个 switch 语句允许测试一个变量等于多个值时的情况。
+	嵌套 switch 语句	您可以在一个 switch 语句内使用另一个 switch 语句。
+# C#循環
+	循环类型
+	while 循环	当给定条件为真时，重复语句或语句组。它会在执行循环主体之前测试条件。
+	for/foreach 循环	多次执行一个语句序列，简化管理循环变量的代码。
+	do...while 循环	除了它是在循环主体结尾测试条件外，其他与 while 语句类似。
+	嵌套循环	您可以在 while、for 或 do..while 循环内使用一个或多个循环。
+	循环控制语句
+	break 语句	终止 loop 或 switch 语句，程序流将继续执行紧接着 loop 或 switch 的下一条语句。
+	continue 语句	引起循环跳过主体的剩余部分，立即重新开始测试条件。
+# C#封裝
+	public：所有对象都可以访问；
+	private：对象本身在对象内部可以访问；
+	protected：只有该类对象及其子类对象可以访问
+	internal：同一个程序集的对象可以访问；
+	protected internal：访问限于当前程序集或派生自包含类的类型。
+# C#方法
+	public             int           FindMax      (int num1, int num2)
+	<Access Specifier> <Return Type> <Method Name>(Parameter List)
+	{
+   		Method Body
+	}
+	*Access Specifier：访问修饰符，这个决定了变量或方法对于另一个类的可见性。
+	*Return type：返回类型，一个方法可以返回一个值。返回类型是方法返回的值的数据类型。如果方法不返回任何值，则返回类型为 void。
+	*Method name：方法名称，是一个唯一的标识符，且是大小写敏感的。它不能与类中声明的其他标识符相同。
+	*Parameter list：参数列表，使用圆括号括起来，该参数是用来传递和接收方法的数据。参数列表是指方法的参数类型、顺序和数量。参数是可选的，也就是说，一个方法可能不包含参数。
+	*Method body：方法主体，包含了完成任务所需的指令集。
+	
+	递归方法调用
+	圖
+# C#可空類型-Nullable
+	C# 单问号 ? 与 双问号 ??
+	int? i = 3;
+	Nullable<int> i = new Nullable<int>(3);
+	等於
+	int i; //默认值0
+	int? ii; //默认值null
+
+	exsample:
+	    int? num1 = null;
+        int? num2 = 45;
+        double? num3 = new double?();
+        double? num4 = 3.14157;
+         
+        bool? boolval = new bool?();
+
+        // 显示值
+         
+        Console.WriteLine("显示可空类型的值： {0}, {1}, {2}, {3}",
+                            num1, num2, num3, num4);
+        Console.WriteLine("一个可空的布尔值： {0}", boolval);
+        Console.ReadLine();
+	output:
+	显示可空类型的值： , 45,  , 3.14157
+	一个可空的布尔值：
+# C#數組 Array
+	datatype[] arrayName;
+# C#字串 String
+# C#結構體 Struct
+	exsample:
+	struct Books
+	{
+		public string title;
+		public string author;
+		public string subject;
+		public int book_id;
+	};  
+
+      Books Book1;        /* 声明 Book1，类型为 Books */
+      Books Book2;        /* 声明 Book2，类型为 Books */
+
+      /* book 1 详述 */
+      Book1.title = "C Programming";
+      Book1.author = "Nuha Ali";
+      Book1.subject = "C Programming Tutorial";
+      Book1.book_id = 6495407;
+
+      /* book 2 详述 */
+      Book2.title = "Telecom Billing";
+      Book2.author = "Zara Ali";
+      Book2.subject =  "Telecom Billing Tutorial";
+      Book2.book_id = 6495700;
+	output:
+		Book 1 title : C Programming
+		Book 1 author : Nuha Ali
+		Book 1 subject : C Programming Tutorial
+		Book 1 book_id : 6495407
+		Book 2 title : Telecom Billing
+		Book 2 author : Zara Ali
+		Book 2 subject : Telecom Billing Tutorial
+		Book 2 book_id : 6495700
+
+	C#結構的特點
+	结构可带有方法、字段、索引、属性、运算符方法和事件。
+	结构可定义构造函数，但不能定义析构函数。但是，您不能为结构定义无参构造函数。无参构造函数(默认)是自动定义的，且不能被改变。
+	*与类不同，结构不能继承其他的结构或类。
+	*结构不能作为其他结构或类的基础结构。
+	结构可实现一个或多个接口。
+	*结构成员不能指定为 abstract、virtual 或 protected。
+	*当您使用 New 操作符创建一个结构对象时，会调用适当的构造函数来创建结构。与类不同，结构可以不使用 New 操作符即可被实例化。
+	*如果不使用 New 操作符，只有在所有的字段都被初始化之后，字段才被赋值，对象才被使用。
+	类 vs 结构
+	类是引用类型，结构是值类型。
+	结构不支持继承。
+	结构不能声明默认的构造函数
+
+	1、结构体中声明的字段无法赋予初值，类可以:
+	2、结构体的构造函数中，必须为结构体所有字段赋值，类的构造函数无此限制:
+# C#列舉 Enum
+	類似go iota
+	enum <enum_name>
+	{ 
+		enumeration list 
+	};
+	enum_name 指定枚举的类型名称。
+	enumeration list 是一个用逗号分隔的标识符列表。
+	exsample:
+	enum Day { Sun, Mon, Tue, Wed, Thu, Fri, Sat };
+	int x = (int)Day.Sun;
+	int y = (int)Day.Fri;
+	Console.WriteLine("Sun = {0}", x);
+	Console.WriteLine("Fri = {0}", y);
+	output:
+	Sun = 0
+	Fri = 5
+# C#類 Class
+	Class的定義
+	https://www.runoob.com/csharp/csharp-class.html
+	
+	public			   class  Box
+	<access specifier> class  class_name
+	{
+		// member variables
+		public			   int		   length
+		<access specifier> <data type> variable1;
+		<access specifier> <data type> variable2;
+		...
+		<access specifier> <data type> variableN;
+
+		// member methods
+		public			   void。		 get_size(i int)
+		<access specifier> <return type> method1(parameter_list)
+		{
+			// method body
+		}
+		<access specifier> <return type> method2(parameter_list)
+		{
+			// method body
+		}
+		...
+		<access specifier> <return type> methodN(parameter_list)
+		{
+			// method body
+		}
+	}
+
+	*访问标识符 <access specifier> 指定了对类及其成员的访问规则。如果没有指定，则使用默认的访问标识符。类的默认访问标识符是 internal，成员的默认访问标识符是 private。
+	internal 內部類型或成員只能在相同組件的檔案內存取
+	*数据类型 <data type> 指定了变量的类型，返回类型 <return type> 指定了返回的方法返回的数据类型。
+	*如果要访问类的成员，你要使用点（.）运算符。
+	*点运算符链接了对象的名称和成员的名称。
