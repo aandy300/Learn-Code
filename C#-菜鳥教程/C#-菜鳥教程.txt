@@ -229,7 +229,7 @@ https://www.runoob.com/csharp/csharp-tutorial.html
 # C#類 Class
 	Class的定義
 	https://www.runoob.com/csharp/csharp-class.html
-	
+
 	public			   class  Box
 	<access specifier> class  class_name
 	{
@@ -262,3 +262,17 @@ https://www.runoob.com/csharp/csharp-tutorial.html
 	*数据类型 <data type> 指定了变量的类型，返回类型 <return type> 指定了返回的方法返回的数据类型。
 	*如果要访问类的成员，你要使用点（.）运算符。
 	*点运算符链接了对象的名称和成员的名称。
+# C#繼承
+	exsample:
+	基底
+	class Shape
+	{
+		...
+	}
+	繼承者
+	class Rectangle : Shape
+	{
+	...
+	}
+	C# 基底類別初始化 派生 : base 圖
+	C# 無法多重繼承 可以使用多個接口(interface)解決此問題

@@ -18,7 +18,7 @@
 # 18-複寫-Override
 # 19-Override-Method-Hiding-隱藏-new
 # 20-Protected-保護
-# 21-Base-指向基底類別
+# 21-Base-指向基底類別-初始化基底類別
 # 22-Abstract-Class-抽象class
 # 23-Constant-readonly-常數
 # 24-Switch-enum-列舉
