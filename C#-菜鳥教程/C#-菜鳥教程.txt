@@ -276,3 +276,46 @@ https://www.runoob.com/csharp/csharp-tutorial.html
 	}
 	C# 基底類別初始化 派生 : base 圖
 	C# 無法多重繼承 可以使用多個接口(interface)解決此問題
+# C#多態性
+	静态多态性中，函数的响应是在编译时发生的。
+	在动态多态性中，函数的响应是在运行时发生的。
+	多态就是同一个接口，使用不同的实例而执行不同操作
+	
+	函数重载
+		exsample:
+	    public int Add(int a, int b, int c)  
+        {  
+            return a + b + c;  
+        }  
+        public int Add(int a, int b)  
+        {  
+            return a + b;  
+        }
+
+		// 投進的類型 對應的fucn()投幣口 就不同
+		TestData dataClass = new TestData();
+		int add1 = dataClass.Add(1, 2);  
+		int add2 = dataClass.Add(1, 2, 3);
+
+		Console.WriteLine("add1 :" + add1);
+		Console.WriteLine("add2 :" + add2);
+	
+	動態多態性
+	A***** class = 抽象類 NOTE..
+	強制***一定要有 func *** ()
+	func()實作內容交給繼承的物件自己去定義
+	用override 自己定義內容 END
+	
+	virtual class  = 虛方法
+	当有一个定义在类中的函数需要在继承类中实现时，可以使用虚方法。
+	虚方法是使用关键字 virtual 声明的。
+	虚方法可以在不同的继承类中有不同的实现。
+	对虚方法的调用是在运行时发生的。
+	动态多态性是通过 抽象类 和 虚方法 实现的。
+	以下实例创建了 Shape 基类，
+	并创建派生类 Circle、 Rectangle、Triangle， Shape 类
+	提供一个名为 Draw 的虚拟方法，在每个派生类中重写该方法以绘制该类的指定形状。
+
+	用override 自己定義內容 END
+
+# C#運算符重載
