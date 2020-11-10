@@ -1,7 +1,7 @@
 ﻿// recursion 遞迴 遞歸 圖
 using System;
 
-namespace recursion
+namespace Recursion
 {
     class NumberManipulator
     {

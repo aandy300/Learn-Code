@@ -319,3 +319,31 @@ https://www.runoob.com/csharp/csharp-tutorial.html
 	用override 自己定義內容 END
 
 # C#運算符重載
+圖
+與多載相同,自定義內容 operator 後 運算子 (容器) 來設定符合條件
+通过关键字 operator 后跟运算符的符号来定义的
+
+結構
+public static result-type operator unary-operator ( op-type operand )
+public static result-type operator binary-operator ( op-type operand, op-type2 operand2 )
+public static implicit operator conv-type-out ( conv-type-in operand )
+public static explicit operator conv-type-out ( conv-type-in operand )
+result-type 运算符的结果类型。
+unary-operator 下列运算符之一：+ - ! ~ ++ — true false
+op-type 第一个（或唯一一个）参数的类型。
+operand 第一个（或唯一一个）参数的名称。
+binary-operator 其中一个：+ - * / % & | ^ << >> == != > < >= <=
+op-type2 第二个参数的类型。
+operand2 第二个参数的名称。
+conv-type-out 类型转换运算符的目标类型。
+conv-type-in 类型转换运算符的输入类型。
+
+可重载和不可重载运算符
+下表描述了 C# 中运算符重载的能力：
+运算符	描述
++, -, !, ~, ++, --	这些一元运算符只有一个操作数，且可以被重载。
++, -, *, /, %	这些二元运算符带有两个操作数，且可以被重载。
+==, !=, <, >, <=, >=	这些比较运算符可以被重载。
+&&, ||	这些条件逻辑运算符不能被直接重载。
++=, -=, *=, /=, %=	这些赋值运算符不能被重载。
+=, ., ?:, ->, new, is, sizeof, typeof	这些运算符不能被重载。
