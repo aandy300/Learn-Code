@@ -29,7 +29,7 @@
 # 29-多型性-Polymorphism
 # 30-Interface-介面
 # 31-List-串列-列表
-...
+
 etc
 # recursion-遞歸-遞迴
 
