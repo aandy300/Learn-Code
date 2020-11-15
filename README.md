@@ -45,7 +45,9 @@ Q
 # Tip
 
 C#  判定  func() 是否相同是以 func()名稱 與 (容器內容是否一樣)
-VSCODE CTRL+SHIFT+C  = CMD here
+VSCODE 
+CTRL+SHIFT+C  = CMD here
+ALT 上下 = 移動該行上下
 
 宣告時:
 變數每個單字大寫
