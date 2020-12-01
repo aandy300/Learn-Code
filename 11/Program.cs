@@ -9,7 +9,7 @@ namespace _11
         {
             Console.WriteLine("Hello World!");
 
-            Person p1 = new Person();
+            Person p1 = new Person("ANDY", "MING", 18);
             
             // private 無法在自己以外使用
             p1.age = 1 ;
