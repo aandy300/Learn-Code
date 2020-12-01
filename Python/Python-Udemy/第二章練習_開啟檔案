@@ -1,0 +1,17 @@
+# 讀取檔案
+# 有 'r' 還是沒好像都可以?
+data = []
+
+with open ('food.txt', 'r') as f :
+    # with = 開啟檔案 當執行離開 with的架構時關閉檔案 讓其他程式可以使用
+    # 開啟檔案 檔名 開啟模式 r = 讀取 w = 寫入 as f = 把前面讀取的東西暫時稱作 f
+    for line in f :
+        data.append(line.strip())
+        # strip = 去除記事本的換行 /n 只能使用在字串
+print(data)        
+
+with open ('food.txt') as f :
+    
+    for line in f :
+        print(line)
+ 

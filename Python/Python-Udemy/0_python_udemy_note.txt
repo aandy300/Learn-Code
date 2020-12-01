@@ -1,0 +1,602 @@
+快速過完會的地方
+
+筆記重點 記下 以後翻筆記就好 不用重新看
+
+
+不熟的基礎打扎實
+學習不會的才是重點
+
+CMD
+ctrl + c = 停止程式
+tab 自動完成 ex cd d*** tab
+cd .. =  上一層
+cls 清除畫面
+內容 > 選項 > 快速編輯 V  = 可以反白
+反白 右鍵一下 = 複製
+沒反白 打字區右鍵 = 貼上
+
+編輯器
+CTRL + <- or ->  = 調到文字最左最右
+shift + ctrl + <- or -> = 快速選取文字
+CTRL + H = 取代功能 \t = tab的空白 > 4個空白
+
+路徑 Path
+相對路徑 相對於我現在的位置 EX 從我現在的位置 > ***
+絕對路徑 完整的地址
+
+Other
+
+SDK 開發包? 唯一對外出口 = API
+
+宣告 ----------------------
+
+X=5
+變數較X 裡面數"值" 是5
+
+declare (宣告) : 創作出變數的意思,只有第一次遇到是宣告
+
+variable (變數) : 只是一個 "名字" 苦以饗承標前,用來裝著/對應到 某個值
+
+assignment (設值指令) : 遇到等號就是設值指令,把右邊存到左邊的意思
+
+
+資料類型(data type) -------------------
+
+資料類別
+1. 整數 int
+2. 浮點數(小數) folat
+3. 布林值 bool
+4. 字串 str
+
+Github 上傳 ----------------
+echo "# hi" >> README.md = 產生 README.m echo = CMD的print
+git init
+git add README.md = 要上傳的檔名
+git commit -m "first commit" = "版本資訊"
+git remote add origin https://github.com/aandy300/TESTTT.git
+git push -u origin master 上傳(沒密碼時)
+git push origin master 上傳
+git push origin master -f 強制上傳 會覆蓋之前的
+
+Git 其他指令 ------
+git config = 設定
+git remote -v = 檢查遠程倉庫配置
+$ git pull --rebase = 重整? 沒試過
+git add . = 加入資料夾內的所有東西
+
+Codeing Style 好的寫法 ----------------
+讀 > 寫 pep8
+https://tw-google-styleguide.readthedocs.io/en/latest/google-python-styleguide/
+
+註解 ---------- ----------------
+# or ctrl + / (Emnt)
+
+比較符號 運算符號  ---------- ----------------
+== 
+<= Etc...
+
+if架構 ---------- ----------------
+注意 tab不能跟空白混著用 Google標準 = 4個空白鍵
+if rain == '有' :
+XXXX print('***')
+
+XXXX = block 區塊 python = C# 的 { } 
+
+if架構延伸 elseif  ---------- ----------------
+elif 跟 else 都只是 if的延伸,整個都是"1個" if架構
+
+and  / or = 串接 
+
+python簡稱 elif
+elif age >= 13 and age < 18 :
+print('國高中')
+
+if架構延伸 else  ---------- ----------------
+else 一定在最後 上敘的條線件都不符合的話
+if*****
+elif******
+else: 
+        print('ZXA')
+
+型別轉換 casting  ---------- ----------------
+注意 input 會自動把輸入的內容轉為字串-
+age = input('age?')
+age = int(age)
+上面 型別轉換 後 存回原本的 age裡
+
+while 迴圈  ---------- ----------------
+
+x = 5 
+while x < 10 :
+    print('x小於10')
+    print('回圈ing')
+    x = x +1
+print('迴圈結束')
+
+while true (無限迴圈)  ---------- ---------------- 11/1
+
+while True :
+    mode = input('請輸入遊戲模式')
+    if mode == 'q': # quit
+        break
+    elif mode == '1':
+        print('啟動模式一'
+    elif mode == '2':
+        print('啟動模式二'
+    else:
+        print('只能輸入 1/2/q')
+
+上續整合練習 if else while 密碼測試  ---------- ----------------
+
+password = 'a123'
+x = 3 # 剩餘機會
+while x > 0 :
+    z = input('請輸入密碼')
+    if z == password :
+        print('登入成功')
+        break
+    else:
+        x -= 1
+        print('密碼錯誤,剩餘',x ,'次機會')
+if x == 0 :
+    print('登入失敗')
+
+
+第二章 import(載入) -----------------
+為了讓程式開啟時輕量化 而需要時再另外載入
+載入其他人做成的工具包
+範例: import random
+
+r = random.randint(1, 100) #. = radnom裡的功能
+
+random 猜數字遊戲 ---------------
+第二章練習猜數字.py ...
+
+list 清單 ---------------
+
+sample a = ['toyota', 'honda']
+
+list(清單)是用來裝東西的
+清單的符號是中括號
+可以混裝不同資料型別
+idnex(索引) (車廂代號) 是從0開始
+寫a[0] = toyota 就可以取出存在第0個東西 
+用len()來取清單長度
+用in來檢查東西在不再
+
+a.append('audi') = 將audi 加入 a 裡面
+
+for迴圈 ---------------
+#for loop 迴圈
+
+cars = ['audio', 'toyota', 'exallea']
+for car in cars:
+    print(car) # car = 暫存的
+
+讀取檔案 ------------
+
+strip() 除掉換行符號 只能對字串使用
+with = 開啟檔案 當執行離開 with的架構時關閉檔案 讓其他程式可以使用
+
+讀取檔案練習 留言分析程式 -----------
+
+#第二章練習_留言讀取程式.py
+運用 for loop 算出字數與平均字數
+其他運用到 append len
+用數學概念乘除
+
+清單快寫法 -------------
+list comprehension 
+
+good = [1 for d in data if 'good' in d]
+print(good)
+
+bad = ['bad' in d for d in data]
+print(bad)
+
+output = [(number-1) for number in reference if number % 2 == 0]
+               || 運算           ||變數              ||清單       ||篩選條件
+
+range 範圍--------------
+python 內建 清單產生器
+#第二章練習_range
+range(5) # [0, 1, 2, 3, 4]
+range(2, 5) #2.3.4
+range(8, 10) #8.9
+range(2, 10, 3) #2.5.8
+range(10, 2, -2) #10.8.6.4
+
+# d = 暫存 可以當次數
+for d in range(10) :
+    print('hi') #印5次hi
+    print('這是第', d,'次印出hi')
+
+記帳程式 二維 ------------
+第五節_記帳程式.py
+
+寫入檔案 ------
+str 文字可以 +與*
+.csv資料處理格式
+加入 encoding='utf-8' 指定格式
+因為文字只能加文字不能加數字  str(p[1]) 轉換為字串
+
+加上之前記帳程式
+with open('products.csv', 'w', encoding='utf-8') as f: # 'w'= 寫入 #encoding='utf-8' = 指定存取為 utf-8 格式
+    f.write('商品,價格\n') #新增標題
+    for p in products:
+        f.write(p[0] + ',' + str(p[1]) + '\n') # \n = 空白 ','在excel會自動換格子 
+      
+讀取檔案---------------
+#讀取寫都得統一格式 utf-8
+# spilt = 切割完的結果是清單
+# 先去除換行符號 在執行切割 # spilt = 切割完的結果是清單
+#|| 直接將內容存入 EX 拉麵,280 存入 name,price 如果有三個目標就得有三個容器
+
+continue ----------------
+# skip
+continue與break一樣只能使用於迴圈裡
+continue = 跳到下一迴的意思
+
+if '商品,價格' in line:
+                continue #跳過這一次迴圈
+
+OS 檢查檔案在不再 -------------------
+運用 OS 系統模組
+import os # operating system
+
+if os.path.isfile('products.csv'):
+    print('找到檔案,繼續作業...')
+else:
+    print('找不到檔案....')
+
+Function ----------
+自製化 程序
+
+Function 參數 ------------
+可指定參數 或 填入參數
+
+#water(參數)
+def wash(dry=False, water=8):
+    print('加水', water, '分滿')
+    print('加洗衣精')
+    print('旋轉')
+    if dry:
+        print'(烘衣服')
+
+Function 回傳 ------------
+return = 回傳 = 傳出資料 
+EX Fuction = 計算程式 把要算的數字丟進去後跑出的數字
+
+#return 回傳 
+def add(x, y):
+    return x + y
+
+a = add(6, 8)
+print(a)
+
+#簡寫法
+def averages(number):
+    return sum(number) / len(number)
+print(averages([1, 5, 9]))
+#averages 加入要算的目標後 return 後 averages 會變為答案 所以可以直接印 averages
+
+
+程式轉寫 -----------------
+datas = resttext() # 轉存後 原本有return 資料的 resttext() 就變回 []
+** = 123 **一定要有用到不然故障 print **也好
+
+程式轉寫 Line-------------
+*程式碼裡 有開始值~結尾值 通常都不包含結尾值
+
+s = data.split(' ') 切割空白
+
+清單的分割 split
+n = 26684
+       01234
+1. 前3個 n[:3] = 0:3 = 0~3 = 266
+2. 中間 n[2:4] = 23 = 68
+3. 結尾 n[-2:] = 34 = 84 -2 = 重結尾倒數2個 重8開始 所以 84
+4. 結尾 n[2:] = 34 = 84 = 重2之後的所有 所以是 84
+
+for data in datas:
+    s = data.split(' ')
+    time = s[0][:5] #清單0的 前5個 0~5
+    name = s[0][5:] #5之後的所有
+    print(name)
+
+
+字典 ---------
+split() 預設 沒有填的話就是空白 連續空白會自動無視掉
+words = {
+    'raman' : '拉麵',
+    'pasta' : '義大利麵'
+    # key       value
+}
+words ['tea'] = '茶' #增加新的key 
+
+留言讀取程式分析練習 --------------
+第六節_留言讀取+分析.py
+#概念 開啟檔案讀取,並告知讀取進度,將資料回存到 datas
+#將資料做分行處理split(),並將分行處理後的資料存進wc{}字典並記數,一開始wc{}為空所以資料會一筆一筆加進去
+# wc{} wc[word] += 1 
+# key = 單字 value = 出現次數
+#如果輸入的文字 同名的 key(索引) 在裡面wc{}(字典)裡面
+#印出 輸入的文字(key) 與 輸入的文字(key)字典裡的值(value)
+
+Import 載入第三方套件 --------------------
+PYPI 第三方套件 總和區
+python -m pip install XXX  = 安裝指令
+pip uninstall ***** = uninstall
+
+
+Import 載入第三方套件  Progressbar範例--------------------
+
+import time
+import progressbar
+
+for i in progressbar.progressbar(range(100)):
+    time.sleep(0.001)
+
+Import 載入第三方套件  Progressbar 物件類別 簡易Ver-------------
+
+Python裡面 所有東西都是物件(OBJ)只是類別不同(Type(int str...))
+物件第一個英文字會是大寫(?)
+fuction 第一個英文是小寫 以上為默認規則?
+
+寫 class Progressbar = 自創型別(Type)
+
+bar = progressbar.ProgressBar(max_value=1000000)
+#       ||套件包         || Object
+bar.update(count)
+|| .updata = ProgressBar(Object) 裡的功能
+
+class類別/object物件 文字版教學 -------------
+
+在講class 跟 object 的時候，必須把第三個字一起講 ： type(型別) 
+這三個詞最短版的教學就是：
+寫class 才可以發明自己的type(型別) ，然後就可以做出這個type(型別)的object(物件)。
+
+第三方  matplotlib 圖表 -------
+ylabel = y 座標
+plt.savefig('123.png')
+
+製作sop 個人ver -------
+
+其實【怎麼寫自己的程式】沒有什麼祕密SOP，
+我只能盡量給大家大格局的流程模擬：
+
+1. 想清楚自己的程式要有什麼功能
+先有願景 ，input output是什麼，   先稍微思考開發的階段性，程式的發展性，想做到什麼程度
+例如思考要不    要先做基本款，以後再增加網頁介面，這時候在思考的是一種【步驟】的概念
+可能思考的問題：
+1. 程式需要互動嗎？
+   這個程式需要互動操作嗎？（例如透過CMD輸入資料）
+   還是只要執行就好了 （例如執行後就自動開始下載某些資料）
+
+2. 程式需要哪些功能？
+   例如需要儲存資料嗎 (阿我可能就要想我要用哪種格式儲存，文字檔嗎還是需要使用到資料庫
+   (基礎課程沒有教資料庫，但同學可以上網自學也可，先從什麼是資料庫查起) 
+
+2. 把問題拆解 (你想達到的功能就是待解決的問題)
+例如你想寫程式來定期自動貼文到臉書，
+聽到這樣的問題，我會想到兩個部分：
+1. 如何貼文到臉書
+2. 如何定期
+大家要練習這樣思維上的拆解！
+
+3. 先把程式的想法拋到GOOGLE看看有什麼東西
+說不定已經有現成的程式或是教學，完全跟你想做的功能一樣，
+先google 'python facebook 貼文' 就會找到不少教學
+再來就要解決如何定期貼文，google 'python 定期' 又會查到不少教學。
+那你這兩個都達的到，不是組合在一起就完成了嗎！
+
+4. 尋找相關套件
+google你的想法時，出現很多現成的套件，例如跟臉書互動的套件，
+這時你就該去看看這個套件的＂官網＂，先稍微看一下介紹，安裝，跟使用範例等等。
+看起來很順眼，就準備好使用它了！
+
+5. 初始能查的東西查得差不多了，可以開始動工了！
+動工的第一步就是建立GitHub專案，隨著你的開發，做好辦本控管。
+如果使用到一些套件，也許是邊看套件的教學，邊做。
+如果覺得程式行數開始越來越多了，可以看refactor（重構程式）那些影片看看怎麼把程式碼用function收納好。
+這部分比較屬於嘗試，修改，嘗試，修改。
+沒有任何公認的SOP表示，寫程式一定要直接先寫function，
+只要你能把你的程式做到你想要的功能，就已經任務達成了，
+當你發現一件事情要重複做一百次，你自然而然會發現太麻煩，所以必須寫成function或是用到迴圈，
+所以沒有任何＂標準步驟＂，都是很自然的a不行就試b, b不行就換c。
+一般現實生活中，每個寫程式的人寫法習慣等等其實都相差許多，有的人喜歡用這個軟體，有的人喜歡那個，
+所以越是了解這個領域，越是會發現很多很多的東西都在激辯當中，各種事情都各有優缺，很少很少事情已經有 公布說＂這就是最好的做法＂。
+所以大家勇於去嘗試就對了！
+
+
+第三方 pillow 圖片處理 ------------
+
+os.path.join 轉化路徑
+for *** 多個檔案分別存
+
+image_file.save(os.path.join('sample','output', file[:-4] + '_output.png'))
+
+from PIL import Image
+import os
+
+for file in os.listdir('sample/input'): #lsit列表 dir資料夾 '.' = 同階級 現在位置
+    if file.endswith('.png'): #endswith = 檢查字串最後的結尾是否是 ('')
+        image_file = Image.open('sample/input/' + file)
+        image_file = image_file.convert('L') #convert 轉化
+        image_file.save('sample/output/' + file[:-4] + '_output.png') # file[:-4] = .png 之前的文字
+        print(file)
+
+第三方 line-bot ------
+
+遇到的錯誤******
+requirements.txt 大小寫
+app.logger.info("Request body: " + body) VSCODE bug -> sub3
+
+
+heroku *****
+heroku debug heroku logs
+heroku git:remote -a line-bot-m = 增加一條雲端上傳路線
+
+if __name__ == "__main__":
+    app.run()
+||防止直接執行
+
+新增個檔案 Procfile 不用附檔名 讓 heroku 知道讀取哪個和使用哪個
+web gunicorn app:app
+在新增個檔案 requirements.txt    !! 大小寫有差 注意都是小寫
+
+app.py
+
+回復克服大小寫問題  用清單來迴避
+if msg == 'hi':
+        r = '你好'
+if msg in ['hi', 'Hi']:
+         r = '你好'
+
+其他 if規則 = rule based
+人工智能 = NLP 自然語言處理
+
+延伸 Class --------
+
+Python > dir(**) ＝確認有甚麼屬性 (功能)
+pytohn裡所有東西都是物件OBJ 
+每個物件都是自己的種類Class
+Class裡面有各種屬性
+
+其他**
+self.name = name # 這種為設質指令(assigmnment)
+
+Class 相關 **
+
+Class大寫開頭 function一律小寫
+Class = 最高層級的收納 接下來才是 function收納
+寫Class 要有 def __init__(self) 為 初始化一定必要
+ def __init__(self) = 初始會 會先讀取裡面的所有內容
+ def __init__(self) 開始就會先跑 類似Unity Star
+
+self #自己身上的
+Class 裡預設會自動投self參數進去
+s2.read() 不用參數 裡面有藏 self
+
+class Student:
+    def __init__(self):
+        print('hi')
+
+     def read(self):
+        self.x = 5 #會新增一個x的屬性 dir查(Student)會有 x屬性
+        self.score += 2
+        print(self.name, 'reading...')
+
+s2 = Student('B', 60)
+s2.read()
+
+Class 整理版
+
+Class第一個字大寫
+Class裡的function 稱為 method
+self增加屬性不一定要在 init裡面
+Class裡的method 沒有順序差別
+method間隔一行 function間隔兩行
+
+Class 3大好處 
+1.把所有function收納
+2.透過self 共用身上屬性
+3.包裝程式碼 方便使用
+
+import ------
+
+只能往資料夾更裡面找 不能往外(上)找 (通常)
+
+from db import Db , Abc, x
+        ||#檔案      ||#class  多個用,載入 指定名稱
+from db import * = 載入全部
+form ***.db =載入深層(資料夾裡)的db
+
+
+
+
+
+-----------------------------------------------------------------------------------------------
+
+++++++++++++++++++++ 更新 問題 解決 區 ++++++++++++++++++++
+
+#待解決
+如何反向 if -= 'q' keybord
+
+#待了解
+財報爬蟲和分析 api?
+https://ithelp.ithome.com.tw/articles/10204773
+Python HOOK?
+https://www.youtube.com/watch?v=8BiOPBsXh0g
+例外處理 try-except陳述
+https://pydoing.blogspot.com/2011/01/python-try.html
+字串格式化 %d、%f、%s
+https://openhome.cc/Gossip/Python/StringFormat.html
+
+???錯誤
+
+將 Python 追加至 我的電腦 PATH 解決 (因為是亂按產生的問題 也不算需要解決?)
+https://www.roelpeters.be/what-to-do-when-python-is-not-recognized-as-an-internal-or-external-command/
+Python 安裝路徑
+C:\Users\admin\AppData\Local\Programs\Python\Python38-32
+
+# VSCODE 運行跑出的問題 rewqcd = 在執行 keyboard 測試時按的按鍵
+rewqcd : The term 'rewqcd' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a 
+ path was included, verify that the path is correct and try again.
+At line:1 char:1
++ rewqcd 'c:\Users\admin\Desktop\Coding\python\python_udemy'; ${env:PYT ...
++ ~~~~~~
+    + CategoryInfo          : ObjectNotFound: (rewqcd:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+#已解決
+QQQ 2020/01/06/-2020/01/09 按鍵單次點擊_待解決.py
+外側監控 bug的原因 進入迴圈沒出來
+moutse_keybord_test v1-2 done
+
+QQQ 2020/01/06/-2020/01/06 儲存新建檔案 路徑
+f = open("C:/Users/admin/Desktop/A_File.txt", "w", encoding='utf-8')
+
+
+-----------------------------------------------------------------------------------------------
+
+2020/01/06 note # autokey
+
+Python 中文 WIKI https://www.runoob.com/python/python-tutorial.html
+
+#新建/存檔 檔案
+開啟/新建 檔案 縮寫 函數
+https://www.runoob.com/python/python-func-open.html
+https://www.guru99.com/reading-and-writing-files-in-python.html
+
+#Python 運算子
+https://pydoing.blogspot.com/2011/01/python-operator.html
+
+# 鍵盤 滑鼠監測
+from keyboard
+from pynput import mouse
+from pynput.mouse import Button, Controller, mouse
+from pynput import keyboard
+
+監控 VER1 
+https://stackoverflow.com/questions/24072790/detect-key-press-in-python
+VER2 中文
+https://blog.csdn.net/tcy23456/article/details/82153411
+VER3 監控 KEYBORD VER
+https://github.com/boppreh/keyboard
+pynput VER
+https://pynput.readthedocs.io/en/latest/keyboard.html
+
+
+2020/01/09 note # autokey
+
+global = 全局變數 c# public?
+print type
+
+插件換成
+import time ,sys
+import pyautogui as ms
+from pynput import keyboard
+
+pyautogui wiki
+https://pyautogui.readthedocs.io/en/latest/index.html

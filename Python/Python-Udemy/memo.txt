@@ -1,0 +1,262 @@
+快速過完會的地方
+
+筆記重點 記下 以後翻筆記就好 不用重新看
+
+
+不熟的基礎打扎實
+學習不會的才是重點
+
+CMD
+ctrl + c = 停止程式
+
+宣告 ----------------------
+
+X=5
+變數較X 裡面數"值" 是5
+
+declare (宣告) : 創作出變數的意思,只有第一次遇到是宣告
+
+variable (變數) : 只是一個 "名字" 苦以饗承標前,用來裝著/對應到 某個值
+
+assignment (設值指令) : 遇到等號就是設值指令,把右邊存到左邊的意思
+
+
+資料類型(data type) -------------------
+
+資料類別
+1. 整數 int
+2. 浮點數(小數) folat
+3. 布林值 bool
+4. 字串 str
+
+Github 上傳 ----------------
+echo "# hi" >> README.md = 產生 README.m echo = CMD的print
+git init
+git add README.md = 要上傳的檔名
+git commit -m "first commit" = "版本資訊"
+git remote add origin http: ********
+git push -u origin master 上傳(沒密碼時)
+git push origin master 上傳
+
+Codeing Style 好的寫法 ----------------
+讀 > 寫 pep8
+https://tw-google-styleguide.readthedocs.io/en/latest/google-python-styleguide/
+
+註解 ---------- ----------------
+# or ctrl + / (Emnt)
+
+比較符號 運算符號  ---------- ----------------
+== 
+<= Etc...
+
+if架構 ---------- ----------------
+注意 tab不能跟空白混著用 Google標準 = 4個空白鍵
+if rain == '有' :
+XXXX print('***')
+
+XXXX = block 區塊 python = C# 的 { } 
+
+if架構延伸 elseif  ---------- ----------------
+elif 跟 else 都只是 if的延伸,整個都是"1個" if架構
+
+and  / or = 串接 
+
+python簡稱 elif
+elif age >= 13 and age < 18 :
+print('國高中')
+
+if架構延伸 else  ---------- ----------------
+else 一定在最後 上敘的條線件都不符合的話
+if*****
+elif******
+else: 
+        print('ZXA')
+
+型別轉換 casting  ---------- ----------------
+注意 input 會自動把輸入的內容轉為字串-
+age = input('age?')
+age = int(age)
+上面 型別轉換 後 存回原本的 age裡
+
+while 迴圈  ---------- ----------------
+
+x = 5 
+while x < 10 :
+    print('x小於10')
+    print('回圈ing')
+    x = x +1
+print('迴圈結束')
+
+while true (無限迴圈)  ---------- ---------------- 11/1
+
+while True :
+    mode = input('請輸入遊戲模式')
+    if mode == 'q': # quit
+        break
+    elif mode == '1':
+        print('啟動模式一'
+    elif mode == '2':
+        print('啟動模式二'
+    else:
+        print('只能輸入 1/2/q')
+
+上續整合練習 if else while 密碼測試  ---------- ----------------
+
+password = 'a123'
+x = 3 # 剩餘機會
+while x > 0 :
+    z = input('請輸入密碼')
+    if z == password :
+        print('登入成功')
+        break
+    else:
+        x -= 1
+        print('密碼錯誤,剩餘',x ,'次機會')
+if x == 0 :
+    print('登入失敗')
+
+
+第二章 import(載入) -----------------
+為了讓程式開啟時輕量化 而需要時再另外載入
+載入其他人做成的工具包
+範例: import random
+
+r = random.randint(1, 100) #. = radnom裡的功能
+
+random 猜數字遊戲 ---------------
+第二章練習猜數字.py ...
+
+list 清單 ---------------
+
+sample a = ['toyota', 'honda']
+
+list(清單)是用來裝東西的
+清單的符號是中括號
+可以混裝不同資料型別
+idnex(索引) (車廂代號) 是從0開始
+寫a[0] = toyota 就可以取出存在第0個東西 
+用len()來取清單長度
+用in來檢查東西在不再
+
+a.append('audi') = 將audi 加入 a 裡面
+
+for迴圈 ---------------
+#for loop 迴圈
+
+cars = ['audio', 'toyota', 'exallea']
+for car in cars:
+    print(car) # car = 暫存的
+
+讀取檔案 ------------
+
+strip() 除掉換行符號 只能對字串使用
+with = 開啟檔案 當執行離開 with的架構時關閉檔案 讓其他程式可以使用
+
+讀取檔案練習 留言分析程式 -----------
+
+#第二章練習_留言讀取程式.py
+運用 for loop 算出字數與平均字數
+其他運用到 append len
+用數學概念乘除
+
+清單快寫法 -------------
+list comprehension 
+
+good = [1 for d in data if 'good' in d]
+print(good)
+
+bad = ['bad' in d for d in data]
+print(bad)
+
+output = [(number-1) for number in reference if number % 2 == 0]
+               || 運算           ||變數              ||清單       ||篩選條件
+
+range 範圍--------------
+python 內建 清單產生器
+#第二章練習_range
+range(5) # [0, 1, 2, 3, 4]
+range(2, 5) #2.3.4
+range(8, 10) #8.9
+range(2, 10, 3) #2.5.8
+range(10, 2, -2) #10.8.6.4
+
+# d = 暫存 可以當次數
+for d in range(10) :
+    print('hi') #印5次hi
+    print('這是第', d,'次印出hi')
+
+記帳程式 二維 ------------
+第五節_記帳程式.py
+
+寫入檔案 ------
+str 文字可以 +與*
+.csv資料處理格式
+加入 encoding='utf-8' 指定格式
+因為文字只能加文字不能加數字  str(p[1]) 轉換為字串
+
+加上之前記帳程式
+with open('products.csv', 'w', encoding='utf-8') as f: # 'w'= 寫入 #encoding='utf-8' = 指定存取為 utf-8 格式
+    f.write('商品,價格\n') #新增標題
+    for p in products:
+        f.write(p[0] + ',' + str(p[1]) + '\n') # \n = 空白 ','在excel會自動換格子 
+      
+讀取檔案---------------
+#讀取寫都得統一格式 utf-8
+# spilt = 切割完的結果是清單
+# 先去除換行符號 在執行切割 # spilt = 切割完的結果是清單
+#|| 直接將內容存入 EX 拉麵,280 存入 name,price 如果有三個目標就得有三個容器
+
+continue ----------------
+# skip
+continue與break一樣只能使用於迴圈裡
+continue = 跳到下一迴的意思
+
+if '商品,價格' in line:
+                continue #跳過這一次迴圈
+
+OS 檢查檔案在不再 -------------------
+運用 OS 系統模組
+import os # operating system
+
+if os.path.isfile('products.csv'):
+    print('找到檔案,繼續作業...')
+else:
+    print('找不到檔案....')
+
+Function ----------
+自製化 程序
+
+Function 參數 ------------
+可指定參數 或 填入參數
+
+#water(參數)
+def wash(dry=False, water=8):
+    print('加水', water, '分滿')
+    print('加洗衣精')
+    print('旋轉')
+    if dry:
+        print'(烘衣服')
+
+Function 回傳 ------------
+return = 回傳 = 傳出資料 
+EX Fuction = 計算程式 把要算的數字丟進去後跑出的數字
+
+#return 回傳 
+def add(x, y):
+    return x + y
+
+a = add(6, 8)
+print(a)
+
+#簡寫法
+def averages(number):
+    return sum(number) / len(number)
+print(averages([1, 5, 9]))
+#averages 加入要算的目標後 return 後 averages 會變為答案 所以可以直接印 averages
+
+
+-----------------
+
+程式轉寫 問題點在於 says 影片的說話的人˙ if
+
+datas = resttext() # 轉存後 原本有return 資料的 resttext() 就變回 []

@@ -1,0 +1,201 @@
+2020.06.05 以上DC
+
+Git
+
+首先，Git的數據庫分為遠端數據庫和本地端數據庫。
+
+遠端數據庫: 配有專用的伺服器，為了讓多人共享而建立的數據庫。
+本地端數據庫：為了方便用戶個人使用，在自己的機器上配置的數據庫。
+
+Github 上傳 
+----------------
+
+echo "# hi" >> README.md = 產生 README.m echo = CMD的print
+git init
+git add README.md = 要上傳的檔名
+git commit -m "first commit" = "版本資訊"
+git remote add origin https://github.com/aandy300/TESTTT.git
+git push -u origin master 上傳(沒密碼時)
+git push origin master 上傳
+git push origin master -f 強制上傳 會覆蓋之前的
+
+----------------
+
+Git的標準提交訊息：
+
+第1行：提交時修改內容的摘要
+第2行：空行
+第3行以後：修改的理由
+
+其他基本知識 ----------------
+
+SHAI =  commit 後產生的 特別碼 (照檔案內容編碼 = 檔案一樣號碼一樣)
+
+git commit -am，則可以省略git add a.txt這一步，因為git commit -am可以提交跟蹤過的檔案
+
+origin/master
+代表遠端數據庫「origin」的「master」分支位置。
+origin/HEAD
+代表遠端數據庫「origin」當前提交的位置。通常和「origin/master」的位置相同。
+master
+代表本地端數據庫的「master」分支位置。
+
+線上有資料庫
+中間本地的佔存空間(Ram)
+本地也有產生一個資料庫
+
+小訣竅 ----------------
+
+gitconfig alias 縮寫 *****
+https://gitbook.tw/chapters/config/convenient-settings.html
+$ git config --global alias.br branch
+$ git config --global alias.st status
+
+待了解 ----------------
+
+rebase = 就以結果來看，感覺像是「把 cat 分支剪下來，然後貼在 dog 分支上面」，有點像插花時候「嫁接」的概念： ??
+
+錯誤 ---------------
+
+QQQ git 有其他人先上傳新版本
+
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/aandy300/git_ver_te
+'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushi
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+AAA 先 git pull 更新資料 之後整合資料 重新上傳
+
+QQQ detached HEAD 斷頭（detached HEAD）是怎麼一回事？
+https://gitbook.tw/chapters/faq/detached-head.html
+
+AAA git checkout master = 切回分支
+
+QQQ 帳號衝突
+AAA
+因為之前的憑證與現在使用的憑證帳號不同
+控制台\所有控制台項目\認證管理員
+刪除之前 Github 認證的憑證 重新登入 現在要使用的帳號 解決
+
+QQQ 檔案版本衝突 
+上方本地 下方遠端 ||以下為範例
+<<<<<<< HEAD
+"# git_ver_test"
+"NB ver2"
+=======
+"# git_ver_test" 
+"pc 2"
+>>>>>>> 74a7bba7eacbc31791d18c814c543cf3df66750a
+
+??? 版本衝突錯誤 Merge
+CONFLICT (content): Merge conflict in README.md
+Automatic merge failed; fix conflicts and then commit the result.
+
+AAA 
+決定要使用的版本後切回master-> merge -> commit no -m -> edit anyway -> :q out
+
+指令一覽 -------------
+
+git config -l = 看目前設定
+git clone https://github.com/***/***.git = 拉資料庫 複製整份
+git pull  <remote> <branch> = 下載更新 remote = github link
+|| pull =  git fetch 遠端的 branch 然後與本地的 branch 做 merge 產生一個 merge commit 節點
+git fetch = Fetch 指令才是把東西拉回來的主角
+branch = 分支 ex master
+commit = 版本 本地資料庫上傳
+push = 上傳到 遠端資料庫
+git status = 確認現在狀態 nothing to commit, working tree clean = 本地與遠端版本相同 乾淨的狀態
+git checkout 檔案名 = 刪除之前的狀態' 返回 乾淨的狀態
+git mv =
+跟刪除檔案一樣，變更檔名也是一種「修改」，所以操作上其實也是差不多的：
+mv hello.html world.html        # 把 hello.html 改成 world.html
+git revert ba*** = 再做一個新的 Commit，來取消你不要的 Commit
+git revert HEAD =  復原最新 HEAD = 最新  HEAD^ = 最新的前一個
+git reset = 把目前的狀態設定成某個指定的 Commit 的狀態，通常適用於尚未推出去的 Commit。 
+
+Commit之前修改 *********
+git rest HEAD FileName = 將暫存區的檔案 移動回本地工作資料夾
+git checkout -- filename = 刪除暫存區add的檔案
+
+刪除和搬移檔案 **********
+git rm **** =  加入刪除清單?
+git mv ***
+git clean -n = 列出刪除清單
+git clean -f = 刪除清單裡的檔案
+
+branch 分支 ********
+同一時間只能處於一個branch
+用途 開發新功能 bug fix 重構 實驗
+git branch = 列出現在有的分支清單
+git branch newbranchname = 新增branch
+git chackout branchname = 換到指定的branch
+git chackout ID = 換到指定的branch ID VER 此時匯市 detached HEAD 狀態, 一種沒名字的 currnent branch狀態 給名字後解決
+git branch branchname -d = 刪除指定branch(如果已經marge只是刪除stree和系統的標籤 紀錄還會存在)
+git checkout -b newbranchname = 新建branch並切換過去
+git merge 要合併的branch名稱 = 合併
+branch 更名和刪除 *********
+git branch -m old_name new_name
+git branch -M old_name new_name = 強制覆蓋
+git branch new_fearure -d
+git branch new_fearure -D = 強制刪除
+git branch -r = 看遠端的資料庫有哪些分之
+git branch -r --merged = (列出已經被合併的分支)
+git fetch = 更新 F5
+
+
+
+標籤 ******
+git tag tagname = 當前目標下標籤
+git tag tagname <SHAI ID> = 指定目標下標籤
+git tag tagname -m "message" = 附加說明? (不知道如何看說明)
+git tag -d tagname = 刪除tag
+
+歷史紀錄 ******
+git log
+git blame <filename> = 拿到<SHAI ID> 到 Stree 找 commit 甚麼時候加的
+
+檔案差異比較  *****
+https://ithelp.ithome.com.tw/articles/10135441
+git diff commit1 commit2 <SHAI ID>
+git diff => 工作目錄 vs 索引
+git diff HEAD => 工作目錄 vs HEAD
+git diff --cached HEAD => 索引 vs HEAD
+git diff --cached => 索引 vs HEAD
+git diff HEAD^ HEAD => HEAD^ vs HEAD
+
+忽略清單*****
+https://gitbook.tw/chapters/using-git/ignore.html
+https://github.com/github/gitignore
+檔案夾新增 檔名輸入成 .gitignore.
+# 檔案名稱 .gitignore
+# 忽略 secret.yml 檔案
+secret.yml
+# 忽略 config 目錄下的 database.yml 檔案
+config/database.yml
+# 忽略所有 db 目錄下附檔名是 .sqlite3 的檔案
+/db/*.sqlite3
+# 忽略所有附檔名是 .tmp 的檔案
+*.tmp
+# 當然你要忽略自己也可以，只是通常不會這麼做
+# .gitignore
+
+四種合併方式
+1. Straight merge = 預設合併
+如果是快轉 fast-forward 就不會有 merge commity 除非 git merge --no-ff  取消快轉 (原本不會製造出merge節點 --no-ff後會製造出merge節點)
+
+2.Squasghed commit  看不出從屬關係
+git merge new_feature --squash = 壓縮成只有一個merge-commit 不會有被合併的log(較少使用)
+
+3.cherry-pick 將指定的commit合併 修正小部分錯誤 EX 新版本中 錯字 只打算修正錯字? 單獨挑出合併
+git cherry-pick <ID>
+只會合併指定的commit
+-x 參數會在log裡加註本來是哪個<ID>
+
+暫存區 ---把修改暫時存取到暫存區
+git stash
+git stash apply 套用
+git stash clear 刪除
