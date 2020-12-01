@@ -1,0 +1,168 @@
+// {
+//     "version": "2.0.0",
+//     "command": "g++",
+//     "args": ["-g", "${file}", "-o", "main.exe"], // 編譯命令引數
+//     "problemMatcher": {
+//         "owner": "cpp",
+//         "fileLocation": ["relative", "${workspaceRoot}"],
+//         "pattern": {
+//             "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+//             "file": 1,
+//             "line": 2,
+//             "column": 3,
+//             "severity": 4,
+//             "message": 5
+//         }
+//     }
+// }
+
+// {
+//     "version": "2.0.0",
+//     "command": "g++",
+//     "args": ["-g","${file}","-o","${file}.exe"],    // 编译命令参数
+//     "problemMatcher": {
+//         "owner": "cpp",
+//         "fileLocation": ["relative", "${workspaceRoot}"],
+//         "pattern": {
+//             "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+//             "file": 1,
+//             "line": 2,
+//             "column": 3,
+//             "severity": 4,
+//             "message": 5
+//         }
+//     }
+// }
+
+
+
+// {
+//     "version": "2.0.0",
+//     "command": "g++",
+//     "args": ["-g","${file}","-o","${fileBasenameNoExtension}.exe"],    // 编译命令参数
+//     "problemMatcher": {
+//         "owner": "cpp",
+//         "fileLocation": ["relative", "${workspaceFolder}"],
+//         "pattern": {
+//             "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+//             "file": 1,
+//             "line": 2,
+//             "column": 3,
+//             "severity": 4,
+//             "message": 5
+//         }
+//     }
+// }
+
+
+
+
+
+
+// {
+//     "version": "2.0.0",
+//     "command": "gcc",
+//     "tasks": [
+//         {
+//             "label": "build",
+//             "command": "dotnet",
+//             "type": "process",
+//             "args": [
+//                 "build",
+//                 "${workspaceFolder}/MyOldProject.csproj"
+//             ],
+//             "problemMatcher": "$msCompile"
+//         }
+//     ]
+// }
+
+
+// {
+//     // See https://go.microsoft.com/fwlink/?LinkId=733558
+//     // for the documentation about the tasks.json format
+//     "version": "2.0.0",
+//     "tasks": [
+//         {
+//             "label": "build",
+//             "type": "shell",
+//             "command": "g++",
+//             // "args": ["-g", "${file}", "-o", "${fileBasenameNoExtension}.exe"],
+//             "args": ["-g","${file}","-o","${file}.exe"],
+//             "group": {
+//                 "kind": "build",
+//                 "isDefault": true
+//             }
+//         }
+//     ]
+// }
+
+// {
+//     // See https://go.microsoft.com/fwlink/?LinkId=733558
+//     // for the documentation about the tasks.json format
+//     "version": "2.0.0",
+//     "tasks": [
+//         {
+//             "label": "build",
+//             "command": "dotnet build",
+//             "type": "shell",
+//             "group": "build",
+//             "presentation": {
+//                 "reveal": "silent"
+//             },
+//             "problemMatcher": "$msCompile"
+//         }
+//     ]
+// }
+
+// {
+//     "version": "2.0.0",
+//     "command": "g++",
+//     // "args": ["-g","${file}","-o","${file}.exe"],    // 编译命令参数
+//     "args": ["-g", "${file}", "-o", "main.exe"], // 編譯命令引數
+//     "problemMatcher": {
+//         "owner": "cpp",
+//         "fileLocation": ["relative", "${workspaceRoot}"],
+//         "pattern": {
+//             "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+//             "file": 1,
+//             "line": 2,
+//             "column": 3,
+//             "severity": 4,
+//             "message": 5
+//         }
+//     }
+// }
+
+
+
+// {
+//     "version": "2.0.0",
+//     "tasks": [
+//         {
+//             "label": "build",
+//             "type": "shell",
+//             "command": "g++ -g file_name.cpp -o output_name.exe",
+//             "group": {
+//                 "kind": "build",
+//                 "isDefault": true
+//             }
+//         }
+//     ]
+// }
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "command": "dotnet build",
+            "type": "shell",
+            "group": "build",
+            "presentation": {
+                "reveal": "silent"
+            },
+            "problemMatcher": "$msCompile"
+        }
+    ]
+}
