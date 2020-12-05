@@ -1,0 +1,13 @@
+C:\Users\admin\Desktop\Coding\Learn-Code\C#\C#-u2-slmt\32\bin\Debug\netcoreapp3.1\32.exe
+C:\Users\admin\Desktop\Coding\Learn-Code\C#\C#-u2-slmt\32\bin\Debug\netcoreapp3.1\32.deps.json
+C:\Users\admin\Desktop\Coding\Learn-Code\C#\C#-u2-slmt\32\bin\Debug\netcoreapp3.1\32.runtimeconfig.json
+C:\Users\admin\Desktop\Coding\Learn-Code\C#\C#-u2-slmt\32\bin\Debug\netcoreapp3.1\32.runtimeconfig.dev.json
+C:\Users\admin\Desktop\Coding\Learn-Code\C#\C#-u2-slmt\32\bin\Debug\netcoreapp3.1\32.dll
+C:\Users\admin\Desktop\Coding\Learn-Code\C#\C#-u2-slmt\32\bin\Debug\netcoreapp3.1\32.pdb
+C:\Users\admin\Desktop\Coding\Learn-Code\C#\C#-u2-slmt\32\obj\Debug\netcoreapp3.1\32.csprojAssemblyReference.cache
+C:\Users\admin\Desktop\Coding\Learn-Code\C#\C#-u2-slmt\32\obj\Debug\netcoreapp3.1\32.csproj.CoreCompileInputs.cache
+C:\Users\admin\Desktop\Coding\Learn-Code\C#\C#-u2-slmt\32\obj\Debug\netcoreapp3.1\32.AssemblyInfoInputs.cache
+C:\Users\admin\Desktop\Coding\Learn-Code\C#\C#-u2-slmt\32\obj\Debug\netcoreapp3.1\32.AssemblyInfo.cs
+C:\Users\admin\Desktop\Coding\Learn-Code\C#\C#-u2-slmt\32\obj\Debug\netcoreapp3.1\32.dll
+C:\Users\admin\Desktop\Coding\Learn-Code\C#\C#-u2-slmt\32\obj\Debug\netcoreapp3.1\32.pdb
+C:\Users\admin\Desktop\Coding\Learn-Code\C#\C#-u2-slmt\32\obj\Debug\netcoreapp3.1\32.genruntimeconfig.cache
