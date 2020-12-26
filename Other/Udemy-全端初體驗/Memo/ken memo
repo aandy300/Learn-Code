@@ -1,0 +1,205 @@
+html4
+
+@文字空格 <pre> or <p>
+
+<pre>
+this   is  a apple
+</pre>
+
+@ 超連結 <a href="***">
+<a href="***" target="_self" title="滑鼠移上文字說明"></a> 在原本的網頁開啟
+<a href="/~mydomamin/dir/one/1.jpg" target="_blank"></a> 新增分頁開啟 向資料夾裡訪問文件
+
+@網頁內插入頁面
+<iframe src="" width="" height="" style="boder:none;" frameborder="0"></iframe>
+
+@form 輸入表單
+將資料送到 /login.php get 的方法
+
+<form action="/login.php">
+	
+	Username:<br>
+	<input type="text" name="username"><br> <!-- name="" = 存取空間 -->
+	Password:<br>
+	<input type="password" name="password"><br>
+
+	<input type="radio" name="gender" value="male">Male
+	<input type="radio" name="gender" value="female">Female
+	<br>
+
+	<input type="checkbox" name="savePassword" value="saved"> I need save
+	<br>
+
+	<textarea name="message" row="10" cols="40"></textarea> <!-- 大小調整row="10" cols="40" -->
+	<br>
+
+	<select name="option"> <!-- 下向下展出選單 -->
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+	</select>
+	
+	<input type="date" name="day" max="1995-02-21"> <!-- 日月需要兩位數才可以 -->
+	<br>
+
+	<input type="submit" value="提交"><br>
+
+</form>
+
+html5 ----------------
+
+架構 
+上>下 <header> <nav> <footer>
+<aside>側邊
+
+<!-- html5 form2.0 -->
+
+<form action="">
+	<input list="mylist"> <!-- 輸入框 關鍵字搜索 資料庫為 mylist -->
+
+	<datalist id="mylist"> <!-- 資料庫 資料庫名稱 -->
+		<!-- <option value=""> 标签能够在不带任何属性的情况下使用，但是通常需要 value 属性，该属性定义了发送到服务器的数据 -->
+		<option value="IE"> 
+		<option value="Firefox"> 
+		<option value="Goole Chrome"> 
+		<option value="Safari"> 
+	</datalist>
+
+	<input type="color" name="color"> <!-- 顏色選擇 -->
+	<br>
+
+	<input type="date" name="day"> <!-- 日期選擇 -->
+	<br>
+
+	<input type="email" name="email"> <!-- 信箱限定 -->
+	<br>
+
+	<input type="number" name="number" min="1" max="6"> <!-- 日期選擇 -->
+	<br>
+	
+	<input type="text" name="firstname" value="Tom" readonly=""> <!-- 文字內容無法更改 -->
+	<br>
+	
+	<input type="text" name="firstname" value="Tom" disabled> <!-- 文字灰色 無法選擇 -->
+	<br>
+	
+	<input type="text" name="firstname" value="Tom" size="90"> <!-- 輸入框size -->
+	<br>
+	
+	<input type="text" name="firstname" value="Tom" maxlength="4"> <!-- 字數限制 -->
+	<br>
+	
+</form>
+
+撥放音樂 影片
+
+<!-- 播放音樂 需要 controls="" 控制器 src可以寫在audio後面 或者 <source src="">裡 --> 
+<audio controls="" src="01. KISS OF DEATH (Produced by HYDE).mp3" type="audio/mp3">
+	<source src="01. KISS OF DEATH (Produced by HYDE).mp3" type="audio/mp3">
+</audio>
+<!-- 播放影片 與上一樣 --> 
+<video controls="" width="600">
+	<source src="1.mp4" type="video/mp4">
+</video>
+
+
+純 html 網頁練習 少許css ---------
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css"> /*css*/
+		table, th, td{
+			border: 1px solid black;
+			border-collapse: collapse; /*外框限取消*/
+		}
+		
+	</style>
+</head>
+<body>
+
+	<header>
+			<h1>my zoo</h1>
+	</header>
+
+	<nav> <!-- 導覽列 -->
+		<ul>
+			<li>home</li>
+			<li>about</li>
+			<li>Contact</li>
+		</ul>
+	</nav>
+
+	<section> <!-- 文章內容一部分 -->
+		<img src="MAMP-PRO-Logo.png" alt="om" width="100%">
+	</section>
+	
+	<section>
+		<h2>my video</h2>
+		<br>
+		<video src="1.mp4" type="video/mp4" controls="" width="600"></video>
+	</section>
+
+	<article> <!-- 文章主體 -->
+		<h3>title1</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis quas voluptatibus tempora culpa qui porro numquam quasi neque. Magni aspernatur dolores, aut aliquid dolore nobis repudiandae voluptatem rerum est accusantium.</p>
+	</article>
+
+	<br>
+	<hr>
+	<br>
+
+	<article>
+		<h3>title2</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis quas voluptatibus tempora culpa qui porro numquam quasi neque. Magni aspernatur dolores, aut aliquid dolore nobis repudiandae voluptatem rerum est accusantium.</p>
+	</article>
+
+	<br>
+	<hr>
+	<br>
+
+	<section>
+			<table style="width: 100%"> <!-- 欄位 -->
+				<caption>my animeals</caption>
+				<tr>
+					<th>animals</th> <!-- 大欄位 -->
+					<th>amount</th>
+				</tr>
+				<tr>
+					<td>LION</td> <!-- 小欄位(數值) -->
+					<td>36</td>
+				</tr>
+				<tr>
+					<td>ele</td>
+					<td>33</td>
+				</tr>
+			</table>
+	</section>
+
+	<br>
+	<hr>
+	<br>
+
+	<footer>
+		<form action="">
+			Email address: <br>
+			<input type="eil" name="email" value="Email"> <br>
+			Message:	<br>
+			<textarea rows="4" cols="50"></textarea> <br>
+		</form>
+	</footer>
+	
+	<p>&copy; 2018 mark icon</p>
+</body>
+</html>
+
+Ken CSS------------------------
+畫面縮小時不會有拉霸
+max-width: 700px;
+height: 600px;
+
+margin A 下+20 B上+30 會取 30 不會 +成50
+
+box-sizeing: border-box; 增加 pading 不會影響 本身尺寸

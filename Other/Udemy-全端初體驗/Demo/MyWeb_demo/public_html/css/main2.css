@@ -1,0 +1,52 @@
+.menu_bk{
+	padding: 35px;
+	background:black;
+}
+.icon{
+	position:fixed;
+	width : 250px ;
+	height: 50px;
+	top:13px;
+	left:10px;
+}
+
+#title{
+	display: inline-block;
+	position:fixed;
+	font-size: 14px;
+	
+	text-align: center;
+	line-height:28px; 
+
+	background: #CCC;
+	width: 80px;
+	height: 80px;
+
+	top:0px;
+
+	cursor: pointer;
+}
+.menu1{
+	 left:270px;
+}
+.menu2{
+	 left:350px;
+}
+.menu3{
+	 left:430px;
+}
+.menu4{
+	 left:510px;
+}
+.menu5{
+	 width: 120px;
+	 right:0px;
+}
+.bk{
+	padding: 35px;
+	background: #aaa;
+}
+.dropdown-item{
+	display: block;
+	position:static;
+}

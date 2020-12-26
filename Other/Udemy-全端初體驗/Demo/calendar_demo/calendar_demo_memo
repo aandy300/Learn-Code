@@ -1,0 +1,559 @@
+
+@ calendar 印出年月日 ----------------------
+<div id="calendar">//範例
+	<div id="header">
+	   <?= date('Y')?>/<?= date('m')?>
+	</div>
+	<div id="days">
+		<div class="week" class="clearfix">
+			<?php foreach ($week as $key => $weekday): ?>
+				<div class="day"><?= $weekday ?></div>				
+			<?php endforeach ?>
+		</div>
+	<!-- 	<div class="day">SUN</div>
+		<div class="day">MON</div>
+		<div class="day">TUE</div>
+		<div class="day">WED</div>
+		<div class="day">THU</div>
+		<div class="day">FRI</div>
+		<div class="day">SAT</div> -->
+	</div>
+
+	<div id="dates" class="clearfix">
+		<?php foreach ($dates as $key => $date): ?>
+		   <div class="date-block <?= (is_null($date))? 'empty' : ''?>">
+				<div class="date"><?= $date ?></div>
+				<div class="events">
+				</div>
+		   </div>
+		<?php endforeach ?>
+	</div>
+ </div>
+@ 步驟一
+用PHP <?= date('Y') ?> <?=?date('m')?> 印出年月
+
+@ 步驟二
+自己打或用 array 印出 星期
+<div class="day">SUN</div>
+<div class="day">MON</div>
+<div class="day">TUE</div>
+<div class="day">WED</div>
+<div class="day">THU</div>
+<div class="day">FRI</div>
+<div class="day">SAT</div>
+
+@ 步驟三 用 for 遞增寫入 array 印出日期
+在data.php 新增 array
+$dates = [];
+for ($i=1; $i<=31; $i++){
+	$dates[] = $i;
+}
+
+<?php foreach ($dates as $key => $date): ?>
+    <div class="day"><?= $date ?></div>	
+<?php endforeach ?>
+
+@ 介面製作 置中大框架 與 展開星期與日期 -----------------
+
+CSS
+
+@ 步驟一 置中 大框架 #calendar 佔90%(橫)剩下的 margin 自動分配
+
+#calendar{
+	margin: auto;
+    width: 90%;
+}
+
+@ 步驟二 星期與日期 變成橫的 float:left; 並平均分配 width: calc(100%/7); 
+  使用的話 float 要在 外面 class 加 class="clearfix" 有 bootstrap.min.css 才可以直接加
+
+.day, .date-block{
+	float:left;
+	width: calc(100%/7);
+}
+
+@ 步驟三 外框線 boder各自新增外框線 因全體的會重疊而分開製作 只用 .date-block會缺右下角 所以在追加使用 #dates 加上框線
+  補填日期的空格 在 data.php 新增空的 array 四個 $dates[] = null;
+
+#dates{
+	border-right: 1px solid #CCC ;
+	border-bottom: 1px solid #CCC ;
+}
+
+.date-block{
+	border-top: 1px solid #CCC ;
+	border-left: 1px solid #CCC ;
+}
+
+data.php
+<?php  
+$dates[] = null;
+$dates[] = null;
+$dates[] = null;
+$dates[] = null;
+?>
+
+
+@ 步驟四 日期框 平均化 height: 15vh; = 整個畫面的 15%
+
+.date-block{
+	border-top: 1px solid #CCC ;
+	border-left: 1px solid #CCC ;
+	height: 15vh;
+}
+
+@ 步驟五 額外設定 null 格子的顏色 用 PHP判定產生出來的是否為 null 是的話 新增 empty 標籤
+判斷法 is_null($date) = php的語法 確認($date)是否為空
+<?= (is_null($date))? 'empty' : ''?> = Conditional (ternary) operator 是的話執行前者 新增 empty 標籤 不是的話執行後者 不做事情
+https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Operators/Conditional_Operator
+
+<div class="date-block <?= (is_null($date))? 'empty' : ''?>">
+
+CSS 追加顏色
+
+.date-block.empty{
+	background-color: #EEE;
+}
+
+@ 步驟六 增加 年月份 字體大小 CSS
+
+#header{
+	font-size: 2.4rem; rem = 最頂層的百分比 r=root=body em = 百分比
+	font-weight: bold;
+}
+
+@ 【HTML】建立 panel 架構（在行事曆上，建立新事件的 UI） -------------
+製作 "info-panel" 內含以下 參考程式
+<div id="info-panel">//範例
+  <div class="close">X</div>	
+  <div class="title">
+     <label>Event</label>
+     <div contenteditable="true"></div>	
+     </div>
+  <div class="time-picker">
+   	 <div class="selected-date">
+   	 	<span class="month">10</span>/<span class="date">20</span>
+   	 </div>
+   	 <div class="from">
+   	    <label for="from">from</label>
+   	    <input id="from" type="time" name="start_time">	
+   	 </div>
+   	 <div class="to">
+   	    <label for="to">to</label>
+   	    <input id="to" type="time" name="end_time">	
+   	 </div>
+     </div>
+  <div class="description">
+  	 <label>description</label>
+  	 <div id="description" contenteditable="true"></div>
+     </div>
+  <div class="button">
+  	 <button class="create">create</button>
+  	 <button class="update">update</button>
+  	 <button class="cancel">cancel</button>
+  	 <button class="delete">delete</button>
+     </div>  
+  </div>
+
+@ 【CSS】刻出 panel 雛形 --------
+
+! x 靠邊的原因為 套用到 bootstrap close 用 position: relative; 更改為置
+
+<div id="info-panel">//範例
+  <div class="close">x</div>	
+  <div class="title">
+     <label>Event</label>
+     <div contenteditable="true"></div>	
+     </div>
+  <div class="time-picker">
+   	 <div class="selected-date">
+   	 	<span class="month">10</span>/<span class="date">20</span>
+   	 </div>
+   	 <div class="from">
+   	    <label for="from">from</label><br>
+   	    <input id="from" type="time" name="start_time">	
+   	 </div>
+   	 <div class="to">
+   	    <label for="to">to</label><br>
+   	    <input id="to" type="time" name="end_time">	
+   	 </div>
+     </div>
+  <div class="description">
+  	 <label>description</label><br>
+     <textarea name="description" id="description"></textarea>
+  	 <div id="description" contenteditable="true"></div>
+     </div>
+  <div class="button">
+  	 <button class="create">create</button>
+  	 <button class="update">update</button>
+  	 <button class="cancel">cancel</button>
+  	 <button class="delete">delete</button>
+     </div>  
+ </div>
+
+CSS範例
+
+#info-panel{
+	position: fixed;
+	top: 60px;
+	right:100px;
+	background: white;
+	border: 1px solid #ccc;
+ }
+
+#info-panel .close{
+	position: relative;
+	right: 10px;
+	top: 1px;
+	cursor: pointer;
+ }
+
+#info-panel label{
+	color: #AAA;
+	font-size: 0.8rem;
+ }
+
+#info-panel .title, #info-panel .time-picker{
+	border-bottom : 1px solid #CCC;
+ }
+
+.selected-date{
+	text-align: center;
+	font-size: 1.5rem;
+ }
+
+#description{
+	width: 100%;
+ }
+
+@ 【CSS】按鈕的調整 ----------------
+
+ ! 新增更改顏色 利用class名更換顯示 NEW UPDATE 
+
+#info-panel{//範例
+	position: fixed;
+	top: 60px;
+	width: 280px;
+	right:100px;
+	background: white;
+	border: 1px solid #ccc;
+ }
+
+#info-panel .close{
+	position: relative;
+	right: 10px;
+	top: 1px;
+	cursor: pointer;
+ }
+
+#info-panel label{
+	color: #AAA;
+	font-size: 0.8rem;
+ }
+
+#info-panel .title, #info-panel .time-picker{
+	border-bottom : 1px solid #CCC;
+ }
+
+.selected-date{
+	text-align: center;
+	font-size: 1.5rem;
+ }
+
+#description{
+	width: 100%;
+ }
+
+#info-panel button{
+	display: none;
+	border: none;
+	padding: 10px;
+	color: white;
+	background: #BFC6CA;
+	cursor: pointer;
+ }
+
+#info-panel.new button.create , #info-panel.new button.cancel {
+	float: left;
+	display: block;
+	width: 50%;
+ }
+
+#info-panel.update button.update , #info-panel.update button.cancel , #info-panel.update button.delete {
+	float: left;
+	display: block;
+	width: 50%;
+ }
+
+#info-panel button.create , #info-panel button.update {
+	background:  #74be00;
+ }
+
+#info-panel.update button.delete{
+	width: 100%;
+	background: red;
+ }
+
+
+@ 【jQuery】開啟與關閉 panel ----------------
+利用按鈕觸發 追加與移除class 顯示 隱藏 panel
+
+一開始先隱藏 display: none; 追加顯示出來的css #info-panel.open{display: block;}
+@main.css
+#info-panel{
+	display: none;
+	position: fixed;
+	top: 60px;
+	width: 280px;
+	right:100px;
+	background: white;
+	border: 1px solid #ccc;
+}
+#info-panel.open{
+	display: block;
+}
+
+
+利用按鍵監聽 來開關 
+步驟一 追加class開啟 panel $('#info-panel').addClass('open')
+步驟二 移除 $('#info-panel').removeClass('open');
+步驟三 與減去麻煩直接去選擇按鍵觸發 $('button.cancel').click();
+
+@action.js
+$(document).ready(function(){
+
+$('.date-block').dblclick(function(e){
+  	$('#info-panel').addClass('open');
+  });
+
+$('#info-panel')
+	.on('click','button',function(e){
+	   if($(this).is('.create')){
+
+	   }
+	   if($(this).is('.update')){
+	   	
+	   }
+	   if($(this).is('.cancel')){
+	   	 $('#info-panel').removeClass('open');
+	   }
+	   if($(this).is('.delete')){
+	   	
+	   }
+    })
+    .on('click','.close',function(e){
+       $('button.cancel').click();
+    });
+});
+
+【jQuery】panel 開啟的位置，應該要在滑鼠旁邊 -----------
+
+利用 $('.date-block').dblclick(function(e)
+步驟一 console.log(e); 尋找滑鼠監聽事件
+步驟二 .css({...})直接更改info-panel css的位置XY參數
+步驟三 top: e.pageY+'px', 更改參數 因為e.pageY 只是純數值 需要加.'px'
+
+$('.date-block').dblclick(function(e){
+  	$('#info-panel').addClass('open').css({
+  		top: e.pageY+'px',
+  		left: e.pageX+'px',
+  	});
+  });
+
+【jQuery】panel auto focus 自動進入表單 -----------
+                  [] = 目標裡有得屬性
+追加 .find('.title [contenteditable]').focus();
+
+$('.date-block').dblclick(function(e){
+  	$('#info-panel').addClass('open').css({
+  		top: e.pageY+'px',
+  		left: e.pageX+'px',
+  	}).find('.title [contenteditable]').focus();
+});
+
+【HTML + CSS】製作行事曆上的 "事件" UI -----------
+
+假enents 事件 
+步驟一 新增 title from 容器
+步驟二 css調整 用float 變成同一排
+步驟三 調整 events css外觀
+
+<div class="events clearfix">
+        <div class="title">title</div>
+        <div class="from">10:00</div>
+</div>
+
+css
+.events{
+	border-radius: 12px;
+	padding: 0 6px;
+	background: orange;
+	color: white;
+}
+
+.events .title{
+	float: left;
+}
+.events .from{
+	float: right;
+}
+
+【jQuery】panel 自動辨別 "新增" 與 "更新" 模式 -------------
+
+步驟一 指令function化
+步驟二 點擊空白區域時 addClass('new').removeClass('update'); 點擊 events時則相反
+步驟三 因 top: e.pageY+'px', 的 e 簡潔化後位置有變更 用 panel.open(true,e); 回傳數值到 open: function(isNEW,e) 判斷
+步驟四 回傳 true false 會有向上層繼續傳遞的 bug false完又true 用 e.stopPropagation(); 停止傳遞
+步驟五 close: function()化 以後直接使用 panel.close(); 就好
+
+
+$(document).ready(function()
+{
+
+var panel = 
+{
+	el: '#info-panel',
+	open: function(isNEW,e)
+	{
+		
+		$(panel.el).addClass('open').css({
+	  		top: e.pageY+'px',
+	  		left: e.pageX+'px',
+  	    }).find('.title [contenteditable]').focus();
+
+		if(isNEW)
+  	       $(panel.el).addClass('new').removeClass('update');
+  		else
+  		   $(panel.el).addClass('update').removeClass('new');
+  	},
+  	close: function(){	$(panel.el).removeClass('open'); },
+};
+	
+	$('.date-block').dblclick(function(e){
+		panel.open(true,e);
+	}).on('dblclick','.events',function(e){
+		e.stopPropagation();
+		panel.open(false,e);
+	});
+ 	
+  	$('#info-panel')
+	.on('click','button',function(e){
+	   if($(this).is('.create')){
+
+	   }
+	   if($(this).is('.update')){
+	   	
+	   }
+	   if($(this).is('.cancel')){
+	   	  panel.close();
+	   }
+	   if($(this).is('.delete')){
+	   	
+	   }
+    })
+    .on('click','.close',function(e){
+       $('button.cancel').click();
+    });
+
+});
+
+【jQuery】自動更新 panel 上的日期 -----------------------
+
+步驟一 新增 date 方便提取
+
+index.php
+年月
+<div id="calendar" data-year="<?= date('Y')?>" data-month="<?= date('m')?>">
+日
+<div class="date-block <?= (is_null($date))? 'empty' : ''?>" data-date="<?= $date?>">
+
+步驟二 新增 panel.updateDate(e); 程序 提取資料
+
+注意e 記得填入 不然不知道 currentTarget 目標是是誰
+提取 date 資料因 有可能點擊 .date-block 或 .events 所以使用 if 區分 並存取起來
+
+步驟三 寫入資料
+
+action.js
+updateDate: function(e){
+		
+  		if ($(e.currentTarget).is('.date-block'))
+  			var date = $(e.currentTarget).data('date');
+  		else
+  			var date = $(e.currentTarget).closest('.date-block').data('date');
+
+  		var month = $('#calendar').data('month');
+
+  		$(panel.el).find('.month').text(month);
+  		$(panel.el).find('.date').text(date);
+  	},
+
+【jQuery】製作功能：create event
+更改成用 form 方便資料傳送 部分內容更改為 form元素
+
+<form>
+按送出後 會把資料傳送去 create.php ps. 是form元素的才有用 送出後
+.serialize()
+透過 jQ 程式 .serialize() 會得到一團字串 get 用的
+
+$.post('create.php',{".serialize()得到的字串"},function(data,textStatus,xhr )){};
+
+<form action="create.php">
+  <input type="text" name="ted">
+  <input type="text" name="ted">
+  <button>submit</button>
+</form>
+
+@ <input type="hidden"> 不會顯示出來 可以用來存東西
+EX <input type="hidden" name="month">
+   <input type="hidden" name="date">
+
+index.php
+<form action="">
+      <div class="title">
+       <label>Event</label>
+       <input type="text" name="title">
+       </div>
+    <div class="time-picker">
+       <div class="selected-date">
+        <span class="month"></span>/<span class="date"></span>
+        <input type="hidden" name="month">
+        <input type="hidden" name="date">
+       </div>
+       <div class="from">
+          <label for="from">from</label><br>
+          <input id="from" type="time" name="start_time"> 
+       </div>
+       <div class="to">
+          <label for="to">to</label><br>
+          <input id="to" type="time" name="end_time"> 
+       </div>
+       </div>
+    <div class="description">
+       <label>description</label><br>
+       <textarea name="description" id="description"></textarea>
+       </div>
+</form>
+
+action.js
+
+updateDate: function(e){
+  		if ($(e.currentTarget).is('.date-block'))
+  			var date = $(e.currentTarget).data('date');
+  		else
+  			var date = $(e.currentTarget).closest('.date-block').data('date');
+
+  		var month = $('#calendar').data('month');
+
+  		$(panel.el).find('.month').text(month);
+  		$(panel.el).find('.date').text(date);
+  		$(panel.el).find('[name="month"]').val(month);
+  		$(panel.el).find('[name="date"]').val(date);
+  	},
+
+  	.on('click','button',function(e){
+	   if($(this).is('.create')){
+	   		var data = $(panel.el).find('form').serialize();
+		   	// $.post('create.php',{data},function(data,textStatus,xhr ){ 
+		   	// });
+	   }

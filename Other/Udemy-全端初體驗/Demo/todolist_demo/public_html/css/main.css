@@ -1,0 +1,55 @@
+#panel{
+	
+	<style type="text/css">
+    //預設display為block直式 inline = 橫式
+    </style>
+    display: block;
+	margin: 0 auto;
+	padding: 30px;
+	width: 600px;
+	background: #D0D3D4;
+}
+#todolist ul{
+	margin: 0;
+	padding: 0;
+	/*取消掉ul前面的小圓圈*/
+	list-style-type: none; 
+}
+#todolist li{
+    display: flex;
+    padding: 10px;
+}
+/*li.complete 狀態底下的 .checkbox*/
+#todolist li.complete .checkbox{
+    background-color: #333;
+}
+/*冒號取代 = 書多class (假的) 滑鼠移到上面時*/
+#todolist li:hover{
+    background-color: #f8f8f8;
+}
+#todolist .checkbox{
+    margin-right: 10px;
+	/*border-radius = 圓角的度數 沒有的話下面變正方形  極限為一半*/
+	border-radius: 50%;
+	width: 30px;
+	height: 30px;
+	background-color:  #797D7F;
+	cursor: pointer;
+}
+#todolist .content{
+    flex: 1; 
+	/*calc = 全部的%數 減多少 相對數值 - 要空格才有用*/
+	/*width: calc(100% - 60px);*/
+}
+/*li.complete 狀態底下的.content */
+/*text-decoration: line-through 文字狀態上畫線條*/
+#todolist li.complete .content{
+	text-decoration: line-through;
+}
+ /*> * = .actions以下的所有東西*/
+}
+#todolist .actions > *{
+	padding: 0 , 10;
+	/*cursor: pointer; 滑鼠移到上面時變成指標*/
+	cursor: pointer;	
+}

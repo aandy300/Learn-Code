@@ -1,0 +1,227 @@
+快捷鍵--------------
+.+tab = <div class=""></div>
+
+
+HTML語法 -------------
+
+<form> 
+
+<form> 标签用于为用户输入创建 HTML 表单。
+
+表单能够包含 input 元素，比如文本字段、复选框、单选框、提交按钮等等。
+
+表单还可以包含 menus、textarea、fieldset、legend 和 label 元素。
+
+表单用于向服务器传输数据。
+
+<label>
+
+<label> 标签为 input 元素定义标注（标记）。 點級會滑鼠會選擇到 <label> for="***" 的目標
+
+label 元素不会向用户呈现任何特殊效果。不过，它为鼠标用户改进了可用性。如果您在 label 元素内点击文本，就会触发此控件。就是说，当用户选择该标签时，浏览器就会自动将焦点转到和标签相关的表单控件上。
+
+<label> 标签的 for 属性应当与相关元素的 id 属性相同
+
+範例 單選選項
+<form>
+<label for="male">Male</label>
+<input type="radio" name="sex" id="male" />
+<br />
+<label for="female">Female</label>
+<input type="radio" name="sex" id="female" />
+</form>
+
+
+
+@ contenteditable = 文字輸入框
+<p contenteditable="true">这是一段可编辑的段落。请试着编辑该文本。</p>
+
+@ <span> 與<div>一整行不同 可以接續
+<span class="month">10</span>/<span class="date">20</span> = 10/20
+
+@ <textarea> 文字輸入框 屬性外觀可用css調整
+<textarea name="" id="" cols="30" rows="10"></textarea>
+
+
+CSS 語法 --------------
+
+@ calc(); 直接計算
+@ 範例
+.day{
+    margin: auto;
+    float:left;
+    width: calc(100%/7);
+}
+
+
+
+範例製作 --------------
+
+@15d切版1d-------------
+置中
+
+<div> 的 CSS 預設式 display:block; 佔一整行
+
+文字置中
+text-align:center; 文字置中會以父親的位置置中 並告訴下的目標的兒子全部置中
+
+
+置中2 把div生成的 margin上下 刪除掉 margin左右為 auto 容器裡的自動會移到中間
+<div class="container">
+<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores architecto repudiandae quidem, quia nesciunt non velit?</p>
+<img src="https://seosight.crumina.net/wp-content/uploads/2016/11/offers1.png" alt="icon">
+</div>
+
+.container{
+margin: 0 auto;
+width: 600px;
+}
+
+置中3 三攔式 要先用置中2 把物件置中 在利用 float 空下來的範圍其他容器填上 兩攔式 調整 width:50%; 
+     有 float 就要 clearfix  .clearfix{clear:both;}
+<div class="container">
+  
+<div class="work">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis, voluptatibus!</div>
+<div class="work">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis, voluptatibus!</div>
+<div class="work">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis, voluptatibus!</div>
+<div class="work">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis, voluptatibus!</div>
+<div class="work">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis, voluptatibus!</div>
+<div class="work">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis, voluptatibus!</div>
+
+</div>
+
+.container{
+  margin: 0 auto;
+  width: 600px;
+}
+.work{
+  width:33%;
+  float:left;
+  margin-bottom:10px;
+  background-color: #CCC;
+}
+
+@15d切版2d-------------
+ 
+ul通常不需要 margin padding
+ul{
+  margin:0;
+  padding-left:0;
+  list-style-type:none;
+}
+
+display: inline; 寬高取決於內容
+display: block; 占據整行可以條寬高
+
+logo nav左右分方法1 https://codepen.io/aandy300/pen/LXLWMY
+缺點: 中間有空格 改顏色與點擊會不法點或顏色留白
+#logo{
+  float:left;
+}
+nav{
+ float:right;  
+}
+.clearfix{
+  clear:both;
+}
+
+nav li{
+  display: inline;
+}
+
+logo nav左右分方法2 https://codepen.io/aandy300/pen/zMzwrg
+方法:用外面的nav float:right; 然後增加padding的距離分開 boder以內都算是本體
+#logo{
+  float:left;
+}
+nav{
+ float:right;  
+}
+.clearfix{
+  clear:both;
+}
+nav li{
+  display: inline;
+}
+
+
+位移logo
+
+方法一 position: relative
+position: static; 跟 position: relative; 一樣
+只差 position: relative 可以調整 上下左右 
+
+方法二 margin
+margin-top:-80px; 擠出
+.feature img{
+  margin-top:-80px;
+}
+
+@15d切版3d-------------
+
+img 預設 display:inline 會因為英文字的關係pqj的關係底下會留白
+改成 display:block; 就不會留白了
+img 圖片不受控於容器大小 過大就會跑出去
+
+css追加
+
+img {
+  display: block; //讓圖片底線消失
+  width: 100%;    //讓圖片符合容器
+  height: auto;   //讓圖片等比例 防止變形
+}
+
+圖層重疊特效 @ postion: absolute; @ opacity: 0; @ .info:hover
+.info.cover = <div class="info cover"></div> 同一個的
+.info .cover  <div class="info"><div class="cover"></div></div>空格分開就是另外的了
+步驟一 postion: absolute; 內容有多少東西就多大 可以自己再用CSS調整 但需要定位點 位置會往上層找找到不是預設static的 都沒有就已body為主
+步驟二 將work做成定位點work改成relative 增加padding調整位置 
+步驟三 因為舊版運算會直接加上數值所以會pading增加的會突出 所以增加box-sizing:border-box 變成重border開始算 變成 border以下的尺寸總數會是你調整的
+步驟四 調整透明度  opacity: 0;
+步驟五 滑鼠移上去時調整透明度 .info:hover{ opacity: 1;} 
+
+html
+<div class="work">
+  
+  <img src="http://sitetemplate.demo.ithemeslab.com/riana/assets/images/all/volunteer.jpg" alt="image" />
+  
+  <div class="info">
+    <button>View More</button>
+    <p>Great Job</p>
+  </div>
+  
+</div>
+
+css
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.work {
+  position: relative;
+  width: 250px;
+  background-color: #ccc;
+}
+
+.info {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  padding-top: 30px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: rgba(0,0,0,.3);
+}
+
+.info:hover {
+  opacity: 1;
+}
+
+.info p {
+  color: white;
+}

@@ -1,0 +1,118 @@
+/* this by calendar */
+
+#calendar{
+	margin: auto;
+    width: 90%;
+}
+
+#header{
+	font-size: 2.4rem;
+	font-weight: bold;
+}
+
+.day,.date-block{
+	float:left;
+	width: calc(100%/7);
+}
+
+#dates{
+	border-right: 1px solid #CCC ;
+	border-bottom: 1px solid #CCC ;
+}
+
+.date-block{
+	padding: 4px;
+	border-top: 1px solid #CCC ;
+	border-left: 1px solid #CCC ;
+	height: 15vh;
+}
+
+.date-block.empty{
+	background-color: #EEE;
+}
+
+.events{
+	border-radius: 12px;
+	padding: 0 6px;
+	background: orange;
+	color: white;
+}
+
+.events .title{
+	float: left;
+}
+.events .from{
+	float: right;
+}
+
+.selected-date{
+	text-align: center;
+}
+
+/* info panel */
+#info-panel{
+	display: none;
+	position: fixed;
+	top: 60px;
+	width: 280px;
+	right:100px;
+	background: white;
+	border: 1px solid #ccc;
+}
+#info-panel.open{
+	display: block;
+}
+#info-panel .close{
+	position: relative;
+	right: 10px;
+	top: 1px;
+	cursor: pointer;
+}
+
+#info-panel label{
+	color: #AAA;
+	font-size: 0.8rem;
+}
+
+#info-panel .title, #info-panel .time-picker{
+	border-bottom : 1px solid #CCC;
+}
+
+.selected-date{
+	text-align: center;
+	font-size: 1.5rem;
+}
+
+#description{
+	width: 100%;
+}
+
+#info-panel button{
+	display: none;
+	border: none;
+	padding: 10px;
+	color: white;
+	background: #BFC6CA;
+	cursor: pointer;
+}
+
+#info-panel.new button.create , #info-panel.new button.cancel {
+	float: left;
+	display: block;
+	width: 50%;
+}
+
+#info-panel.update button.update , #info-panel.update button.cancel , #info-panel.update button.delete {
+	float: left;
+	display: block;
+	width: 50%;
+}
+
+#info-panel button.create , #info-panel button.update {
+	background:  #74be00;
+}
+
+#info-panel.update button.delete{
+	width: 100%;
+	background: red;
+}
