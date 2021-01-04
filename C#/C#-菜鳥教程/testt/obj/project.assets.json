@@ -14,9 +14,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\admin\\Desktop\\Coding\\Learn-Code\\C#\\C#-菜鳥教程\\testt\\test.csproj",
-      "projectName": "test",
-      "projectPath": "C:\\Users\\admin\\Desktop\\Coding\\Learn-Code\\C#\\C#-菜鳥教程\\testt\\test.csproj",
+      "projectUniqueName": "C:\\Users\\admin\\Desktop\\Coding\\Learn-Code\\C#\\C#-菜鳥教程\\testt\\testt.csproj",
+      "projectName": "testt",
+      "projectPath": "C:\\Users\\admin\\Desktop\\Coding\\Learn-Code\\C#\\C#-菜鳥教程\\testt\\testt.csproj",
       "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\admin\\Desktop\\Coding\\Learn-Code\\C#\\C#-菜鳥教程\\testt\\obj\\",
       "projectStyle": "PackageReference",

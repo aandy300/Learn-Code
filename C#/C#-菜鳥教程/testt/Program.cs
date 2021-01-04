@@ -1,23 +1,49 @@
-﻿// using System;
-// using System.Text.RegularExpressions;
+﻿// // C# 錯誤處理
+// // Err
+// using System;
 // namespace testt
 // {
-//     class Program
-//     {
-//         static void Main(string[] args)
-//         {
-//             // Search for a pattern that is not found in the input string.
-//             string pattern = @"123";
-//             string input = "ABC123 847 555";
-//             Match match = Regex.Match(input, pattern);
-//             Console.WriteLine(match);
-//             if (match.Success )
-//             // Report position as a one-based integer.
-//             Console.WriteLine("'{0}' was found at position {1} in '{2}'.", 
-//                                 match.Value, match.Index , input);
-//             else
-//             Console.WriteLine("The pattern '{0}' was not found in '{1}'.",
-//                                 pattern, input);
-//         }
+//    class TestTemperature
+//    {
+//       static void Main(string[] args)
+//       {
+//          Temperature temp = new Temperature();
+//          try
+//          {
+//             temp.showTemp();
+//          }
+//          catch(TempIsZeroException e)
+//          {
+//             Console.WriteLine("catch_TempIsZeroException: {0}", e.Message);
+//             // throw e;
+//          }
+         
+//       }
+//    }
+// }
+// // 自訂 異常 Class
+// public class TempIsZeroException: ApplicationException
+// {
+//     // base(message) = public ApplicationException(string? message);
+//     // 參數:
+//     //   message:
+//     //     A message that describes the error. // 一條描述錯誤的消息。
+//    public TempIsZeroException(string message): base(message)
+//    {
+//    }
+// }
+// public class Temperature
+// {
+//    int temperature = 1;
+//    public void showTemp()
+//    {
+//       if(temperature == 0)
+//       {
+//          throw (new TempIsZeroException("Zero Temperature found"));
+//       }
+//       else
+//       {
+//          Console.WriteLine("Temperature: {0}", temperature);
+//       }
 //    }
 // }
