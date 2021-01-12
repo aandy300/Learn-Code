@@ -1,0 +1,9 @@
+C:\Users\admin\Desktop\Coding\Learn-Code\C#\C#-菜鳥教程\testt\Build\bin\Debug\net471\Build.exe.config
+C:\Users\admin\Desktop\Coding\Learn-Code\C#\C#-菜鳥教程\testt\Build\bin\Debug\net471\Build.exe
+C:\Users\admin\Desktop\Coding\Learn-Code\C#\C#-菜鳥教程\testt\Build\bin\Debug\net471\Build.pdb
+C:\Users\admin\Desktop\Coding\Learn-Code\C#\C#-菜鳥教程\testt\Build\obj\Debug\net471\Build.csprojAssemblyReference.cache
+C:\Users\admin\Desktop\Coding\Learn-Code\C#\C#-菜鳥教程\testt\Build\obj\Debug\net471\Build.csproj.CoreCompileInputs.cache
+C:\Users\admin\Desktop\Coding\Learn-Code\C#\C#-菜鳥教程\testt\Build\obj\Debug\net471\Build.AssemblyInfoInputs.cache
+C:\Users\admin\Desktop\Coding\Learn-Code\C#\C#-菜鳥教程\testt\Build\obj\Debug\net471\Build.AssemblyInfo.cs
+C:\Users\admin\Desktop\Coding\Learn-Code\C#\C#-菜鳥教程\testt\Build\obj\Debug\net471\Build.exe
+C:\Users\admin\Desktop\Coding\Learn-Code\C#\C#-菜鳥教程\testt\Build\obj\Debug\net471\Build.pdb
