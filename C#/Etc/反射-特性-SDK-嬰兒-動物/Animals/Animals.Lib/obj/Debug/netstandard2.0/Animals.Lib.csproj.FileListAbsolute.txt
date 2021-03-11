@@ -1,0 +1,11 @@
+C:\Users\admin\Desktop\新增資料夾\Animals\Animals.Lib\bin\Debug\netstandard2.0\Animals.Lib.deps.json
+C:\Users\admin\Desktop\新增資料夾\Animals\Animals.Lib\bin\Debug\netstandard2.0\Animals.Lib.dll
+C:\Users\admin\Desktop\新增資料夾\Animals\Animals.Lib\bin\Debug\netstandard2.0\Animals.Lib.pdb
+C:\Users\admin\Desktop\新增資料夾\Animals\Animals.Lib\obj\Debug\netstandard2.0\Animals.Lib.csprojAssemblyReference.cache
+C:\Users\admin\Desktop\新增資料夾\Animals\Animals.Lib\obj\Debug\netstandard2.0\Animals.Lib.AssemblyInfoInputs.cache
+C:\Users\admin\Desktop\新增資料夾\Animals\Animals.Lib\obj\Debug\netstandard2.0\Animals.Lib.AssemblyInfo.cs
+C:\Users\admin\Desktop\新增資料夾\Animals\Animals.Lib\obj\Debug\netstandard2.0\Animals.Lib.csproj.CoreCompileInputs.cache
+C:\Users\admin\Desktop\新增資料夾\Animals\Animals.Lib\obj\Debug\netstandard2.0\Animals.Lib.dll
+C:\Users\admin\Desktop\新增資料夾\Animals\Animals.Lib\obj\Debug\netstandard2.0\Animals.Lib.pdb
+C:\Users\admin\Desktop\新增資料夾\Animals\Animals.Lib\bin\Debug\netstandard2.0\BabyStroller.SDK.dll
+C:\Users\admin\Desktop\新增資料夾\Animals\Animals.Lib\obj\Debug\netstandard2.0\Animals.Lib.csproj.CopyComplete

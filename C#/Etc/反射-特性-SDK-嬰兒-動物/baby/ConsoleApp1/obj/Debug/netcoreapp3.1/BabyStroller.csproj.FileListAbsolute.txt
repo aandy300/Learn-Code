@@ -1,0 +1,15 @@
+C:\Users\admin\Desktop\新增資料夾\baby\ConsoleApp1\bin\Debug\netcoreapp3.1\BabyStroller.exe
+C:\Users\admin\Desktop\新增資料夾\baby\ConsoleApp1\bin\Debug\netcoreapp3.1\BabyStroller.deps.json
+C:\Users\admin\Desktop\新增資料夾\baby\ConsoleApp1\bin\Debug\netcoreapp3.1\BabyStroller.runtimeconfig.json
+C:\Users\admin\Desktop\新增資料夾\baby\ConsoleApp1\bin\Debug\netcoreapp3.1\BabyStroller.runtimeconfig.dev.json
+C:\Users\admin\Desktop\新增資料夾\baby\ConsoleApp1\bin\Debug\netcoreapp3.1\BabyStroller.dll
+C:\Users\admin\Desktop\新增資料夾\baby\ConsoleApp1\bin\Debug\netcoreapp3.1\BabyStroller.pdb
+C:\Users\admin\Desktop\新增資料夾\baby\ConsoleApp1\obj\Debug\netcoreapp3.1\BabyStroller.csprojAssemblyReference.cache
+C:\Users\admin\Desktop\新增資料夾\baby\ConsoleApp1\obj\Debug\netcoreapp3.1\BabyStroller.AssemblyInfoInputs.cache
+C:\Users\admin\Desktop\新增資料夾\baby\ConsoleApp1\obj\Debug\netcoreapp3.1\BabyStroller.AssemblyInfo.cs
+C:\Users\admin\Desktop\新增資料夾\baby\ConsoleApp1\obj\Debug\netcoreapp3.1\BabyStroller.csproj.CoreCompileInputs.cache
+C:\Users\admin\Desktop\新增資料夾\baby\ConsoleApp1\obj\Debug\netcoreapp3.1\BabyStroller.dll
+C:\Users\admin\Desktop\新增資料夾\baby\ConsoleApp1\obj\Debug\netcoreapp3.1\BabyStroller.pdb
+C:\Users\admin\Desktop\新增資料夾\baby\ConsoleApp1\obj\Debug\netcoreapp3.1\BabyStroller.genruntimeconfig.cache
+C:\Users\admin\Desktop\新增資料夾\baby\ConsoleApp1\bin\Debug\netcoreapp3.1\BabyStroller.SDK.dll
+C:\Users\admin\Desktop\新增資料夾\baby\ConsoleApp1\obj\Debug\netcoreapp3.1\BabyStroller.csproj.CopyComplete

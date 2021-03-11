@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "vJL2HImJDPwnWt1O5aFuTHuNfq0ZF/Ek9b5p6hY9XQwz4AuwFKaYOkTmnMsf/wg0eMEBjzQs29kLSHqs4OER+g==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\admin\\Desktop\\Coding\\Learn-Code\\C#\\Etc\\DI-Dependency-Injection-依賴注入Exsample\\DI-Dependency-Injection-Exsample\\DI-Dependency-Injection-Exsample.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\admin\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\5.0.1\\microsoft.extensions.dependencyinjection.5.0.1.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,16 @@
+C:\Users\admin\Desktop\DI-Dependency-Injection-Exsample\DI-Dependency-Injection-Exsample\DI-Dependency-Injection-Exsample\obj\Debug\netcoreapp3.1\DI-Dependency-Injection-Exsample.AssemblyInfoInputs.cache
+C:\Users\admin\Desktop\DI-Dependency-Injection-Exsample\DI-Dependency-Injection-Exsample\DI-Dependency-Injection-Exsample\obj\Debug\netcoreapp3.1\DI-Dependency-Injection-Exsample.AssemblyInfo.cs
+C:\Users\admin\Desktop\DI-Dependency-Injection-Exsample\DI-Dependency-Injection-Exsample\DI-Dependency-Injection-Exsample\obj\Debug\netcoreapp3.1\DI-Dependency-Injection-Exsample.csproj.CoreCompileInputs.cache
+C:\Users\admin\Desktop\DI-Dependency-Injection-Exsample\DI-Dependency-Injection-Exsample\DI-Dependency-Injection-Exsample\bin\Debug\netcoreapp3.1\DI-Dependency-Injection-Exsample.exe
+C:\Users\admin\Desktop\DI-Dependency-Injection-Exsample\DI-Dependency-Injection-Exsample\DI-Dependency-Injection-Exsample\bin\Debug\netcoreapp3.1\DI-Dependency-Injection-Exsample.deps.json
+C:\Users\admin\Desktop\DI-Dependency-Injection-Exsample\DI-Dependency-Injection-Exsample\DI-Dependency-Injection-Exsample\bin\Debug\netcoreapp3.1\DI-Dependency-Injection-Exsample.runtimeconfig.json
+C:\Users\admin\Desktop\DI-Dependency-Injection-Exsample\DI-Dependency-Injection-Exsample\DI-Dependency-Injection-Exsample\bin\Debug\netcoreapp3.1\DI-Dependency-Injection-Exsample.runtimeconfig.dev.json
+C:\Users\admin\Desktop\DI-Dependency-Injection-Exsample\DI-Dependency-Injection-Exsample\DI-Dependency-Injection-Exsample\bin\Debug\netcoreapp3.1\DI-Dependency-Injection-Exsample.dll
+C:\Users\admin\Desktop\DI-Dependency-Injection-Exsample\DI-Dependency-Injection-Exsample\DI-Dependency-Injection-Exsample\bin\Debug\netcoreapp3.1\DI-Dependency-Injection-Exsample.pdb
+C:\Users\admin\Desktop\DI-Dependency-Injection-Exsample\DI-Dependency-Injection-Exsample\DI-Dependency-Injection-Exsample\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\admin\Desktop\DI-Dependency-Injection-Exsample\DI-Dependency-Injection-Exsample\DI-Dependency-Injection-Exsample\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\admin\Desktop\DI-Dependency-Injection-Exsample\DI-Dependency-Injection-Exsample\DI-Dependency-Injection-Exsample\obj\Debug\netcoreapp3.1\DI-Dependency-Injection-Exsample.csprojAssemblyReference.cache
+C:\Users\admin\Desktop\DI-Dependency-Injection-Exsample\DI-Dependency-Injection-Exsample\DI-Dependency-Injection-Exsample\obj\Debug\netcoreapp3.1\DI-Dependency-Injection-Exsample.csproj.CopyComplete
+C:\Users\admin\Desktop\DI-Dependency-Injection-Exsample\DI-Dependency-Injection-Exsample\DI-Dependency-Injection-Exsample\obj\Debug\netcoreapp3.1\DI-Dependency-Injection-Exsample.dll
+C:\Users\admin\Desktop\DI-Dependency-Injection-Exsample\DI-Dependency-Injection-Exsample\DI-Dependency-Injection-Exsample\obj\Debug\netcoreapp3.1\DI-Dependency-Injection-Exsample.pdb
+C:\Users\admin\Desktop\DI-Dependency-Injection-Exsample\DI-Dependency-Injection-Exsample\DI-Dependency-Injection-Exsample\obj\Debug\netcoreapp3.1\DI-Dependency-Injection-Exsample.genruntimeconfig.cache

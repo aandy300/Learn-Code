@@ -1,0 +1,9 @@
+C:\Users\admin\Desktop\新增資料夾\baby\BabyStroller.SDK\bin\Debug\netstandard2.0\BabyStroller.SDK.deps.json
+C:\Users\admin\Desktop\新增資料夾\baby\BabyStroller.SDK\bin\Debug\netstandard2.0\BabyStroller.SDK.dll
+C:\Users\admin\Desktop\新增資料夾\baby\BabyStroller.SDK\bin\Debug\netstandard2.0\BabyStroller.SDK.pdb
+C:\Users\admin\Desktop\新增資料夾\baby\BabyStroller.SDK\obj\Debug\netstandard2.0\BabyStroller.SDK.csprojAssemblyReference.cache
+C:\Users\admin\Desktop\新增資料夾\baby\BabyStroller.SDK\obj\Debug\netstandard2.0\BabyStroller.SDK.AssemblyInfoInputs.cache
+C:\Users\admin\Desktop\新增資料夾\baby\BabyStroller.SDK\obj\Debug\netstandard2.0\BabyStroller.SDK.AssemblyInfo.cs
+C:\Users\admin\Desktop\新增資料夾\baby\BabyStroller.SDK\obj\Debug\netstandard2.0\BabyStroller.SDK.csproj.CoreCompileInputs.cache
+C:\Users\admin\Desktop\新增資料夾\baby\BabyStroller.SDK\obj\Debug\netstandard2.0\BabyStroller.SDK.dll
+C:\Users\admin\Desktop\新增資料夾\baby\BabyStroller.SDK\obj\Debug\netstandard2.0\BabyStroller.SDK.pdb
