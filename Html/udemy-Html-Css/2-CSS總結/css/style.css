@@ -1,0 +1,179 @@
+/*#region CSS Reset*/ 
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*#endregion */
+
+h1{
+    font-size: 2em;
+}
+h2{
+    font-size: 1.5em;
+}
+h3{
+    font-size: 1em;
+}
+
+.ez_css h1{
+    background-color: blanchedalmond;
+    border-bottom: 10px solid blue;
+    border-top: 10px solid brown;
+    border-left: 10px solid coral;
+    border-right: 10px solid darkgreen;
+    color: red;
+}
+
+/* 連結 */
+.Link {
+    display: block;
+    width: 120px;
+    height: 30px;
+    color: green;
+    text-decoration:none;
+    background-color: yellowgreen;
+}
+/* 擬態選擇器 :hover = 滑鼠滑過去換色 :active = 按住換色 */
+/* 要黏再一起，不能有空白 .Link:hover */
+.Link:hover{
+    color: red;
+}
+.Link:active{
+    color: blue;
+}
+
+.txt_sort h1{
+    margin-top: 20px;
+}
+
+/* 文字樣式 */
+.txt_sort p{
+    /* 字體 */
+    font-family: veradna;
+    /* 粗體 */
+    font-weight: bold;
+    /* 字體尺寸 */
+    font-size: 15px;
+    /* 行高 */
+    line-height: -1.5px;
+    /* 對其 */
+    text-align: left;
+    /* 縮排 */
+    text-indent: 32px;
+    /* 字距 */
+    letter-spacing: 5px;
+    /* 劃線 | line-through = 刪除縣 | underline = 底線 */
+    text-decoration: line-through;
+    /* 超出的文字隱藏 其他參數: https://www.wibibi.com/info.php?tid=157 */
+    overflow: hidden;
+    /* 段落中本文不進行換行 https://www.w3school.com.cn/cssref/pr_text_white-space.asp */
+    white-space: nowrap;
+    
+    margin-bottom: 20px;
+}
+
+
+.box_mod h1{
+    margin-top: 20px;
+    display: block;
+    /* block 上下 */
+    /* margin-block-start: 2em; */
+    /* block 左右 */
+    /* margin-block-end: 2em; */
+    /* inline 左右 */
+    /* margin-inline-start: 0px; */
+    /* inline 上下? */
+    /* margin-inline-end: 0px; */
+}
+
+/* 分隔線 */
+.divider_line{
+    display: block;
+    background-color: black;
+    height: 1px;
+    width: 500px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+/* 盒模型 */
+
+/* * = 所有標籤都可以吃到 */
+/* border-box = 長寬多少就是多少，增加的會被限制在長寬裡面不會超出 */
+/* content-box = 增加的長寬會追加在原本的長寬上 */
+
+*,*::before,*::after{
+    box-sizing:  border-box;
+}
+
+/* 父元素 外層框 */
+.box_mod{
+    height: 500px;
+    width: 500px;
+    border: 5px solid black;
+    /* 置中 */
+    margin: 0 auto;
+}
+
+.box1{
+    width: 50px;
+    height: 50px;
+    border: 10px solid blue;
+    padding: 10px;
+    background-color: black;
+    margin: 0 auto;
+}
+
+.box2{
+    width: 50px;
+    height: 50px;
+    border: 10px solid blue;
+    padding: 10px;
+    background-color: black; 
+}
