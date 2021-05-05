@@ -51,27 +51,288 @@ table {
 
 /*#endregion */
 
-.box0{
+/* flex必備屬性 */
+/* display: feex */
+
+
+.container{
     display: flex;
-    height: 600px;
-    width: 600px;
-    align-items: center;
-    margin: 0 auto;
-    background-color: gray;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.box1{
-    height: 200px;
-    width: 200px;
-    background-color: blue;
+.container_column{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
-.box2{
-    height: 200px;
-    width: 200px;
-    background-color: green;
+
+.title{
+    display: block;
+    margin: 0 auto;
+    font-size: 20px;
+    padding: 10px 0px 10px 0px;
 }
-.box3{
-    height: 200px;
-    width: 200px;
+
+/* 同名稱 多個Class的話 尺寸不會超過父容器 會自動調整 */
+/* 要超過父容器的話，個別下Class名稱 向上面box123 */
+.item{
+    width: 150px;
+    margin: 0 auto;
+    font-size: 36px;
+    text-align: center;
     background-color: red;
 }
+
+/*#region flex-direction: flex軸向 */
+.container1{
+    /* flex-direction: flex軸向 */
+    
+    /*  
+    - flex-direction: row; 左至右
+    - flex-direction: row-reverse; 右至左 與row相同，且主軸線起點與終點相反。
+    - flex-direction: column; 上至下交錯軸線位置與主軸線位置調換，因此內容物呈現直向排列
+    - flex-direction: column-reverse; 下至上與column相同，且主軸線起
+    */
+    
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+    width: 300px;
+    align-items: center;
+    background-color: gray;
+    margin: 0 auto;
+}
+/*#endregion  */
+
+/*#region justify-content: 對齊方式 */
+.container2{
+    display: flex;
+    /* justify-content: 對齊方式 */
+    /* flex-start = 軸線開始的地方 | flex-end = 軸線結束的地方 | center = 軸線中間 | space-between = 水平左右不留白 | space-around = 水平中間平均左右不平均 | space-evenly = 全部水平均分 */
+    justify-content: space-evenly;
+    height: 100px;
+    width: 300px;
+    align-items: center;
+    background-color: black;
+    margin: 0 auto;
+}
+.box{
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    font-size: 36px;
+    /* text-align: center; */
+    /* margin: 0 auto; */
+    background-color: rgb(126, 189, 230);
+}
+.box1{
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    background-color: rgb(61, 188, 111);
+}
+.box2{
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    background-color: rgb(254, 203, 88);
+}
+.box3{
+    /* 置中 = height: 50px; line-height: 50px; */
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    text-align: center;
+    background-color: red;
+}
+/*#endregion */
+
+/*#region flex-wrap: 換行屬性 */
+/* flex-wrap: nowrap; 預設值，不斷行 | flex-wrap: wrap; 多行 | flex-wrap: wrap-reverse; 多行，且主軸線 */
+.menu_warp{
+    display: flex;
+    flex-wrap: wrap-reverse;
+    margin: 0 auto;
+    width: 500px;
+    background-color: cornsilk;
+}
+
+.menu_warp li{
+    width: 100px;
+    text-align: center;
+    border: 1px solid black;
+}
+
+.menu_warp li a{
+    display: block;
+    background-color: rgb(212, 212, 212);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-decoration: none;
+    color: black;
+}
+/*#endregion  */
+
+/*#region align-items: 交錯軸對齊方式 */
+
+/*
+ - align-items: flex-start 對齊交錯軸線最前端 
+ - align-items: flex-end 對齊交錯軸線最末端 
+ - align-items: center 對齊交錯軸線中央 
+ - align-items: stretch 預設值，將內容元素撐開至 flexbox 大小 
+ - align-items: baseline 對齊內容物的基線 
+*/
+
+.container3{
+    align-items: baseline;
+    
+    display: flex;
+    width: 300px;
+    margin: 0 auto;
+    justify-content: center;
+    background-color: black;
+}
+
+.container3 .box1{
+    /* margin: 0 0; */
+    background-color: blue;
+    height: 50px;
+}
+.container3 .box2{
+    /* margin: 0 0; */
+    background-color: rebeccapurple;
+    height: 100px;
+}
+.container3 .box3{
+    width: 50px;
+    /* margin: 0 0; */
+    line-height: 50px;
+    background-color: sandybrown;
+    height: 75px;
+}
+
+/*#endregion  */
+
+/*#region align-content: 換行的排列方式(需要flex-warp) */
+
+/* 
+- align-content: flex-start：每行貼齊交錯軸線最前端
+- align-content: flex-end：每行貼齊交錯軸線最末端
+- align-content: center：每行對齊交錯軸線中間
+- align-content: space-between：第一行與最後一行分別對齊交錯軸線最前端與最末端
+- align-content: space-around：每行平均分配每行間距
+- align-content: stretch：預設值，每行內容元素全部撐開至 flexbox 大小 
+*/
+
+.container4{
+    display: flex;
+    
+    flex-wrap: wrap;
+    align-content: space-around;
+    width: 350px;
+    height: 150px;
+    margin: 0 auto;
+    background-color: black;
+}
+
+.container4 .box5{
+    margin: 0 0 0 5px;
+    background-color: rgb(101, 183, 238);
+    height: 50px;
+    width: 50px;
+    border: 1px solid red;
+}
+/*#endregion  */
+
+/*#region order: 排列順序(只影響同樣有下oder的人) */
+.container5{
+    display: flex;
+    width: 250px;
+    justify-content: center;
+    margin: 0 auto;
+    background-color: black;
+}
+.container5 .box1{
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    text-align: center;
+    background-color: rgb(101, 183, 238);
+}
+.container5 .box2{
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    text-align: center;
+    background-color: rgb(254, 203, 88);
+}
+.container5 .box3{
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    text-align: center;
+    background-color: rgb(61, 188, 111);
+}
+.container5 .box4{
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    text-align: center;
+    background-color: rgb(228, 66, 66);
+}
+.container5 .box1{
+    order: 4;
+}
+.container5 .box2{
+    order: 3;
+}
+.container5 .box3{
+    order: 2;
+}
+.container5 .box4{
+    order: 1;
+}
+
+
+/*#endregion */
+
+
+
+
+
+/*#region 列表  */
+/* 最外層 flex >  置中 > 下尺寸寬度 > 背景色 */
+.menu{
+    display: flex;
+    margin: 0 auto;
+    width: 500px;
+    background-color: cornsilk;
+}
+/* 第二層 下小標題寬度 > 文字置中 > 邊框線 */
+.menu li{
+    width: 100px;
+    text-align: center;
+    border: 1px solid black;
+}
+/* 第三層 block滿版 > 背景色 > 增加天地 > 去除底線 > 文字顏色 */
+.menu li a{
+    /* inline只有文字範圍點選  block擴大範圍 */
+    display: block;
+    /* 背景顏色 */
+    background-color: rgb(212, 212, 212);
+    /* 增加天地範圍 */
+    padding-top: 10px;
+    padding-bottom: 10px;
+    /* 去除底線 */
+    text-decoration: none;
+    /* 文字顏色 */
+    color: black;
+}
+/* 滑過去的時候 背景顏色、文字顏色 */
+.menu li a:hover{
+    background-color: cornsilk;
+    color: blue;
+}
+
+/*#endregion  */
