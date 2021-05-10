@@ -60,6 +60,12 @@ table {
     flex-direction: column;
     justify-content: center;
 }
+.container p{
+    margin: 0 auto;
+    padding: 5px 0px 5px 0px;
+    font-family: veradna;
+    font-weight: bold;
+}
 
 .container_column{
     display: flex;
@@ -105,7 +111,7 @@ table {
 }
 /*#endregion  */
 
-/*#region justify-content: 對齊方式 */
+/*#region justify-content: 主軸對齊方式 */
 .container2{
     display: flex;
     /* justify-content: 對齊方式 */
@@ -148,32 +154,6 @@ table {
 }
 /*#endregion */
 
-/*#region flex-wrap: 換行屬性 */
-/* flex-wrap: nowrap; 預設值，不斷行 | flex-wrap: wrap; 多行 | flex-wrap: wrap-reverse; 多行，且主軸線 */
-.menu_warp{
-    display: flex;
-    flex-wrap: wrap-reverse;
-    margin: 0 auto;
-    width: 500px;
-    background-color: cornsilk;
-}
-
-.menu_warp li{
-    width: 100px;
-    text-align: center;
-    border: 1px solid black;
-}
-
-.menu_warp li a{
-    display: block;
-    background-color: rgb(212, 212, 212);
-    padding-top: 10px;
-    padding-bottom: 10px;
-    text-decoration: none;
-    color: black;
-}
-/*#endregion  */
-
 /*#region align-items: 交錯軸對齊方式 */
 
 /*
@@ -212,6 +192,32 @@ table {
     height: 75px;
 }
 
+/*#endregion  */
+
+/*#region flex-wrap: 換行屬性 */
+/* flex-wrap: nowrap; 預設值，不斷行 | flex-wrap: wrap; 多行 | flex-wrap: wrap-reverse; 多行，且主軸線 */
+.menu_warp{
+    display: flex;
+    flex-wrap: wrap-reverse;
+    margin: 0 auto;
+    width: 500px;
+    background-color: cornsilk;
+}
+
+.menu_warp li{
+    width: 100px;
+    text-align: center;
+    border: 1px solid black;
+}
+
+.menu_warp li a{
+    display: block;
+    background-color: rgb(212, 212, 212);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-decoration: none;
+    color: black;
+}
 /*#endregion  */
 
 /*#region align-content: 換行的排列方式(需要flex-warp) */
@@ -297,8 +303,96 @@ table {
 
 /*#endregion */
 
+/*#region flex-grow、shrink、basis 比例伸展壓縮 */
+/* 基本比例滿足的話 > 伸展 || 基本比例不滿足的話 > 壓縮 */
+/* 0 = 比例不動 大於1 = 彈性 */
 
+/*  
+- flex-grow: "伸展" 比例 0~* 數值越大套用的比例越大 預設為0
+- flex-shrink: "壓縮" 比例 0~* 數值越大套用的比例越大 預設為1
+- flex-basis: 基本大小 ** px 超過父元素會超出
+> 以上都是下 子元素 不可負值 0 = 比例不動
+*/
 
+.container6{
+    display: flex;
+    width: 400px;
+    height: 100px;
+    justify-content: center;
+    margin: 0 auto;
+    background-color: black;
+}
+.testbox1, .testbox2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.testbox1{
+    width: 300px;
+    background-color: gray;
+}
+.testbox2{
+    width: 100px;
+}
+
+.container6 .box1{
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    text-align: center;
+    background-color: rgb(101, 183, 238);
+}
+.container6 .box2{
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    text-align: center;
+    background-color: rgb(228, 66, 66);
+}
+
+.container6 .box1{
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 100px;
+ }
+ .container6 .box2{
+    flex-grow: 5;
+    flex-shrink: 5;
+    flex-basis: 100px;
+}
+/*#endregion  */
+
+/*#region align-self: 複寫 align-items */
+/* 一樣有 align-self: flex-start end... */
+/* align-self: stretch; = 撐開至 flexbox 大小 */
+.container7{
+    display: flex;
+    width: 300px;
+    height: 150px;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+    margin: 0 auto;
+}
+.container7 .box1, .box3{
+    height: 50px;
+    line-height: 50px;
+}
+.container7 .box6{
+    display: flex;
+    background-color: rgb(101, 183, 238);
+    width: 50px;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+}
+.container7 a{
+    display: block;
+    text-decoration: none;
+}
+
+/*#endregion */
 
 
 /*#region 列表  */

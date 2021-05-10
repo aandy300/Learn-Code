@@ -22,7 +22,7 @@
             <div class="item">3</div>
         </div>
         
-    <div class="title">justify-content: 對齊方式</div>
+    <div class="title">justify-content: 主軸對齊方式</div>
         <div class="container2">
             <div class="box1">1</div>
             <div class="box2">2</div>
@@ -34,6 +34,15 @@
    </div>
 
    <div class="container">
+    <div class="title">align-items: 交錯軸對齊方式</div>
+        <div class="container3">
+            <div class="box1">1</div>
+            <div class="box2">2</div>
+            <div class="box3">3</div>
+        </div>
+    </div>
+
+   <div class="container">
         <div class="title">flex-wrap: 換行屬性</div>
         <ul class="menu_warp">
             <li><a href="">內容</a></li>
@@ -43,15 +52,6 @@
             <li><a href="">內容</a></li>
         </ul>
    </div>
-
-   <div class="container">
-    <div class="title">align-items: 交錯軸對齊方式</div>
-        <div class="container3">
-            <div class="box1">1</div>
-            <div class="box2">2</div>
-            <div class="box3">3</div>
-        </div>
-    </div>
    
     <div class="container">
         <div class="title">align-content: 換行的排列方式(需要flex-warp)</div>
@@ -75,6 +75,34 @@
                 <div class="box2">2</div>
                 <div class="box3">3</div>
                 <div class="box4">4</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="title">flex-grow: "伸展" 比例 0~*</div>
+        <div class="title">flex-shrink: "壓縮" 比例 0~*</div>
+        <div class="title">flex-basis: 基本大小 **px</div>
+        <p>以上都是下 子元素 預設0 不可負值</p>
+        <div class="container6">
+            <div class="testbox1">
+                <div class="box1">1</div>
+                <div class="box2">4</div>
+            </div>
+            <div class="testbox2">
+                <div class="box1">1</div>
+                <div class="box2">4</div>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="title">align-self: 複寫align-items(需要父元素有align-items)</div>
+            <div class="container7">
+                <div class="box1">1</div>
+                <div class="box6"><a href="">2</a></div>
+                <div class="box3">3</div>
             </div>
         </div>
     </div>
