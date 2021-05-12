@@ -304,6 +304,7 @@ table {
 /*#endregion */
 
 /*#region flex-grow、shrink、basis 比例伸展壓縮 */
+/* 簡寫 flex: flex-grow(伸展) flex-shrink(壓縮) flex-basis(比例) ex:flex: 1 1 50%; */
 /* 基本比例滿足的話 > 伸展 || 基本比例不滿足的話 > 壓縮 */
 /* 0 = 比例不動 大於1 = 彈性 */
 
@@ -388,6 +389,7 @@ table {
     align-self: stretch;
 }
 .container7 a{
+    color: wheat;
     display: block;
     text-decoration: none;
 }
