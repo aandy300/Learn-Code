@@ -51,7 +51,34 @@ table {
 
 /*#endregion */
 
-html, body{
+/*region 整體大概流程
+
+- html, body 
+	- margin padding 歸零 
+	- height:100% (html, body有設定高度子元素材可以伸展)
+	- 設定文字樣式
+- 大容器
+	- 下Flex
+	- height:100% 伸展整個版面，如果之前父元素沒100%無效
+- 小容器
+	- Flex: 伸展、壓縮、比例簡寫 1 1 50%
+	- margin 上右下左內壓縮
+	- border-radius: 圓角
+- 子容器logo
+	- 下Flex
+	- 調整軸線 上到下
+- 出處容器
+	- 調整軸線右到左	
+
+endreion*/
+
+/* region 主要學到的
+    - Flex: 伸展、壓縮、比例簡寫 : 1 1 50%
+    - height: 100% 父元素沒有設定高度的襪無效
+    - border-radius: 圓角
+*/
+
+html, body, h2, h3{
     margin: 0;
     padding: 0;
     height: 100%;
@@ -63,21 +90,13 @@ h1,h2,h3,h4{
 }
 h1{
     font-size: 25px ;
-    /* margin: 0 auto; */
+    padding-top: 10px;
 }
-
 
 .container_column{
     display: flex;
     height: 100%; /* html, body沒設定高度的話100%會無效 */
     padding: 0 5px;
-}
-
-.container_logo{
-    display: flex;
-    flex-direction: column;
-    /* justify-content: center; */
-    align-items: center;
 }
 
 .box{
@@ -88,11 +107,12 @@ h1{
     margin:  10px 5px;
     border-radius: 10px;
     background-color: wheat;
-
 }
 
-.box .container_text{
-    flex-direction: row-reverse;
+.container_logo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .box2{
@@ -100,22 +120,3 @@ h1{
     justify-content: flex-end;
 }
 
-/*
-.container_logo{
-    display: flex;
-    height: 800px;
-    width: 800px;
-    flex: 1 1 50%;
-    flex-direction: column;
-    background-color: wheat;
-    justify-content: center;
-    align-items: center;
-}
-.container_logo img{
-    justify-items: center;
-    align-items: center;
-}
-.container_text{
-    display: flex;
-} 
-*/
