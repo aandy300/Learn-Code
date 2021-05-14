@@ -100,7 +100,7 @@ h3{
     font-weight: bold;
     /* 字體尺寸 */
     font-size: 15px;
-    /* 行高 */
+    /* 行高 | normal | 2.5 | 3em | 150% | 32px */
     line-height: -1.5px;
     /* 對其 */
     text-align: left;
