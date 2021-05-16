@@ -1,0 +1,126 @@
+/*#region CSS Reset*/ 
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*#endregion */
+
+/*region 整體大概流程
+
+endreion*/
+
+/* region 主要學到的
+    
+*/
+
+html, body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: "Microsoft JhengHei";
+    color: #333;
+  }
+h1,h2,h3,h4{
+    color: #3F5D45;
+}
+h1{
+    font-size: 20px ;
+    font-weight: bold;
+    padding: 10px 10px 10px 0px;
+}
+p{
+    font-family: "微軟正黑體";
+}
+.all{
+    display: flex;
+    flex: 1 1 50%;
+    height: 100%;
+    width: 100%;
+    background-color: gray;
+}
+.container{
+    display: flex;
+    
+    flex: 0 0 80%;
+    
+    height: 400px;
+    width: 170px;
+    background-color: rgb(49, 47, 47);
+}
+.card_box{
+    border: 0.1px solid black;
+    margin: 0px 10px;
+    align-self: stretch;
+}
+.card_inside_top_box{
+    display: flex;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+    background-color: wheat;
+}
+.card_inside_bot_box{
+    height: 200px;
+    background-color: rgb(236, 231, 227);
+}
+.card_inside_bot_box .info{
+    padding: 15px 15px;
+}
+.reaction_box{
+    height: 20px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px 10px 0px 10px;
+}
+.reaction_box .reaction{
+    padding: 0px 1px 0px 1px;
+}

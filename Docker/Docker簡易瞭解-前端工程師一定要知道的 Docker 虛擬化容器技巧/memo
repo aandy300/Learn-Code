@@ -1,0 +1,84 @@
+Docker簡易瞭解-前端工程師一定要知道的 Docker 虛擬化容器技巧 (18:34) 圖文Ver Notion
+
+《Docker —— 從入門到實踐­》正體中文版
+[https://philipzheng.gitbook.io/docker_practice/](https://philipzheng.gitbook.io/docker_practice/)
+
+## 連結  前端工程師一定要知道的 Docker 虛擬化容器技巧 (18:34)
+---
+[https://www.youtube.com/watch?v=k5iwKUZY9tk](https://www.youtube.com/watch?v=k5iwKUZY9tk)
+
+| 前端工程師是什麼?
+	HTML5 JAVAScript PHP JSON JQ RWD GIT Node.js UX Django Vim
+|| 導入虛擬化容器有什麼好處?
+	VM模擬環境 Docker模擬Process流程，簡少流程減少計畫外工作，讓開發、測試和正是環境無縫接軌。
+||| docker是什麼?
+	類似Git有儲存庫 > 裝箱後 > 部屬到雲端、伺服器or本機
+	跟傳統VM相比效能差異 > 少一層 Guest OS 省了很多資源
+	從 Registry(雲端) 下載 image > 使用 image 建立 container(容器) > 建置 Infrastructure > 將建置好的 container(容器) 儲存成 image > 上傳 image 到 Registry(雲端) Loop
+|||| 怎麼安裝docker?
+||||| 12招成為dokcer大師
+	  4個lv
+	  	lv1 pull / 看有哪些images / run
+		 	1. 取得映像檔(pull) = docker pull 位置
+		 	2. 列出本機映像檔 = images
+		 	3. 新建並啟動容器 = 
+				1. 基本 開一個Docker綁terminal = 直接坐在一台電腦前操作。
+		 			docker run -it 位置 bash
+		 		2. 開發模式 -d / tail -f = 進入無限迴圈不中斷。
+		 			docker urn -it -d 位置 tail -f /dev/null
+		 		3. 建立容器並啟動，且掛載本機目錄 (local 在前 container 在後)。
+		 			docker run -it -v ~/本機位置 位置 bash
+	 	lv2 查看容器行程 (ps) / 終止容器 (stop) / 啟動容器 (start) / 進入容器(exec) / 提交image (commit) / 修改標籤 (tag)
+		 	4. 查看容器行程 (ps)
+			 	docker ps 查看已經啟動的container || docker ps -a 查看所有的container 
+		 	5. 終止容器 (stop)
+			 	docker stop imageID
+		 	6. 啟動容器 (start)
+			 	docker start imageID
+		lv3 進入容器(exec) / 提交 image (commit) / 修改標籤 (tag)
+		 	7. 進入容器(exec) dev模式不會直接進去 用exec進入容器 = 先開起來之後再連進去  / 跟run不一樣run(直接進去) 
+			 	docke exec -it imageID bash
+			 	# 在 container 裡面操作
+			 	root@imageID:/tmp# lsb_release -a > hello_world.txt
+			 	# 離開 container
+			 	root@imageID:/tmp# exit
+		 	8. 提交 image (commit)
+			 	docker commit imageID REPOSITORY資料庫(雲端ID)
+			 	dorker commit -m "提交訊息" -a "作者名稱" imageID 資料庫(雲端ID)
+		 	9. 修改標籤 (tag)
+			 	# docker tag IMAGE[:TAG] [REGINSTRYHOSTY/][USERNAME/]NAME[:TAG]
+			 	# 透過 IMAGE ID 修改 tag。
+			 	docker tag imageID NAME:TAG
+			 	# 透過 REPOSITORY(資料庫) 修改 tag。
+			 	docker tag REPOSITORY資料庫(雲端ID) NAME:TAG
+			 	# 透過 REPOSITORY(資料庫) 修改 tag，latest(最新的)
+			 	docker tag REPOSITORY資料庫(雲端ID):latest(最新的) NAME:TAG
+	 	lv4
+	 		10. 移除image 和 tag (rmi)
+		 		# docker rmi [OPTIONS] IMAGE [IMAGE...]
+		 		# 藉由 IMAGE ID 移除 imgage。
+		 		docker rmi imageID
+		 		# 移除 tag。
+		 		docker rmi imageID:tag
+		 		# 強制移除 (包含有容器正在執行)。
+		 		docker rmi -f imageID
+	 		11. 移除容器 (rm)
+		 		# docker rm [OPTIONS] CONTAINER [CONTAINER...]
+		 		docker ps -a
+		 		# 只移除已停止的容器。
+		 		docker rm 容器名稱
+		 		# 強制移除。
+		 		docker rm -f 容器名稱
+	 		12. 上傳image (push)
+		 		# - 需登入 Docker Registry 才可使用。
+		 		# - Docker Hub: <USERNAME>/<REPO_NAME>
+		 		# - Private Docker Registry: <SERVER_NAME>/<REPO_NAME>
+		 		# 防傳錯改tag後 用tag指定上傳 SERVER_NAME = 公司的伺服器
+		 		docker tag 容器ID <USERNAME>/foo
+		 		docker tag 容器ID <SERVER_NAME>/foo
+
+		 		# 上傳 image
+		 		docker push <USERNAME>foo
+		 		docker psuh <SERVE_NAME>/foo
+
+

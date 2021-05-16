@@ -52,33 +52,21 @@ table {
 /*#endregion */
 
 /*region 整體大概流程
-
-- html, body 
-	- margin padding 歸零 
-	- height:100% (html, body有設定高度子元素材可以伸展)
-	- 設定文字樣式
-- 大容器
-	- 下Flex
-	- height:100% 伸展整個版面，如果之前父元素沒100%無效
-- 小容器
-	- Flex: 伸展、壓縮、比例簡寫 1 1 50%
-	- margin 上右下左內壓縮
-	- border-radius: 圓角
-- 子容器logo
-	- 下Flex
-	- 調整軸線 上到下
-- 出處容器
-	- 調整軸線右到左	
-
+左邊 > 右邊
+- 歸零 > 底色 > 左右 > Flex 壓縮伸展比例 > 軸線改為 column > 左邊 space-between 分散開 
+    > 右邊正常 > 圖片部分使用wrap > 微調
 endreion*/
 
 /* region 主要學到的
-    - Flex: 伸展、壓縮、比例簡寫 : 1 1 50%
-    - height: 100% 父元素沒有設定高度的襪無效
-    - border-radius: 圓角
+    微調、包的方式
+    overflow-y: overlay;  超出的文字如何處理 overlay = auto = 給予拉霸
+    CSS 背景 URL圖片
+    background-image: url('https://...');
+    background-size: cover; 使背景圖放大至內容的大小
+    box-sizing: border-box; border-box = 長寬多少就是多少，增加的會被限制在長寬裡面不會超出
 */
 
-html, body, h2, h3{
+html, body{
     margin: 0;
     padding: 0;
     height: 100%;
@@ -92,48 +80,52 @@ h1,h2,h3,h4{
 h1{
     font-size: 20px ;
 }
-img{
-    padding-top: 10px;
-}
 .container_column{
     display: flex;
     height: 100%; /* html, body沒設定高度的話100%會無效 */
 }
 .left_title{
     display: flex;
-    flex: 0 1 250px;
+    flex: 0 0 250px;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;  
-    padding: 30px 0 ;
-    background-color: rgb(203, 148, 241);
+    padding: 80px 30px ;
+    background-color: rgb(221, 236, 255);
+}
+.left_title img{
+    margin: -35px;
+}
+.left_title .list{
+    margin: 0 0 25px 0;
 }
 .left_title .list a{
     display: block;
-    font-size: 15px;
+    font-size: 18px;
     padding: 10px ;    
     text-decoration: none;
-    color: black;
+    color: rgb(39, 39, 39);
 }
 .left_title .info{
     margin: 10px 20px;
 }
 .left_title .info p{
+    font-size: 17px;
     padding-top: 3px;
+    color: rgb(39, 39, 39);
 }
-
 .right_info{
-    display: flex;
-    height: 100%;
+    overflow-y: auto;
     flex: 1 1 500px;
+    height: 100%;
     flex-direction: column;
     justify-content: center;
-    background-color: lightblue;
+    background-color: rgb(161, 186, 233);
 }
 .right_text{
-    flex: 1 1 500px;
+    height: 100%;
+    flex:  500px;
     overflow-y: overlay;
-    /* margin: 20px 85px; */
     padding: 60px 80px;
 }
 
@@ -146,13 +138,12 @@ img{
     padding: 13px 0 13px 0;
     line-height: 1.4;
 }
-
 .right_text .product{
     display: flex;
     flex-wrap: wrap;
 }
 .right_text .item{
-    flex: 1 1 30%;
+    flex: 1 1 33.33%;
     background-image: url('https://images.unsplash.com/photo-1525251172010-e7472985a6ca?ixlib=rb-1.2.1&auto=format&fit=crop&w=1189&q=80');
     background-size: cover;
     height: 15vw;
