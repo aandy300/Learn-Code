@@ -56,7 +56,9 @@ table {
 endreion*/
 
 /* region 主要學到的
-    
+    - CSS box-shadow: 1px 1px  9px black; 陰影
+    - HTML <i> = <i> 标签和基于内容的样式标签 <em> 类似
+    - HTML <article> = 元素表示文档、页面、应用或网站中的独立结构
 */
 
 html, body{
@@ -66,7 +68,8 @@ html, body{
     width: 100%;
     font-family: "Microsoft JhengHei";
     color: #333;
-  }
+}
+
 h1,h2,h3,h4{
     color: #3F5D45;
 }
@@ -80,24 +83,23 @@ p{
 }
 .all{
     display: flex;
-    flex: 1 1 50%;
+    /* box-sizing: border-box; */
+    padding: 0px 50px 0px 50px;
+    justify-content: center;
+    align-items: center;
     height: 100%;
-    width: 100%;
     background-color: gray;
 }
 .container{
     display: flex;
-    
-    flex: 0 0 80%;
-    
-    height: 400px;
-    width: 170px;
-    background-color: rgb(49, 47, 47);
+    margin: 0 7px;
+    width: 750px;
 }
 .card_box{
-    border: 0.1px solid black;
+    border: 0.1px solid gray;
     margin: 0px 10px;
     align-self: stretch;
+    box-shadow: 1px 1px  9px black;
 }
 .card_inside_top_box{
     display: flex;
