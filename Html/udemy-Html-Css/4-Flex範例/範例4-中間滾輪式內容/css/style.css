@@ -69,3 +69,13 @@ html, body{
     font-family: "Microsoft JhengHei";
     color: #333;
 }
+.all{
+	height: 100%;
+}
+.content{
+	width: 600px;
+	background-color: red;
+}
+.header{
+	background-color: royalblue;
+}
