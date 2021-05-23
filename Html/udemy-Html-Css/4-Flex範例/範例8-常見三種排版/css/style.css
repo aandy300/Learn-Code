@@ -52,13 +52,11 @@ table {
 /*#endregion */
 
 /*region 整體大概流程
-外容器100%占滿版面 直線型 分散頭尾中 
+
 endreion*/
 
 /* region 主要學到的
-    - CSS box-shadow: 1px 1px  9px black; 陰影
-		- 參數 blur：模糊半徑 spread：擴散距離 color：顏色
-	開始作業時思考 > 如何一層一層疊起來下到上容器
+
 */
 
 html, body{
