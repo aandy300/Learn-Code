@@ -56,7 +56,13 @@ table {
 endreion*/
 
 /* region 主要學到的
-
+	加強的
+		粗體
+		內距離外距離區分
+		內容對其軸線 align-items: baseline;
+	新的
+		- css選擇器 空白 = 另一個tag?
+    		ex .row type2 = row & type2 兩個tag?
 */
 
 html, body{
@@ -65,62 +71,46 @@ html, body{
     height: 100%;
     width: 100%;
     font-family: "Microsoft JhengHei";
-    color: #333;
+    color: rgb(43, 43, 43);
 }
 h3{
-	font-size: large;
+	padding: 15px 0px;
 	font-weight: bolder;
-	margin: 12px 0px 12px 0px;
+	font-size: 20px;
 }
-.content img{
-	display: block;
-	margin: 0 auto;
+p{
+	padding: 10px 0px;
+	line-height: 120%;
 }
-.all{
+.row{
 	display: flex;
+	width: 1200px;
+	margin: 50px auto;
+	padding: 30px 40px 30px 40px;
+	border-radius: 20px 20px;
+	letter-spacing: 1.3px;
+	background-color: rgb(153, 202, 192);
+}
+.col{
+	display: flex;
+	align-items: flex-start;
+	padding: 0px 20px;
+}
+.con{
+	padding: 0px 10px;
+}
+.type2 .col{
 	flex-direction: column;
-	justify-content: space-between;
-	height: 100%;
+	align-items: center;
+	text-align: center
 }
-.container{
-	display: flex;
-	justify-content: center;
-	overflow-y: auto;
+.type3{
+	flex-direction: column;
 }
-.content{
-	width: 600px;
-	/* background-color: rgb(236, 167, 167); */
-}
-.header{
-	background-color: rgb(208, 232, 255);
+.type3 .col{
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
-	padding:  0 50px;
-	font-size: 19px;
-	font-weight: bold;
-	box-shadow: 0px 1px 9px black;
 }
-.menu{
-	display: flex;
-	list-style: none;
-}
-.menu a{
-	text-decoration: none;
-	margin-left: 10px;
-	color: rgb(28, 38, 131);
-}
-.footer{
-	display: flex;
-	height: 150px;
-	justify-content: center;
-	align-items: center;
-	padding: 0 50px;
-	font-size: 19px;
-	font-weight: bold;
-	box-shadow: 0px 1px 9px black; 
-	background-color: rgb(75, 89, 151);
-}
-.footer a{
-	color: rgb(226, 226, 226);
+.type3 .reverse{
+	flex-direction: row-reverse;
 }

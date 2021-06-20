@@ -52,6 +52,8 @@ table {
 /*#endregion */
 
 /*region 整體大概流程
+	- 圓角當padding邊界區隔
+	- 主要的另外 .col .main flex: 下比例
 
 endreion*/
 
@@ -66,4 +68,47 @@ html, body{
     width: 100%;
     font-family: "Microsoft JhengHei";
     color: #333;
+}
+body{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-sizing: border-box;
+	background-color: gray;
+}
+h2{
+	font-weight: bold;
+	font-size: 28px;
+	padding: 20px 0px 20px 5px;
+	color: rgb(228, 228, 228);
+}
+p{
+	padding: 0px 0px 10px 5px;
+	color: rgb(247, 247, 247);
+	letter-spacing: 0.8px;
+}
+.all{
+	padding: 30px 50px 50px 50px;
+}
+.container{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	height: 400px;
+}
+.col{
+	display: flex;
+	flex: 1 1 50%;
+	justify-content: center;
+	align-items: center;
+	width: 25%;
+	box-sizing: border-box;
+	border-radius: 15px 15px;
+	border: 10px solid gray;
+	background-color: green;
+	font-family: 'Courier New', Courier, monospace;
+}
+.col.main{
+	flex: 1 1 100%;
+	width: 50%;
 }

@@ -51,6 +51,165 @@ table {
 
 /*#endregion */
 
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.title{
+    margin: 20px;
+    width: 400px;
+    text-align: center;
+}
+
+/* CSS border outline */
+
+.box_css_border{
+    width: 450px;
+    font-size: 20px;
+    text-align: center;
+    padding: 15px 15px;
+    background-color: rgb(201, 181, 152);
+    color: rgb(0, 0, 0);
+}
+
+.box_css_border .box_border h3{
+    padding: 20px 20px;
+    margin: 10px;
+    border-bottom: 10px solid blue;
+    border-top: 10px solid brown;
+    border-left: 10px solid coral;
+    border-right: 10px solid darkgreen;
+}
+.box_css_border .box_border_line{
+    margin: 10px;
+    font-size: 25px;
+    border: black 1px solid;
+}
+
+.box_css_border .box_outline{
+    margin: 10px;
+    font-size: 20px;
+    outline: black 1px solid;
+}
+
+/*#region 字型 CSS font */
+
+.box_css_font{
+    width: 450px;
+    font-size: 20px;
+    text-align: center;
+    padding: 15px 15px;
+    margin: 15px 15px;
+    background-color: rgb(191, 152, 201);
+    color: rgb(0, 0, 0);
+}
+
+.box_font{
+    padding: 10px;
+    margin: 5px;
+    outline: 1px black solid;
+}
+ 
+/* 粗體 */
+.box_font_weight{
+    font-weight: bold;
+}
+/* 字型 */ /* 好看的 "Helvetica", "Arial","LiHei Pro","黑體-繁","微軟正黑體", sans-serif; */
+.box_font_family{
+    font-family: sans-serif;
+}
+/* 尺寸 */
+.box_font_size{
+    font-size: 25px;
+}
+/* 行高 */ /* 行高 | normal | 2.5 | 3em | 150% | 32px */
+.box_line_height{
+    line-height: -1.5px;
+}
+/* 對齊 */
+.box_font_align{
+    text-align: left
+}
+/* 縮排 */
+.box_font_indent{
+    text-indent: 40px;
+}
+/* 字距 */
+.box_font_spacing{
+    letter-spacing: 5px;
+}
+/* 劃線 */ /*| line-through = 刪除線 | underline = 底線 */ 
+.box_font_text_decoration{
+    text-decoration: line-through;
+}
+/* 超出的文字隱藏 */  /* 其他參數: https://www.wibibi.com/info.php?tid=157 */
+.box_font_overflow{
+    overflow: hidden;
+}
+/* 段落中本文不進行換行 */ /* 其他參數: https://www.w3school.com.cn/cssref/pr_text_white-space.asp */
+.box_font_white_space{
+    white-space: nowrap;
+}
+
+/*#endregion */
+
+/*#region 特效 CSS */
+
+.box_css_effect{
+    width: 600px;
+    font-size: 20px;
+    text-align: center;
+    padding: 15px 15px;
+    margin: 15px 15px;
+    background-color: rgb(152, 177, 201);
+    color: rgb(0, 0, 0);
+}
+.box_effect{
+    padding: 10px;
+    margin: 10px;
+    outline: 1px black solid;
+}
+
+/* 陰影 */ /* 偏移-x | 偏移-y | 模糊半徑| 傳播半徑| 顏色 */
+.box_effect_shadow{
+    height: 50px;
+    box-shadow: 5px 5px 5px 2px rgba(255, 0, 0, 0.35);
+    background-color: rgb(199, 199, 199);
+}
+/* 圓角 */ /* 左上 > 右上 > 下右 > 下左 */
+.box_effect_border-radius{
+    height: 50px;
+    border-radius: 50px 50px;
+    background-color: rgb(199, 199, 199);
+}
+/* 背景圖片 */ /* 數值 https://developer.mozilla.org/zh-CN/docs/Web/CSS/background-image */
+.box_effect_background-image{
+    height: 100px;
+    background-image: url("https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png");
+}
+/* a連結 & 鼠標evant */
+.box_effect_alink_button{
+    padding: 5px;
+    color: white;
+    text-decoration: none;
+    background-color: brown;
+}
+.box_effect_alink_button:hover{
+    color: black;
+}
+.box_effect_alink_button:active{
+    background-color: blue;
+}
+
+/*#endregion  */
+
+
+
+
+
+
+/* -------------------- */
 h1{
     font-size: 2em;
 }
@@ -61,7 +220,12 @@ h3{
     font-size: 1em;
 }
 
-.ez_css h1{
+
+
+.ez_css p{
+    width: 400px;
+    font-size: 20px;
+    padding: 15px 15px;
     background-color: blanchedalmond;
     border-bottom: 10px solid blue;
     border-top: 10px solid brown;
@@ -103,7 +267,7 @@ h3{
     font-size: 15px;
     /* 行高 | normal | 2.5 | 3em | 150% | 32px */
     line-height: -1.5px;
-    /* 對其 */
+    /* 對齊 */
     text-align: left;
     /* 縮排 */
     text-indent: 32px;

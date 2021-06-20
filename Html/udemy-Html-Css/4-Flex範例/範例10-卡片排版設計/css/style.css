@@ -51,76 +51,89 @@ table {
 
 /*#endregion */
 
-/*region 整體大概流程
 
+
+/*region 整體大概流程
+	1.  body 下  flex center center 置中置中
+	2. .all width  90% 左右留白
+	3. 上logo板塊設置 flex space-between  center 上面圓角 img要設大小沒社會爆掉
+	4.  下面板塊內容 - css圖片 - (內文+ icon)
+		主軸變直線 > 靠齊兩邊 > 對其尾巴
 endreion*/
 
 /* region 主要學到的
-
+	css rest 影響 .btns i{} 不知道為什麼
+	
+	- 加強
+		CSS圖片 background-image: url('')
+	- align-items 壞掉不懂為啥
+		- 解
+		- logo 沒限制大小 justify-content: space-between; + align-items: center; 會爆掉
+		- 限制大小 height or width
 */
 
+/* 整體版面設置 > 滿版 > 顏色 > 其他etc... margin 0 消除邊框的拉霸條 */
 html, body{
-    margin: 0;
-    padding: 0;
+	margin: 0;
     height: 100%;
     width: 100%;
-    font-family: "Microsoft JhengHei";
+	font-family: "微軟正黑體", "Microsoft JhengHei";
     color: #333;
+	background-color: gray;
 }
-h3{
-	font-size: large;
-	font-weight: bolder;
-	margin: 12px 0px 12px 0px;
+/* 純粹為了 整體至中 */
+body{
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
-.content img{
-	display: block;
-	margin: 0 auto;
-}
+/* 讓左右流空白 */
 .all{
+	width: 90%;
+}
+/* 上面的logo板塊 貼其左右 如果img沒限制大小會爆調 */
+.top{
+	height: 60px;
 	display: flex;
-	flex-direction: column;
 	justify-content: space-between;
-	height: 100%;
-}
-.container{
-	display: flex;
-	justify-content: center;
-	overflow-y: auto;
-}
-.content{
-	width: 600px;
-	/* background-color: rgb(236, 167, 167); */
-}
-.header{
-	background-color: rgb(208, 232, 255);
-	display: flex;
 	align-items: center;
-	justify-content: space-between;
-	padding:  0 50px;
-	font-size: 19px;
-	font-weight: bold;
-	box-shadow: 0px 1px 9px black;
+	padding: 30px 30px 30px 30px;
+	/* font-weight: bold; */
+	background-color: honeydew;
+	border-radius: 10px 10px 0px 0px;
 }
-.menu{
+.top p{
+	font-size: 20px;
+}
+/* 下面的內容板塊 - css圖片 - (內文+ icon) */
+.row{
 	display: flex;
-	list-style: none;
+	padding: 30px 30px 30px 30px;
+	background-color: white;
 }
-.menu a{
-	text-decoration: none;
-	margin-left: 10px;
-	color: rgb(28, 38, 131);
+/* css圖片 */
+/* background-size: cover; = 縮放背景圖片以完全覆蓋背景區，可能背景圖片部分看不見。 */
+.row .pic{
+	height: 350px;
+	width: 350px;
+	background-image: url('https://images.unsplash.com/photo-1462745294598-b3f9a2d7b858?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80');
+	background-size: cover;
 }
-.footer{
-	display: flex;
-	height: 150px;
-	justify-content: center;
-	align-items: center;
-	padding: 0 50px;
-	font-size: 19px;
+/* 內文+icon + 文字樣式調整 */
+.con{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-left: 50px;
+}
+.con h2{
+	font-size: 23px;
 	font-weight: bold;
-	box-shadow: 0px 1px 9px black; 
-	background-color: rgb(75, 89, 151);
+	padding: 20px 0px 20px 0px;;
 }
-.footer a{
-	color: rgb(226, 226, 226);
+.con p{
+	letter-spacing: 0.9px;
+	line-height: 130%;
 }
+
