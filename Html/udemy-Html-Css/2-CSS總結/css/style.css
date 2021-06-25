@@ -204,6 +204,84 @@ body{
 
 /*#endregion  */
 
+/*#region 定位相關  */
+.box_css_position{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    font-size: 20px;
+    text-align: center;
+    padding: 15px 15px;
+    margin: 15px 15px;
+    background-color: rgb(152, 201, 181);
+    color: rgb(0, 0, 0);
+}
+.box_position{
+    padding: 10px;
+    margin: 10px;
+    outline: 1px rgb(10, 8, 8) solid;
+}
+/* 絕對定位 */ /* 用 top right bottom left 調整位置 */
+.box_position_absolute{
+    height: 50px;
+    width: 450px;
+    top: 1450px;
+    left: 100px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+    background-color: rgb(152, 201, 181);
+}
+/* 相對定位 */ /* 下在父元素 以父元素為基準 */
+.box_position_relative{
+    height: 50px;
+    width: 450px;
+    top: 100px;
+    left : 150px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 4;
+    background-color: rgb(100, 133, 120);
+}
+/* 圖層順序 */ /* 數字越大越上面 */
+.box_position_z-index{
+    height: 150px;
+    width: 450px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    z-index: 1;
+    background-color: rgb(56, 88, 75);
+}
+/* 永久固定位置 */ 
+.box_position_fixed{
+    width: 450px;
+    height: 50px;
+    top: 50px;
+    left: 50px;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+    background-color: rgb(186, 223, 208);
+}
+
+/*#endregion  */
+
+
+
+
+
+
+
 
 
 

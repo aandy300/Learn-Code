@@ -1,0 +1,113 @@
+/*#region CSS Reset*/ 
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*#endregion */
+
+/* 學到的 */
+/* html, body height: 100%  重要! 不然沒辦法置中*/
+
+html, body{
+    height: 100%;
+}
+body{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: rgb(94, 94, 94);
+}
+
+h1, h2, p{
+    font-family: "微軟正黑體";
+}
+
+.box_all{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    background-color: rgb(40, 58, 37);
+}
+.box{
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    width: 250px;
+    background-color: rgb(255, 255, 255);
+}
+.box_padding{
+    margin: 0px 10px;
+}
+.title_box{
+    padding: 45px;
+    background-color: rgb(192, 228, 155);
+}
+.title_box h1{
+    font-size: 40px;
+    text-align: center;
+    color: rgb(42, 83, 1);
+}
+.text_box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 20px;
+}
+.text_box h2{
+    font-size: 22px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: rgb(42, 83, 1);
+}
+.text_box p{
+    font-weight: bold;
+    color: rgb(40, 58, 37);
+}
+

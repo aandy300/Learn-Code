@@ -1,0 +1,142 @@
+/*#region CSS Reset*/ 
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*#endregion */
+
+/* 學到的 */
+/* */
+
+html, body{
+    height: 100%;
+}
+body{
+
+}
+*{
+	/* outline: 1px solid black; */
+}
+.box_all{
+	display: flex;
+
+}
+.box_menu{
+
+}
+ul{
+	width: 250px;
+	text-align: center;
+	box-sizing: border-box;
+	border: 1px rgb(188, 209, 197) solid;
+	background: rgb(255, 255, 255);
+}
+li{
+	box-sizing: border-box;
+	border: 1px rgb(188, 209, 197) solid;
+	font-size: 20px;
+	font-family: "微軟正黑體";
+	font-weight: bold;
+	padding: 20px;
+	color: rgb(55, 82, 61);
+	background-color: rgb(232, 241, 234);
+}
+.back_color{
+	color: white;
+	background-color: rgb(55, 82, 61);
+}
+.change_color:hover{
+	background-color: rgb(207, 228, 216);
+}
+
+.shop{
+	display: flex;
+	flex-wrap: wrap;
+
+}
+.box_info{
+	display: flex;
+	flex-direction: column;
+	margin: 5px 5px 5px 5px;
+	outline: 1px rgb(188, 209, 197) solid;
+}
+.price{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	color: rgb(55, 82, 61);
+	outline: 1px rgb(188, 209, 197) solid;
+}
+.price p{
+	margin: 15px;
+	font-size: 25px;
+	font-family: "微軟正黑體";
+	color: rgb(69, 94, 75);
+}
+.add_size_and_name{
+	width: 150px;
+	font-weight: bold;
+	text-align: center;
+}
+.price .add_size_and_name{
+	color: rgb(93, 136, 102);
+}
+.line{
+	height: 40px;
+	width: 1px;
+	background-color: rgb(55, 82, 61);
+}
+.add_to_car{
+	font-size: 25px;
+	padding: 20px;
+	text-align: center;
+	font-weight: bold;
+	color: rgb(55, 82, 61);
+	background-color: rgb(140, 173, 154);
+}
