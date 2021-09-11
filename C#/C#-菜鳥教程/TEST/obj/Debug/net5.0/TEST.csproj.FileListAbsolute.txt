@@ -1,0 +1,16 @@
+C:\Users\admin\Desktop\Coding\Learn-Code\C#\C#-菜鳥教程\TEST\bin\Debug\net5.0\TEST.exe
+C:\Users\admin\Desktop\Coding\Learn-Code\C#\C#-菜鳥教程\TEST\bin\Debug\net5.0\TEST.deps.json
+C:\Users\admin\Desktop\Coding\Learn-Code\C#\C#-菜鳥教程\TEST\bin\Debug\net5.0\TEST.runtimeconfig.json
+C:\Users\admin\Desktop\Coding\Learn-Code\C#\C#-菜鳥教程\TEST\bin\Debug\net5.0\TEST.runtimeconfig.dev.json
+C:\Users\admin\Desktop\Coding\Learn-Code\C#\C#-菜鳥教程\TEST\bin\Debug\net5.0\TEST.dll
+C:\Users\admin\Desktop\Coding\Learn-Code\C#\C#-菜鳥教程\TEST\bin\Debug\net5.0\ref\TEST.dll
+C:\Users\admin\Desktop\Coding\Learn-Code\C#\C#-菜鳥教程\TEST\bin\Debug\net5.0\TEST.pdb
+C:\Users\admin\Desktop\Coding\Learn-Code\C#\C#-菜鳥教程\TEST\obj\Debug\net5.0\TEST.csprojAssemblyReference.cache
+C:\Users\admin\Desktop\Coding\Learn-Code\C#\C#-菜鳥教程\TEST\obj\Debug\net5.0\TEST.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\admin\Desktop\Coding\Learn-Code\C#\C#-菜鳥教程\TEST\obj\Debug\net5.0\TEST.AssemblyInfoInputs.cache
+C:\Users\admin\Desktop\Coding\Learn-Code\C#\C#-菜鳥教程\TEST\obj\Debug\net5.0\TEST.AssemblyInfo.cs
+C:\Users\admin\Desktop\Coding\Learn-Code\C#\C#-菜鳥教程\TEST\obj\Debug\net5.0\TEST.csproj.CoreCompileInputs.cache
+C:\Users\admin\Desktop\Coding\Learn-Code\C#\C#-菜鳥教程\TEST\obj\Debug\net5.0\TEST.dll
+C:\Users\admin\Desktop\Coding\Learn-Code\C#\C#-菜鳥教程\TEST\obj\Debug\net5.0\ref\TEST.dll
+C:\Users\admin\Desktop\Coding\Learn-Code\C#\C#-菜鳥教程\TEST\obj\Debug\net5.0\TEST.pdb
+C:\Users\admin\Desktop\Coding\Learn-Code\C#\C#-菜鳥教程\TEST\obj\Debug\net5.0\TEST.genruntimeconfig.cache

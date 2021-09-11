@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- ↓支援舊版 ie框chrome核 https://iter01.com/183346.html -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 預覽模式 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS總結-復健</title>
+    <!-- link css -->
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+
+
+</head>
+<body>
+    <div class="list">
+        <h1>表單- th = 標題類 td = 內容項目</h1>
+        <table class="text">
+            <tr>
+                <th>標題一</th>
+                <th>標題二</th>
+                <th>標題三</th>
+                <th>標題四</th>
+            </tr>
+            <tr>
+                <td>差異</td>
+                <td class="color">差異</td>
+                <td>差異</td>
+                <td>差異</td>
+            </tr>
+            <tr>
+                <td>差異</td>
+                <td class="color">差異</td>
+                <td>差異</td>
+                <td class="color">差異</td>
+            </tr>
+        </table>    
+    </div>
+    
+    
+
+    <div class="form_all">
+        <form action="index.html">
+            <h1>form相關</h1>
+            <p>form = 表單 基本: form action="index.html" ps:原本是傳db這裡直接傳index.html</p>
+            <div class="input_all">
+                <h1>input相關</h1>
+                <p>基本內容: input type="" value="" name="" id="" placeholder=""</p>
+                <div class="style">
+                    <h3>樣式</h3>
+                    <div class="info">
+                        <p>id="名稱" > 前端 || name="名稱" > 資料庫</p>
+                        <p>value= "按鍵內文" or 輸出的值</p>
+                        <p>placeholder="預設內容"</p>
+                        <input type="text" id="txt" name="txt" placeholder="預設內容">
+                        <input type="submit" value="按鍵內文">
+                    </div>
+                </div>
+    
+                <div class="status">
+                    <h3 class="color_h3">參數</h3>
+                    <div class="info">
+                        <p>text = 文字框     |    <input type="text"> </p>                
+                        
+                        <p>radio = 單選 |
+                            <input type="radio" name="單選1">單選1 
+                            <input type="radio" name="單選2">單選2
+                        </p>
+                        
+                        <p>checkbox = 多選 |
+                            <input type="checkbox" name="多選1">多選1 
+                            <input type="checkbox" name="多選2">多選2
+                            <input type="checkbox" name="多選3">多選3                        
+                        </p>
+                        <p>submit = 輸入按鈕 |  <input type="submit"></p>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <form class="outher_form" action="index.html">
+            <div class="outher">
+                <h1>其他</h1>
+                <p>select = 拉霸選單
+                    <select name="拉霸選單" id="拉霸選單">
+                        <option value="v_選項一">選項一</option>
+                        <option value="v_選項二">選項二</option>
+                        <option value="v_選項三">選項三</option>
+                    </select>
+                </p>
+                <p>解說: select name="" id="" | option value="v_選項一" | 注意:value才是輸出的值</p>
+                <p>textarea = 輸入區域
+                    <textarea name="文字區域" id="文字區域" cols="30" rows="5" ></textarea>
+                </p>
+                <p>解說:textarea name="" id="" cols="可視寬度" rows="顯示高度"</p>
+
+                <p>label for="" = 點擊時跳到指定id欄位 
+                    <label for="output">點我會跳</label>
+                    <input type="text" id="output" placeholder="到這裡">
+                </p>
+                <p><input type="submit"></p>
+                <p>size: =  表格長度</p>
+            </div>
+            
+            
+        </form>
+    </div>
+</body>
+</html>

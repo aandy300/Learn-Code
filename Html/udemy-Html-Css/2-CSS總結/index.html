@@ -9,13 +9,32 @@
     <title>CSS總結-復健</title>
     <!-- link css -->
     <link href="css/style.css" rel="stylesheet" type="text/css">
-
+    <!-- 分頁icon 32x32px -->
+    <link rel="shortcut icon" href="sun.jpg">
+    <meta name="description" content="網站描述文字" />
+    <meta name="keywords" content="關鍵字一, 關鍵字二, 關鍵字三" /> 
+    
+    <!-- FB分享時縮圖內文描述 -->
+    <meta property="og:title" content="FB的標題" />
+    <meta property="og:description" content="FB的描述" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="FB上的網址" />
+    <meta property="og:image" content="FB的圖片" />
+ 
+    <link href="圖片路徑" rel="apple-touch-icon" />
+    <!-- 使用最新的去渲染防止大家版本不同  -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+ 
+    <link rel="stylesheet" href="CSS檔案路徑">
+    <script type="text/javascript" src="JS檔案路徑"></script>
+<!--  -->
 
 </head>
 <body>
     <!-- 簡易CSS -->
     <div class="title">
         <h1>簡易CSS</h1>
+        <h1>caniuse CSS : https://caniuse.com/</h1>
     </div>
 
     <!-- boder outline相關 -->
@@ -58,7 +77,12 @@
         <p>特效相關</p>
         <div class="box_effect_shadow box_effect">陰影 = box-shadow: 5px 5px 5px 2px rgba(255, 0, 0, 0.35);</div>
         <div class="box_effect_border-radius box_effect">圓角 = border-radius: 50px 50px;</div>
-        <div class="box_effect_background-image box_effect">背景圖片 = background-image: url('')</div>
+        <div class="box_effect_background-linear box_effect">漸層 =  background: linear-gradient(方向left, 顏色, 顏色);<br>無效的話看預覽器適用哪個增加-webkit-linear-gradient</div>
+        <div class="box_effect_background-repeat box_effect">圖片重複顯示 = background-repeat: repeat-x; + 背景色延伸 </div>
+        <div class="box_effect_background-position box_effect">圖片位置 = background-position: 30px px;</div>
+        <div class="box_effect_background-image box_effect">背景圖片 = background-image: url('')
+            <p>縮寫:background: url(../google.png) no-repeat center;</p>
+        </div>
         <div class="box_effect_alink box_effect">
             <p>a連結 底線去除 = text-decoration: none;</p>
             <p>鼠標移動到變色 = className :hover</p>
@@ -75,6 +99,16 @@
         <div class="box_position_relative box_position">相對定位 = position: relative;</div>
         <div class="box_position_z-index box_position">圖層順序 = z-index: number</div>
         <div class="box_position_fixed box_position">定位相關 永久固定位置 = position:fixed</div>
+    </div>
+    <!-- 權重相關 -->
+    <div class="box_css_weights">
+        <p>權重相關</p>
+        <p>數字加上去的概念越大優先度越高</p>
+        <div>html標籤 = 1分</div>
+        <div>.class = 10分</div>
+        <div>id = "" = 100分</div>
+        <div>style = "" = 1000分</div>
+        <div>class = "important" = 10000分</div>
     </div>
 
     <H2>標題H2</H2>

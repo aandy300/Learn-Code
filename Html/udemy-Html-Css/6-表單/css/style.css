@@ -1,0 +1,155 @@
+/*#region CSS Reset*/ 
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*#endregion */
+
+
+/* 學到的 */
+/* 
+
+	form action="index.html" = 傳送到資料庫, 這裡沒DB改成index.html
+    input type="輸入類型" text=文字 submit=輸入按鈕 || id="名稱"to前端 name="名稱"to資料庫 || value="按鈕內文" || placeholder="預設內容"
+    label for="id" = 點擊時跳到指定id欄位
+
+
+*/
+
+/* 取消 表單 樣式變成像word一樣 */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.list{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+}
+
+.text{
+    font-size: 20px;
+    font-family: "微軟正黑體";
+}
+
+
+.text th, .text td{
+    box-sizing: border-box;
+    border-top: black 1px solid;
+    border-bottom: black 1px solid;
+}
+
+.text th{
+    font-weight: bold;
+    padding: 10px;
+    background: rgb(199, 229, 240);
+    
+}
+.text td{
+    text-align: left;
+    padding: 10px 50px 10px 20px;
+}
+.color{
+    color: rgb(182, 95, 14);
+}
+
+
+
+p{
+    padding: 10px;
+    font-size: 20px;
+    text-align: center;
+}
+h1{
+    padding: 10px;
+    font-size: 30px;
+    font-family: "微軟正黑體";   
+    text-align: center;
+}
+form{
+    padding: 20px;
+}
+.form_all{
+    outline: 1px solid black;
+    width: 900px;
+    margin: 10px 20px;
+    margin: auto;
+}
+.input_all{
+    outline: 1px solid black;
+    background: rgb(233, 198, 224);
+}
+h3{
+    padding: 10px;
+    font-size: 25px;
+    text-align: center;
+    background: rgb(228, 114, 137);
+}
+.info{
+    padding-bottom: 10px;
+    font-size: 20px;
+    font-family: "微軟正黑體";
+    text-align: center;
+    background: rgb(218, 162, 162);
+}
+.info p{
+    padding: 10px;
+}
+.color_h3{
+    background: rgb(182, 66, 66);
+}
+
+.outher{
+    outline: 1px black solid;
+    background: rgb(255, 164, 99);
+}
+.outher label{
+    background: crimson;
+}

@@ -183,10 +183,44 @@ body{
     border-radius: 50px 50px;
     background-color: rgb(199, 199, 199);
 }
+/* 漸層背景 */
+.box_effect_background-linear{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: blanchedalmond;
+    background: -webkit-linear-gradient(left,black, red);
+}
+/* 圖片重複顯示 */
+.box_effect_background-repeat{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: blanchedalmond;
+
+    height: 120px;
+    background-repeat: repeat-x;
+    background-image: url(../bk.jpg);
+    background-color: rgb(130, 152, 254);
+}
+/* 圖片位置 */ /* background-position：right top 30px 30px 90%*/
+.box_effect_background-position{
+    height: 150px;
+    background-position: 30px 30px;
+    background-repeat: no-repeat;
+    background-image: url(../bk.jpg);
+}
 /* 背景圖片 */ /* 數值 https://developer.mozilla.org/zh-CN/docs/Web/CSS/background-image */
 .box_effect_background-image{
-    height: 100px;
-    background-image: url("https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png");
+    font-weight: bold;
+    height: 92px;
+    color: blanchedalmond;
+    /* background-repeat: no-repeat; */
+    /* background-position: center; */
+    /* background-image: url(../google.png); */
+    background: url(../google.png) no-repeat center;
 }
 /* a連結 & 鼠標evant */
 .box_effect_alink_button{
@@ -227,7 +261,7 @@ body{
 .box_position_absolute{
     height: 50px;
     width: 450px;
-    top: 1450px;
+    top: 1730px;
     left: 100px;
     position: absolute;
     display: flex;
@@ -277,7 +311,29 @@ body{
 /*#endregion  */
 
 
-
+/*#region 權重相關  */
+.box_css_weights{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    font-size: 20px;
+    text-align: center;
+    padding: 15px 15px;
+    margin: 15px 15px;
+    background-color: rgb(233, 218, 153);
+    color: rgb(0, 0, 0);
+}
+.box_css_weights p{
+    margin: 3px;
+}
+.box_css_weights div{
+    padding: 8px;
+    margin: 2px;
+    outline: 1px rgb(10, 8, 8) solid;
+}
+/*#endregion   */
 
 
 
