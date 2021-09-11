@@ -1,0 +1,66 @@
+// 註冊
+.container
+    .register_box
+        display: flex
+        flex-direction: column
+        align-items: center
+        font-family: NotoSansCJKtc-Black
+        // font-size: 18px
+        color: #3D1101
+        .mid_slogan_box
+            text-align: center
+            margin-top: 30px
+            margin-bottom: 30px
+        h2
+            color: rgb(61, 17, 1)
+            font-weight: bold
+        form            
+            box-shadow: 3px 3px 4px 0px rgba(0,0,0,0.16)
+            border-top: 3px solid rgb(255, 94, 69)
+            fieldset
+                display: flex
+                flex-direction: column
+                align-items: center
+                justify-content: center
+                .form_box
+                    display: flex
+                    max-width: 620px
+                    .register_about
+                        font-family: MicrosoftJhengHeiRegular
+                        font-size: 17px
+                        color: #3D1101
+                        line-height: 20px
+                    .register_info_box
+                        display: flex
+                        flex-direction: column            
+                        padding: 0px 13px 0px 15px                                                
+                        input      
+                            background: url("../assets/twitter.png") no-repeat scroll 7px 7px
+                            background-size: 20px 20px
+                            background-color: white
+                            line-height: 0.5
+                            padding: 7px 0px
+                        input:not([value=""]):not(:focus):invalid
+                            background: url("")
+                            background-color: white
+                        input:focus
+                            background: url("")
+                            background-color: white            
+                        a
+                            font-size: 14px
+                            position: relative
+                            bottom: 10px
+                            color: rgb(245, 108, 35)
+                        a:hover
+                            color: rgb(133, 35, 0)
+                        a:active
+                            color: gray
+                    .submit_btn_box
+                        display: flex
+                        justify-content: flex-end                    
+                        button
+                            font-size: 14px
+                            font-family: PingFangTC-Regular                
+                            color: #FFFFFF
+                            padding: 7px 50px
+                            margin: 0px 15px 5px 0px

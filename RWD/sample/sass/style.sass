@@ -1,0 +1,273 @@
+// MEMO 整理一下有夠亂
+@import '_Reset';
+
+// 變數
+$_mainColor: rgb(125, 94, 84)
+$_backgroundMainColor: rgb(239, 233, 231)
+
+// 想要function化
+h2
+    font-size: 22px
+    font-weight: bold
+    color: $_mainColor
+    line-height: 35px
+h3
+    font-size: 18px
+    font-weight: bold
+    color: $_mainColor
+
+.test
+    outline: 1px solid black
+.display_n
+    display: none
+.orange
+    background: rgb(245, 108, 35)
+.gray
+    background: rgb(160, 158, 158)
+button, input, optgroup, select, textarea
+    line-height: 1
+
+html,body
+    height: 100% /*外層高度100%*/
+    margin: 0
+
+body
+    background-color: rgb(30, 30, 30)
+
+// header 這個也可以用import?
+header
+    height: 420px
+    background-color: black
+    background-repeat: no-repeat
+    background-position: center center
+    background-image: url("../assets/header_desktop.png")
+    background-color: black
+    
+    .top_menu
+        display: flex
+        justify-content: space-between
+        align-items: center
+        background-color: #000000bd
+        a
+            padding: 15px 20px
+        .top_btn_right   
+            a
+                font-size: 18px
+                font-weight: bold
+                color: #d3d3d3
+
+    .top_slogan
+        margin-top: 50px
+        display: flex
+        justify-content: center
+        .slogan_text
+            padding: 20px 20px
+            text-align: center
+            letter-spacing: 1px
+            color: white
+            max-width: 500px
+            background-color: #2125296c
+            h1
+                font-weight: bold
+                font-size: 40px
+                padding: 15px
+            p
+                font-size: 18px
+                padding: 3px
+
+
+
+// 主頁 這個也可以用import?
+.container
+    background-color: $_backgroundMainColor
+    .layer1
+        padding-bottom: 50px
+        .mid_slogan
+            .line
+                margin: auto auto
+                position: relative
+                bottom: 85px
+                z-index: 1
+                max-width: 600px
+                border: 1px solid #381f00
+            h2
+                padding: 50px 0px
+                line-height: 35px
+                margin: auto auto
+                max-width: 350px
+                text-align: center
+                position: relative
+                z-index: 2                
+                background-color: $_backgroundMainColor
+        .feature_box
+            display: flex
+            justify-content: center
+            .feature
+                display: flex
+                flex-direction: column
+                align-items: center
+                margin: 20px 60px 20px 60px
+                h3            
+                    margin: 20px 0px 20px 0px
+                p
+                    max-width: 260px
+                    font-family: MicrosoftJhengHeiRegular
+                    color: $_mainColor
+                img
+                    border-radius: 210px 210px
+    .layer2
+        background-color: rgb(61, 17, 1)
+        display: flex
+        justify-content: center
+        img
+            max-width: 460px
+        .layer2_right
+            display: flex
+            flex-direction: column
+            justify-content: center
+            margin: 0px 40px 0px 40px
+            max-width: 410px
+            h3
+                font-family: MicrosoftJhengHeiRegular
+                line-height: 25px
+                padding: 0px 0px 40px 0px
+                color: #f8ebdb
+            p
+                color: #f8ebdb
+                font-size: 18px
+                font-family: MicrosoftJhengHeiRegular
+    .layer3
+        display: flex
+        flex-direction: column
+        align-items: center
+        padding-bottom: 50px
+        .mid_slogan
+            padding-top: 40px
+            padding-bottom: 40px
+        .review_box
+            display: flex
+            margin: 0px 25px
+            letter-spacing: 1px
+            font-size: 18px
+            font-weight: bold
+            color: $_mainColor
+            h2
+                padding: 40px 0px
+            .review
+                display: flex
+                margin: 0px 10px 0px 10px
+                .review_left
+                    img
+                        border-radius: 100px
+                .review_right
+                    max-width: 220px
+                    padding: 0px 20px
+                    h3
+                        font-size: 20px
+                        padding: 20px 0px
+                .text_to_right
+                    display: flex
+                    justify-content: flex-end
+                    padding: 20px 0px
+                    color: #8f693d
+                    font-weight: normal
+    .layer4
+        display: flex
+        flex-direction: column
+        align-items: center
+        background-color: rgb(246, 244, 243)
+        .mid_slogan
+            padding-top: 40px
+            padding-bottom: 40px
+        .map_info
+            display: flex
+            padding-bottom: 40px
+            .map_info_box
+                margin: 0px 20px 0px 20px
+            fieldset
+                display: flex
+                flex-direction: column
+
+        // input[type=text]:focus
+        // 想要做表單選擇時的調整
+        label
+            font-size: 17px
+            font-weight: bold
+            margin: 0px 0px 5px 0px
+            color: $_mainColor            
+        .vegetarian_radio
+            font-size: 17px
+            font-weight: bold
+            color: $_mainColor
+        .push_left
+            margin: 0px 30px 0px 5px        
+        .submit_btn_box
+            display: flex
+            justify-content: flex-end
+            button
+                font-size: 14px
+                font-family: PingFangTC-Regular
+                color: #FFFFFF
+                padding: 12px 20px
+                margin: 0px 10px
+
+
+// 登入
+@import '_Login_style';
+// 註冊
+@import '_Register_style';                    
+// 商品                    
+@import '_Product_style'
+
+// footer 這個也可以用import?
+footer    
+    display: flex
+    justify-content: space-between
+    align-items: center
+    background-color: rgb(239, 233, 231)
+    padding: 50px 50px 50px 50px
+
+    h2
+        padding-bottom: 20px
+        // white-space: nowrap
+    p
+        font-size: 16px
+        line-height: 18px
+        letter-spacing: 0.5px
+        color: $_mainColor
+        font-weight: bold
+        font-family: MicrosoftJhengHeiRegular
+    .bot_info_left
+        display: flex
+        // padding-left: 20px
+        .about_me
+            max-width: 500px
+        .about_connection
+            p
+                white-space: nowrap
+    .bot_info_right
+        display: flex
+        flex-direction: column
+        .bot_info_name
+            // img取代沒用到h1
+            h1
+                font-size: 45px
+                font-weight: bold
+                padding-top: 30px
+                padding-bottom: 10px
+                // white-space: nowrap
+                color: #2e2200
+    .bot_link_group_right
+        display: flex
+        justify-content: flex-end
+        .icon
+            margin: 20px 5px 0px
+
+.all
+    display: flex //啟用flex
+    flex-direction: column //設定由上到下排列
+    min-height: 100vh // 至少佔據可視範圍的整個高度
+    .container
+        flex: 1 // 高度自動伸展至所有剩餘的空間
+        // padding-bottom: 862px
+   

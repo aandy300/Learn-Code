@@ -1,0 +1,11 @@
+@import '_Reset';
+// @import '_Btm';
+@media(max-width: 768px){
+    h1{
+        color: red;
+    }
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
