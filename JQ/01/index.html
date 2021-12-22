@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/all.js"></script>
+    <title>Document</title>
+    <style>
+        .text4{
+            opacity: 0;
+            transition: all 2s;
+        }
+        .text4.active{
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <h1>選擇器 hmtl class #id .hide()</h1>
+    <h3>1234</h3>
+    <h3 id="box">456</h3>
+    <input type="button" class="button" value="隱藏標題">
+    <p>段落內容</p>
+    <h2>.toggle</h2>
+
+    <p>---------</p>
+    <h1>.slideToggle</h1>
+    <input class="button2" type="button" value="留言">
+    <div class="text2" style="display:none">
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+        <input type="submit" value="送出">
+    </div>
+
+    <p>---------</p>
+    <h1>.fadeToggle</h1>
+    <input class="button3" type="button" value="fade">
+    <div class="text3" style="display:none">
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+        <input type="submit" value="送出">
+    </div>
+
+    <p>---------</p>
+    <h1>.toggleClass</h1>
+    <input class="button4" type="button" value="反向開關">
+    <div class="text4">
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+        <input type="submit" value="送出">
+    </div>
+</body>
+</html>
