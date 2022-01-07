@@ -1,0 +1,398 @@
+<!DOCTYPE html><html><head><title>this 指向觀念</title><meta name="viewport" content="width=device-width, initial-scale=1"><link href="images/favicon.ico" rel="shortcut icon"><meta charset="UTF-8"><script src="/javascripts/vendor.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.0.2/vue.global.js"></script></head><body class="bg-lighter">
+<div class="container main my-5"><div class="row"><main class="col post">
+<!-- 章節標題 --><div class="mb-4"><h1 class="mt-0 text-muted">this 指向觀念</h1><small>檔名：<code>this.html</code></small></div>
+<!-- 🔥🔥練習開始🔥🔥 -->
+<script>
+// #1 一個函式中包含多少參數
+var a = '全域'
+function fn(params) {
+  console.log(params, this, window, arguments);
+  debugger;
+}
+
+// #2 this 的指向為何
+// var obj = {
+//   name: '小明',
+//   fn: function(params) {
+//     console.log(params, this, window, arguments);
+//     // debugger;
+//   }
+// }
+// console.log(obj.fn())
+// #3 注意：this 的指向相當複雜，大部分情境只需要了解其中一種即可(95%)
+// 傳統函式中的 this 只與調用方式有關
+// let 和 const 會不太一樣 先用 var理解
+// var someone = '全域';
+// function callSomeone() {
+//   console.log(this.someone);
+// }
+// callSomeone(); // 這種呼叫方式叫 simple code
+
+// #4 各種運用變化
+// var obj = {
+//   someone: '物件',
+//   callSomeone() {
+//     console.log(this.someone);
+//   }
+// }
+// obj.callSomeone();
+
+// var obj2 = {
+//   someone: '物件2',
+//   callSomeone
+// }
+// obj2.callSomeone();
+
+// var wrapObj = {
+//   someone: '外層物件',
+//   callSomeone,
+//   innerObj: {
+//     someone: '內層物件',
+//     callSomeone,
+//   }
+// }
+// wrapObj.innerObj.callSomeone();
+
+// var obj3 = {
+//   someone: '物件 3',
+//   fn() {
+//     callSomeone(); // 通常平常不會這樣去取用 this
+//   }
+// }
+// obj3.fn();
+
+// var obj4 = {
+//   someone: '物件 4',
+//   fn() {
+//     setTimeout(function () {
+//       console.log(this.someone);
+//     });
+//   }
+// }
+// obj4.fn();
+
+// var myName = '小名';
+// var obj = {
+//   maName: '小美',
+//   x: function(){
+//     var myName = '小王';
+//     setTimeout(function(){
+//       console.log(this.myName)
+//     }, 0)
+//   }
+// }
+// obj.x();
+
+
+
+// 正常使用範例
+var  name = '全域'
+function outside_callName_func(){
+  console.log('outside callname func()', this.name)
+}
+
+// 箭頭主要概念 依照外層的func找指向
+// 箭頭得在外面用陳敘事包進去 裡面用 宣告箭頭函式
+// console.log(this)  函式自身本來就帶的this沒目標會指向windows 全域
+const person = {
+  name: '小明',
+  callMe(){
+    const callName =  () => {
+    console.log(this.name)
+    }
+    callName()
+  },
+  // 錯誤跑到全域的 - 沒有外層 = 沒目標 = 指向全域
+  callName_fail: () => {
+    console.log('fail',this.name)
+  },
+  // 錯誤跑到全域的 - 這是題目三
+  x: function(){    
+    // callback 會沒有目標 變 全域
+    // 直接執行func找不到目標
+    setTimeout(function(){
+      console.log(this.name)
+    })
+  },
+  // 解決方法: 用箭頭 => 外面要有包一層被指向的目標
+  y: function(){    
+    // 改成箭頭會往上找目標
+    setTimeout(() =>{
+      console.log(this.name)
+    })
+  },
+  // 解決方法: 將thist 指向其他變數 這邊指向 物件本身
+  z: function(){        
+    const vm = this
+    // console.log('vm',this) // vm {name: '小明', callMe: ƒ, x: ƒ, y: ƒ, z: ƒ}
+    setTimeout(function(){
+      console.log(vm.name)
+    })
+  },
+
+}
+
+person.callMe(); // 小明
+person.callName_fail(); // fail 全域
+person.x(); // 全域
+person.y(); // 小明
+person.z(); // 小明
+
+console.log('------ 分隔線 ------')
+
+// 會跑到全域的範例
+// var obj2 = {
+//   name: 'ming',
+//   outside_callName_func : outside_callName_func,
+//   // 裡面的裡面的 this 會指到全域 因為前面沒目標  
+//   fn: function(){
+//     outside_callName_func()    
+//   },
+//   // 裡面的裡面的 this 會指到全域 因為前面沒目標
+//   // callback 範例
+//   // fn : function(){
+//   fn2(){
+//     setTimeout(function(){
+//       console.log('fn2', this.name)
+//     })
+//   }  
+// }
+// obj2.outside_callName_func() // outside callname func() ming 只有一層func()所以指定的到 obj2
+// obj2.fn() // outside callname func() 全域
+// obj2.fn2() // fn2 全域
+
+
+
+
+
+
+
+
+
+// var someone = '全域';
+// function callSomeone() {
+//   console.log(this.someone);
+// }
+// callSomeone(); // 這種呼叫方式叫 simple code 前面沒有任何物件
+
+// var obj = {
+//   someone: '物件',
+//   callSomeone() {
+//     console.log(this.someone);
+//   }
+// }
+// obj.callSomeone(); // this通常95% 指向前面的目標 這裡的目標 = obj
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// var someone = '全域';
+// function callSomeone() {
+//   console.log(this.someone);
+// }
+
+
+
+
+// // 呼叫 物件本身的callsomeone()
+// var obj = {
+//   someone: '物件',
+//   callSomeone() {
+//     console.log(this.someone);
+//   }
+// }
+// obj.callSomeone(); // 物件
+
+// // // 案例2 this會指向最後的目標 innerObj
+// // var wrapObj = {
+// //   someone: '外層物件',
+// //   callSomeone,
+// //   innerObj: {
+// //     someone: '內層物件',
+// //     callSomeone,
+// //   }
+// // }
+// // wrapObj.innerObj.callSomeone(); // 最後的目標 innerObj // 內層物件
+
+// // // ------------ 陷阱題 ------------
+
+
+// // 多一層 fn() 沒辦法直接指向到obj所以是全域
+// var obj3 = {
+//   someone: '物件 3',
+// // fn : function(){
+//   fn() { // 
+//     callSomeone(); 
+//   }
+// }
+// obj3.fn(); // 
+
+// var obj4 = {
+//   someone: '物件 4',
+//   fn() {
+// 		// callback function
+		
+//     setTimeout(function () { console.log(this.someone);
+//     });
+//   }
+// }
+// obj4.fn();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+<!-- 🙇🙇練習結束🙇🙇 -->
+</main>
+  
+    <aside
+      class="col-md-3"><div class="sticky-top" style="top: 76px">
+  <div class="list-group">
+  
+    <a href="/es6/shorthand.html"
+      class="list-group-item list-group-item-action
+        
+        ">
+      縮寫
+    </a>
+  
+    <a href="/es6/this.html"
+      class="list-group-item list-group-item-action
+        
+        active">
+      this 的運作
+    </a>
+  
+    <a href="/es6/arrow_function.html"
+      class="list-group-item list-group-item-action
+        
+        ">
+      箭頭函式
+    </a>
+  
+    <a href="/es6/separation_of_concerns.html"
+      class="list-group-item list-group-item-action
+        
+        ">
+      關注點分離
+    </a>
+  
+    <a href="/es6/separation_of_concerns_work.html"
+      class="list-group-item list-group-item-action
+        
+        ">
+      關注點分離 練習題
+    </a>
+  
+    <a href="/es6/object_reference.html"
+      class="list-group-item list-group-item-action
+        
+        ">
+      物件參考特性
+    </a>
+  
+    <a href="/es6/promise.html"
+      class="list-group-item list-group-item-action
+        
+        ">
+      Promise
+    </a>
+  
+    <a href="/es6/esModule.html"
+      class="list-group-item list-group-item-action
+        
+        ">
+      ES Module
+    </a>
+  
+    <a href="/es6/esModule_2.html"
+      class="list-group-item list-group-item-action
+        
+        ">
+      ES 模組延伸觀念
+    </a>
+  
+  </div>
+  <div class="mt-3 text-end p-2 bg-light rounded">
+    <small class="text-black-50 fw-light mb-0">文件版本：2021/6/29</small>
+  </div>
+</div>
+
+</aside>
+    
+  </div>
+</div>
+
+<nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-secondary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Vue 3 練習手冊</a>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link active" href="/es6/shorthand.html">JS 必備觀念</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/intro/createApp.html">認識 Vue.js</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/template/v-text.html">模板</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/optionsApi/options-methods.html">方法</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/components/component_register.html">元件</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/advApi/adv-refs.html">進階</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/router/vue-router.html">路由</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/composition/proxy.html">Composition API</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<footer class="footer py-2 bg-light">
+  <div class="container text-center">
+    <small class="text-black-50 fw-light mb-0">六角學院 Vue 課程專屬文件</small>
+  </div>
+</footer>
+<link rel="stylesheet" href="/stylesheets/all.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</body>
+</html>
