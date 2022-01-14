@@ -1,0 +1,26 @@
+#時鐘 至頂 拖移 隨手筆記
+
+雙線程更新數字
+數字 to 可以移動的那邊
+
+每一秒執行
+label_1 = tk.Label(root, text= am_pm + hour + ":" + minute + ":" + second)                
+
+因為初始化 會跑出多個視窗
+
+
+
+ESC結束了 但是 背後其他執行續還在跑
+
+
+while True 改成 while getattr(t, "do_run", True):
+
+
+通過賦家屬姓、更改屬性 來結束線程
+
+
+MEMO整理一下
+
+還可以更好的 拉大視窗 AUTO SIZE
+
+我覺得對開發功能比較有興趣 小工具 ETC
