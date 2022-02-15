@@ -24,7 +24,7 @@
           <input type="checkbox" v-model="item.onStock">
         </td>
         <td>
-          <button type="button" class="btn btn-outline-primary"
+          <button v-on:click="editItem(item)" type="button" class="btn btn-outline-primary"
           >修改</button>
         </td>
       </tr>
@@ -75,12 +75,26 @@ const App = {
       }
     }
   },
-  methods: {
-    confirmEdit() {
-      this.temp.id = new Date().getTime();
-      this.temp.onStock = false;
-      this.products.push(this.temp);
-      this.temp = {};
+  methods: {    
+    confirmEdit() {      
+      console.log(this)
+      if(!this.temp.id){
+        this.temp.id = new Date().getTime();
+        this.temp.onStock = false;
+        this.products.push(this.temp);
+        this.temp = {};
+      }else{
+        this.products.forEach((item, i) =>{
+          if(item.id === this.temp.id){
+            this.products[i] = this.temp            
+          }
+        })
+        this.temp = {};
+      }      
+    },
+    editItem(item){
+      console.log('edititem()', item)
+      this.temp = { ...item}
     }
   },
   created() {

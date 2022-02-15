@@ -5,7 +5,9 @@
 
 <div id="app">
   <h3>v-if</h3>
-  <p>小明 飽了</p>
+  <p v-if="isFull">小明 飽了</p>
+  <p v-else="isFull">小明 餓了</p>
+  {{ isFull}}
   <!-- <p>小明 還沒吃飽</p> -->
   <button type="button" v-on:click="change('isFull')">狀態切換</button>
 
@@ -20,18 +22,22 @@
       v-on:click="link = '杰倫'">杰倫</a>
   </nav>
   <div>
-    <div>小明吃早餐</div>
-    <div>小美去百貨公司</div>
-    <div>杰倫去幫助人</div>
+    {{ link }}
+    <div v-if="link === '小明'">小明吃早餐</div>
+    <div v-else-if="link === '小美'">小美去百貨公司</div>
+    <div v-else-if="link === '杰倫'">杰倫去幫助人</div>
   </div>
 
   <hr>
-  <h3>注意事項：v-for 與 v-if 混用</h3>
-  <ul>
-    <li v-for="(item, key) in products" v-bind:key="item.name">
-      {{ item.name}} / {{ item.price }} 元
-    </li>
-  </ul>
+  <h3>注意事項：v-for 與 v-if 混用</h3>  
+    <ul>
+      <template v-for="(item, key) in products" v-bind:key="item.name">
+      <li v-if="item.price <=  35">
+        {{ item.name}} / {{ item.price }} 元
+      </li>
+    </template>
+    </ul>            
+
   <p>參考說明：<a href="https://vue3js.cn/docs/zh/guide/conditional.html#v-if-%E4%B8%8E-v-for-%E4%B8%80%E8%B5%B7%E4%BD%BF%E7%94%A8">https://vue3js.cn/docs/zh/guide/conditional.html#v-if-%E4%B8%8E-v-for-%E4%B8%80%E8%B5%B7%E4%BD%BF%E7%94%A8</a></p>
 
   <hr>
@@ -95,7 +101,7 @@ const App = {
   },
   methods: {
     change: function (key) {
-      this[key] = !this[key];
+      this[key] = !this[key];      
     },
   },
 };

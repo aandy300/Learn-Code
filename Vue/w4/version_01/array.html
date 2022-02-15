@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+
+  <body>
+    <div id="app">
+
+      <h3>課程陣列展示</h3>
+
+        <template v-for="(item, key) in imagesUrl" :key="key">
+          <div>
+            <input type="text" v-model="imagesUrl[key]">
+          </div>
+        </template>
+        <!-- ！imagesUrl.length 如果不是第一個 -->
+        <!-- imagesUrl[imagesUrl.length - 1] 如果陣列內容是空的 -->
+        <div v-if="!imagesUrl.length || imagesUrl[imagesUrl.length - 1]">
+          <button type="button" @click="imagesUrl.push('')">新增一個</button>
+        </div>
+        <div v-else>
+          <button type="button" @click="imagesUrl.pop()">刪除當前</button>
+        </div>
+
+      
+    </div>
+    
+
+    
+    <script>
+    const App = {
+      data() {
+        return {
+          imagesUrl: ['']
+        }
+      }
+    };
+    Vue.createApp(App)
+      .mount('#app');
+    </script>
+  </body>
+</html>

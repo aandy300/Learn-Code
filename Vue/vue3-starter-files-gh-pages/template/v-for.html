@@ -7,23 +7,23 @@
   <h3>呈現多筆資料於畫面上 v-for</h3>
   <p>菜單</p>
   <ul>
-    
+    <li v-for=" item in products">{{item.name}}-{{item.price}}</li>
   </ul>
 
   <h3>物件回圈</h3>
   <ul>
-    
+    <li v-for=" (item, index) in productsObj">{{index}} {{item}}</li>
   </ul>
 
   <h3>純數值回圈</h3>
   <ul>
-    
+    <li v-for=" i in 5">{{i}}</li>
   </ul>
 
   <h3>v-for 與 key</h3>
   <p>菜單</p>
   <ul>
-    <li v-for="(item, key) in products">
+    <li v-for="(item, key) in products" v-bind:key="item.name">
       {{ key }} - {{ item.name}} / {{ item.price }} 元
       <input type="text">
     </li>
@@ -34,23 +34,29 @@
   <hr>
   <h3>進階技巧：在 template 標籤使用 v-for</h3>
   <table class="table">
-    <tbody>
-      <tr >
-        <th rowspan="2">1</th>
-        <td colspan="2">
-          飯糰
-        </td>
-      </tr>
-      <tr>
-        <td>
-          30元
-        </td>
-        <td>
-          不可素食
-        </td>
-      </tr>
-    </tbody>
-  </table>
+    <template v-for="(item, index) in products" v-bind:key="item.name">
+      <tbody>
+        <tr >
+          <th rowspan="2">{{index + 1}}</th>
+          <td colspan="2">
+            <!-- 飯糰 -->
+            {{ item.name}}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <!-- 30元 -->
+            {{item.price}}
+          </td>
+          <td>
+            <!-- 不可素食 -->
+            <!-- 三原運算子 -->
+            {{ item.vegan ? '素食' : '非素食'}}
+          </td>
+        </tr>
+      </tbody>    
+    </template>
+  </table>  
   <p><a href="https://vue3js.cn/docs/zh/guide/list.html#%E5%9C%A8-template-%E4%B8%AD%E4%BD%BF%E7%94%A8-v-for">參考介紹</a></p>
 
   <h3>補充說明：v-for 與元件</h3>

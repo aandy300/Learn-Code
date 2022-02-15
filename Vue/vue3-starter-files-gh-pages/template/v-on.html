@@ -6,7 +6,7 @@
   <h3>觸發事件 與 縮寫*</h3>
   <div class="box" :class="{ rotate: isTransform }"></div>
   <hr>
-  <button class="btn btn-outline-primary">選轉物件</button>
+  <button @click="changeClass()" class="btn btn-outline-primary">選轉物件</button>
   <br>
   <h3>帶入參數*</h3>
   <div class="box" :class="{ rotate: isTransform }"></div>
@@ -17,26 +17,26 @@
   <h3>原生 DOM 事件*</h3>
   <!-- https://developer.mozilla.org/en-US/docs/Web/Events -->
   <h4>input change 事件</h4>
-  <input type="text">
+  <input @change="onChange()" type="text">
   <br><br>
   <h4>form submit 事件</h4>
-  <form>
+  <form @submit.prevent="submitForm()">
     <input type="text" v-model="name">
     <button>送出表單</button>
   </form>
   <hr>
   <h3>動態事件 []</h3>
-  <input type="text">
+  <input @[event]="dynamicEvent" type="text">
   <input type="text" v-model="event">
 
   <hr>
   <h3>動態物件方法 {}</h3>
   <!-- 此方法無法傳入參數 -->
-  <button class="box">
+  <button @=" { mousedown : down , mouseup : up } " class="box">
   </button>
   <hr>
   <h3>作為運算*</h3>
-  {{ double }}
+  {{ double() }}
   <input type="number" v-model.number="num">
 </div>
 
@@ -73,7 +73,8 @@ const App = {
       console.log('放開');
     },
     double(n) {
-      return `NT$ ${n * 2}`;
+      console.log('放開');
+      return `NT$ ${this.num * 2}`;
     },
   }
 };

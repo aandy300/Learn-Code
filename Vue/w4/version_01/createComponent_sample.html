@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+
+  <body>
+    <div id="app" class="container mt-3">
+      <h1>請讓以下圖片正確顯示</h1>      
+      <card></card>
+      <card2></card2>
+      <!-- <div v-is="'card'"></div> -->
+      <!-- <card v-for="item in array" :key="item.id"></card> -->
+    </div>
+
+    <script type="text/x-template" id="forCardTemplate">
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">卡片資料：{{ text }}</h5>
+        </div>
+      </div>
+    </script>
+
+    <script type="module">
+      import  card3  from "./card2.js";
+      const card2 = {
+        data() {
+          return {
+            text: '我是區域註冊！'
+          }
+        },
+        template: '<div> 區域註冊: {{ text }} </div>'
+      }
+      // #1 複習：Vue 初始化
+      const app = Vue.createApp({
+        data() {
+          return {
+            text: 'text_app'
+          }
+        },
+        methods: {
+          
+        },
+        components:{
+          card2
+        },
+        mounted() {
+          
+        },
+      })
+
+      app.component('card',{
+        data() {
+          return {
+            text: 'text_card'
+          }
+        },
+        template: '#forCardTemplate'
+        // template: '<div>{{ text }}</div>'
+      })
+
+      app.mount('#app')
+      // #2 建立元件 “全域註冊”（x-template）
+      // #3 將元件加入至畫面上
+      // #4 區域註冊 -> 將元件加入至畫面上 (template literal)
+      // #5 使用 import 形式加入元件
+
+    </script>
+  </body>
+</html>
