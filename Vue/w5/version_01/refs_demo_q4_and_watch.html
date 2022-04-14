@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/vue@next"></script>
+</head>
+
+<body>
+  <div id="app" class="container mt-3">
+    <h1>現在想要將 Modal 元件化，請問該怎麼做？</h1>
+    <ol>
+      <li>將元素加上 ref</li>
+      <li>套用 Modal 實體方法 new bootstrap.Modal() 在 DOM 元素上，並回傳至 this.modal</li>
+      <li>在元件 openModal 加上 show() 的方法</li>
+
+      <li>---- 回到外層 ----</li>
+      <li>元件上已經加入了 Modal，請問在外層的 openModal() 方法該如何撰寫，才能開啟 modal</li>
+    </ol>
+
+    <!-- Bootstrap -->
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary me-2" @click="openModal">
+      Launch demo modal
+    </button>
+
+    <button type="button" class="btn btn-outline-primary" @click="createNew">修改 Obj 物件 "{{ obj.text }}"</button>
+
+    <!-- Modal -->
+    <modal ref="modal" :obj="obj"></modal>
+  </div>
+
+  <script>
+    const app = Vue.createApp({
+      data() {
+        return {
+          obj: {
+            text: '原始資料'
+          },
+        };
+      },
+      methods: {
+        openModal() {
+          this.$refs.modal.openModal();
+        },
+        createNew() {
+          this.obj = {
+            text: '被修改的物件'
+          }
+        }
+      },
+    });
+
+
+    app.component('modal', {
+      props: ['obj'],
+      data() {
+        return {
+          modal: '',
+          innerObj: {},
+        }
+      },
+      template: `<div class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" ref="modal" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            {{ innerObj.text }}
+          </div>
+        </div>
+      </div>`,
+      methods: {
+        openModal() {
+          this.modal.show();
+        }
+      },
+      mounted() {
+        this.modal = new bootstrap.Modal(this.$refs.modal);
+        this.innerObj = this.obj;
+      }
+    })
+
+
+    app.mount('#app')
+  </script>
+</body>
+
+</html>

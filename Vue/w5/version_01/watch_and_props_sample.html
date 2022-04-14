@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/vue@next"></script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vue-loading-overlay@4.0.2/dist/vue-loading.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue-loading-overlay@4.0.2/dist/vue-loading.min.js"></script>
+</head>
+
+<body>
+  <div id="app" class="container mt-3">
+    <input type="number" v-model="outerNum">
+    <card :num="outerNum"></card>
+
+  </div>
+
+  <script>
+    const app = Vue.createApp({
+      data() {
+        return {
+          outerNum: 0
+        }
+      },
+    });
+
+    app.component('card', {
+      template: `<div class="card">
+        <div class="card-body">
+          原始 props: {{ num }} <br />
+          透過生命週期導入的值：{{ innerNum }} <br />
+          透過 watch 持續監聽的值：{{ watchNum }}
+        </div>
+      </div>`,
+      props: ['num'],
+      data() {
+        return {
+          innerNum: 0,
+          watchNum: 0,
+        }
+      },
+      watch: {
+        // #1 當外層的 outerNum 更新時，內層可取得外層相對應的值
+        num(){        
+          this.watchNum = this.num;
+          console.log('num更動了', `${'this.watchNum:',this.watchNum, 'this.num', this.num}`)
+        }
+      },
+      mounted() {
+        this.innerNum = this.num;
+      }
+    })
+
+
+    app.mount('#app')
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/vue@next"></script>
+</head>
+
+<body>
+  <div id="app" class="container mt-3">
+    <h1>跨元件通訊</h1>
+    <ul>
+      <li>解決問題點：同層級的元素通訊過於麻煩</li>
+      <li>載入 mitt 套件</li>
+      <li>一個元件發起監聽</li>
+      <li>另一個元件發送事件</li>
+    </ul>
+
+    <spinner></spinner>
+    <card2></card2>
+
+    <card2></card2>
+
+  </div>
+
+  <script src="https://unpkg.com/mitt/dist/mitt.umd.js"></script>
+  <script>
+    console.log(mitt);
+    const emitter = mitt();
+
+    const app = Vue.createApp({})
+
+    app.component('spinner', {
+      data() {
+        return {
+          loading: false
+        }
+      },
+      template: `<div>
+        <div class="spinner-border" role="status" v-if="loading">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+      `,
+      created() {
+        emitter.on('spinner-open', (text) => {
+          this.loading = true;
+          setTimeout(() => {
+            this.loading = false;
+          }, 3000);
+        })
+      }
+    });
+
+    app.component('card2', {
+      template: `<div><button type="button" @click="trigger">按我</button></div>`,
+      methods: {
+        trigger() {
+          emitter.emit('spinner-open')
+        },
+      },
+    });
+
+    app.mount('#app')
+  </script>
+</body>
+
+</html>

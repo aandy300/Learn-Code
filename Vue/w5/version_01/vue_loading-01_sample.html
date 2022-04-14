@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/vue@next"></script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vue-loading-overlay@5.0.2/dist/vue-loading.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue-loading-overlay@5.0.2/dist/vue-loading.min.js"></script>
+</head>
+
+<body>
+  <div id="app" class="container mt-3">
+    <h1>外部元件載入_app.use()版</h1>
+    <ul>
+      <li>https://www.npmjs.com/package/vue-loading-overlay
+        CDN: https://www.jsdelivr.com/package/npm/vue-loading-overlay?path=dist
+      </li>
+      <li>作為 Vue 元件載入</li>
+    </ul>
+
+    <!-- HTML 可能不支援自結尾 -->
+    <loading :active="isLoading" ></loading>
+
+    <button type="button" @click="addLoading">加入讀取效果</button>
+
+  </div>
+
+  <script>
+    const app = Vue.createApp({
+      data() {
+        return {
+          isLoading: false
+        }
+      },
+      methods: {
+        addLoading() {
+          // #1 作為元件呼叫
+
+          // #2 作為套件引用
+          let loader = this.$loading.show({
+                    // Optional parameters
+                    container: this.fullPage ? null : this.$refs.formContainer,
+                    canCancel: true,
+                    onCancel: this.onCancel,
+                });
+                // simulate AJAX
+          setTimeout(() => {
+              loader.hide()
+          }, 5000)
+        },
+      },
+    });
+
+    console.log(VueLoading);
+    app.use(VueLoading.Plugin)
+    app.mount('#app')
+  </script>
+</body>
+
+</html>

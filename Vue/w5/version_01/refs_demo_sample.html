@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/vue@next"></script>
+</head>
+
+<body>
+  <div id="app" class="container mt-3">
+    <h1>$refs 知識點</h1>
+    <ul>
+      <li>操作 DOM 元素</li>
+      <li>與 生命週期的關係</li>
+      <li>操作「子元件」的方法</li>
+      <li>整合 Bootstrap 運用（元件封裝）</li>
+    </ul>
+
+    <div ref="top"></div>
+
+    <card ref="card"></card>
+    <!-- Bootstrap -->
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" @click="openModal">
+      Launch demo modal
+    </button>
+
+    <!-- Modal -->
+    <modal ref="modal"></modal>
+  </div>
+
+  <script>
+    const app = Vue.createApp({
+      methods: {
+        openModal() {
+          
+        }
+      },
+      mounted() {
+        // #1 從 this 查看 $refs 有什麼 
+
+        // #2 使用 $refs 操作 DOM 元素
+        
+        // #3 呼叫 DOM 內的方法
+
+        // #5 由外層呼叫 Modal 方法
+        
+      }
+    });
+
+
+    app.component('card', {
+      data() {
+        return {
+          text: '卡斯伯'
+        }
+      },
+      methods: {
+        changeText() {
+          this.text = 'ArRay'
+        },
+        
+      },
+      template: `<div>
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">{{ text }}</h5>
+          </div>
+        </div>
+      </div>`
+    });
+
+    app.component('modal', {
+      data() {
+        return {
+          modal: ''
+        }
+      },
+      template: `<div class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            12345
+          </div>
+        </div>
+      </div>`,
+      methods: {
+
+      },
+      mounted() {
+        // #4 參考 Bootstrap 文件，建構 Modal 方法
+        // https://bootstrap5.hexschool.com/docs/5.1/components/modal/#methods
+      }
+    })
+
+
+    app.mount('#app')
+  </script>
+</body>
+
+</html>

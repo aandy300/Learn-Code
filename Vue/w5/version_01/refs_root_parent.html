@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/vue@next"></script>
+</head>
+
+<body>
+  <div id="app" class="container mt-3">
+    <h1>更多元件關係介紹</h1>
+    <ul>
+      <li>parent 與 root</li>
+    </ul>
+
+    <div ref="top"></div>
+
+    <card ref="card"></card>
+    <!-- Bootstrap -->
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" @click="openModal">
+      Launch demo modal
+    </button>
+
+    <!-- Modal -->
+    <modal ref="modal"></modal>
+  </div>
+
+  <script>
+    const app = Vue.createApp({
+      methods: {
+        openModal() {
+          console.log(this.$refs.modal);
+          this.$refs.modal.openModal();
+        },
+      },
+      mounted() {
+        console.log(this);
+        console.log(this.$refs.top);
+
+        const div = this.$refs.top;
+        div.innerHTML = '12345';
+
+        // 呼叫元件內的方法
+        console.log(this.$refs.card);
+        this.$refs.card.changeText();
+      }
+    });
+
+
+    app.component('card', {
+      data() {
+        return {
+          text: '卡斯伯'
+        }
+      },
+      methods: {
+        changeText() {
+          this.text = 'ArRay'
+        },
+        // 少用的技巧
+        openParentModal() {
+          this.$parent.openModal();
+        }
+      },
+      template: `<div>
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">{{ text }}</h5>
+            <button type="button" @click="openParentModal">操作父層</button>
+          </div>
+        </div>
+      </div>`
+    });
+
+    app.component('modal', {
+      data() {
+        return {
+          modal: ''
+        }
+      },
+      template: `<div class="modal fade" ref="modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            12345
+          </div>
+        </div>
+      </div>`,
+      methods: {
+        openModal() {
+          this.modal.show();
+        }
+      },
+      mounted() {
+        this.modal = new bootstrap.Modal(this.$refs.modal);
+      }
+    })
+
+
+    app.mount('#app')
+  </script>
+</body>
+
+</html>
